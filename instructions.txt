@@ -13,7 +13,11 @@ To insure that your dot files are working, you must:
 		#Dont know if i will use this... Anyway the site:
 		http://ohmyz.sh/
 	- .zplug  // thinking if this is really necessary
-		#https://github.com/zplug/zplug
+		#https://github.com/zplug/zplug.
+	- .zshrc
+		# we need to set as first shelll with this command:
+		# which zsh  // show where it is.
+		# then : chsh -s "The path Where it is located"
 
 2) link the dotFile:
 
