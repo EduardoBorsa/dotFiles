@@ -1,0 +1,63 @@
+if empty(glob('~/.vim/autoload/plug.vim'))
+	silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+				\ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+	autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+call plug#begin('~/.vim/plugged')
+Plug 'junegunn/vim-easy-align'
+Plug 'wikitopian/hardmode'
+Plug 'vim-latex/vim-latex'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'christoomey/vim-tmux-runner'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'scrooloose/nerdtree'
+Plug 'altercation/vim-colors-solarized'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-rails'
+Plug 'tpope/vim-commentary'
+Plug 'thoughtbot/vim-rspec'
+call plug#end()
+
+
+function! Cocozao()
+	normal! mm[s1z=`m
+endfunction
+nnoremap <leader>zp :call Cocozao()<cr>
+
+"#vim does not accept spaces while entering commands" 
+let g:solarized_termcolors=256
+syntax enable
+set background=dark
+colorscheme solarized
+set tabstop=4
+set number
+syntax on
+filetype plugin indent on
+set autoindent
+set spell spelllang=en_us
+filetype plugin on
+set shellslash
+set grepprg=grep\ -nH\ $*
+let g:tex_flavor='latex'
+set incsearch
+set hlsearch
+set ignorecase
+" automatically rebalance windows on vim resize
+autocmd VimResized * :wincmd =
+" zoom a vim pane, <C-w>= to re-balance
+nnoremap <leader>- :wincmd _<cr>:wincmd \|<cr>
+nnoremap <leader>= :wincmd =<cr>
+" Make CtrlP use ag for listing the files. Way faster and no useless files.
+let g:ctrlp_user_command = 'ag %s -l --hidden --nocolor -g ""'
+let g:ctrlp_use_caching = 0
+
+"easy acess of the vimrc file and how to source it
+nmap <leader>vr :sp $MYVIMRC<cr>
+nmap <leader>so :source $MYVIMRC<cr>
+"#Hot to link your vimrc
+"move the .vimrc to the folder you want
+"use ln -n code/dotFiles/vim/vimrc
+"the file vimrc will hold the configurations

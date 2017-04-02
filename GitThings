@@ -1,0 +1,25 @@
+#---> git commit --amend --no-edit
+	- What this does is that, on the last commit, this new commit will apend to it with no editting.
+	the . in git means all the files in the s directory
+	The workflow with git is something like:
+	- do the changes.
+	- add them
+	- commit them.
+	- push them. 
+
+	Ig i want to unstage a file in my commit, i can use git reset nameOfTheFile and it will be gone
+	check how to create alias on git
+
+	git status show the status of the cuttent folder in compare with the last pull.
+
+	 	- git checkout. //this backups all the changes.
+		
+
+
+
+		When begging a new git repository, the first thing to do is 
+		- git init.
+		 
+		 Just one nice thing to see:
+		 the commanf tree -C folder show the structure of that folder
+

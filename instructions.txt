@@ -1,0 +1,21 @@
+"#Hot to link your vimrc
+"move the .vimrc to the folder you want
+"use ln -s code/dotFiles/vim/vimrc
+"the file vimrc will hold the configurations
+
+To insure that your dot files are working, you must:
+
+1)Check what dotFiles you need to mode:
+	- .vimrc
+	- .tmux.conf
+	- .oh-my-zsh //  thinking if this is really necessary
+		#Remember: the oh-my-zsh has its own folder inside the dotfiles. It os NOT inside the zsh.
+		#Dont know if i will use this... Anyway the site:
+		http://ohmyz.sh/
+	- .zplug  // thinking if this is really necessary
+		#https://github.com/zplug/zplug
+
+2) link the dotFile:
+
+	ln -n code/dotFiles/NameOfTheTool/FileThatHoldTheConfig
+
