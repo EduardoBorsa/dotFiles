@@ -1,0 +1,5 @@
+[user]
+	email = borsa.dado@gmail.com
+	name = Eduardo Borsa
+[alias]
+	sla = log --oneline --decorate --graph --all
