@@ -19,6 +19,7 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-commentary'
 Plug 'thoughtbot/vim-rspec'
+Plug 'tpope/vim-fugitive'
 call plug#end()
 
 
