@@ -6,12 +6,9 @@ endif
 
 call plug#begin('~/.vim/plugged')
 Plug 'junegunn/vim-easy-align'
-Plug 'wikitopian/hardmode'
-Plug 'vim-latex/vim-latex'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'christoomey/vim-tmux-runner'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'scrooloose/nerdtree'
+" Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'altercation/vim-colors-solarized'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tpope/vim-surround'
