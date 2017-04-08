@@ -27,6 +27,9 @@ function! Cocozao()
 endfunction
 nnoremap <leader>zp :call Cocozao()<cr>
 
+nnoremap ctrl-p : :FZF<cr>
+
+
 "#vim does not accept spaces while entering commands" 
 let g:solarized_termcolors=256
 syntax enable
