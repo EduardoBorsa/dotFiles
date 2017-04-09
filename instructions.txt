@@ -22,4 +22,9 @@ To insure that your dot files are working, you must:
 2) link the dotFile:
 
 	ln -n code/dotFiles/NameOfTheTool/FileThatHoldTheConfig
-
+3) Change the to open de HUB
+	-ccsm
+	-search for Ubuntu Unity Plugin
+	-Onde Alt HUB open, disable.
+4) Qt Creator - Instal via WebSite.
+5) Cmake Via web tbm
