@@ -19,7 +19,9 @@ Plug 'tpope/vim-commentary'
 Plug 'thoughtbot/vim-rspec'
 Plug 'ggreer/the_silver_searcher'
 Plug 'tpope/vim-fugitive'
+Plug 'Valloric/YouCompleteMe'
 call plug#end()
+
 
 
 function! Cocozao()
