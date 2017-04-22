@@ -28,3 +28,5 @@ To insure that your dot files are working, you must:
 	-Onde Alt HUB open, disable.
 4) Qt Creator - Instal via WebSite.
 5) Cmake Via web tbm
+6) xclip
+7) sudo apt-get install gawk
