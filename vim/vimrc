@@ -20,6 +20,7 @@ Plug 'thoughtbot/vim-rspec'
 Plug 'ggreer/the_silver_searcher'
 Plug 'tpope/vim-fugitive'
 Plug 'Valloric/YouCompleteMe'
+Plug 'tommcdo/vim-exchange'
 call plug#end()
 
 

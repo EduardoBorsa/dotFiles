@@ -3,7 +3,7 @@ for zsh_source in $HOME/.zsh/configs/**/*.zsh; do
   source $zsh_source
 done
 
-export ZSH=/home/eduardoborsa/.oh-my-zsh
+export ZSH=~/.oh-my-zsh
 
 ZSH_THEME="robbyrussell"
 
