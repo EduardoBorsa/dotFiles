@@ -12,15 +12,27 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'altercation/vim-colors-solarized'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-rails'
 Plug 'tpope/vim-commentary'
-Plug 'thoughtbot/vim-rspec'
 Plug 'ggreer/the_silver_searcher'
-Plug 'tpope/vim-fugitive'
 Plug 'Valloric/YouCompleteMe'
 Plug 'tommcdo/vim-exchange'
+Plug 'ervandew/supertab'
+Plug 'kchmck/vim-coffee-script'
+Plug 'skwp/greplace.vim'
+Plug 'tomtom/tcomment_vim'
+Plug 'thoughtbot/vim-rspec'
+Plug 'tpope/vim-bundler'
+Plug 'tpope/vim-dispatch'
+Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rails'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-unimpaired'
+Plug 'vim-ruby/vim-ruby'
+Plug 'ctrlpvim/ctrlp.vim'
+
+
 call plug#end()
 
 

@@ -2,4 +2,6 @@
 	email = borsa.dado@gmail.com
 	name = Eduardo Borsa
 [alias]
-	sla = log --oneline --decorate --graph --all
+		sla = log --oneline --decorate --graph --all
+		plog = log --pretty=format:'%C(yellow)%h%C(reset) - %an [%C(green)%ar%C(reset)] %s'
+

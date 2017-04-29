@@ -3,6 +3,17 @@ for zsh_source in $HOME/.zsh/configs/**/*.zsh; do
   source $zsh_source
 done
 
+source ~/.zplug/init.zsh
+zplug 'mafredri/zsh-async'
+zplug 'sindresorhus/pure'
+zplug "zsh-users/zsh-syntax-highlighting", defer:3
+zplug 'zsh-users/zsh-completions', defer:3
+zplug check || zplug install
+zplug load
+
+
+
+
 export ZSH=~/.oh-my-zsh
 
 ZSH_THEME="robbyrussell"
