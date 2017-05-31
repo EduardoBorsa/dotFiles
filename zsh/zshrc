@@ -33,3 +33,10 @@ ensure_tmux_is_running() {
 ensure_tmux_is_running
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# General ZSH configurations
+
+export EDITOR="vim"
+
+sz() { source ~/.zshrc }
+bindkey -v
