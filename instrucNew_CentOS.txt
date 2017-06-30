@@ -1,0 +1,19 @@
+Instalation packages:
+
+sudo yum install -y ruby ruby-devel lua lua-devel luajit luajit-devel ctags git python python-devel python3 python3-devel tcl-devel perl perl-devel perl-ExtUtils-ParseXS perl-ExtUtils-XSpp perl-ExtUtils-CBuilder perl-ExtUtils-Embed git cmake
+
+yum groupinstall 'Development tools' -y
+yum install ncurses ncurses-devel wget git -y
+
+Vim config:
+
+./configure --with-features=huge --enable-multibyte --enable-rubyinterp=yes --enable-pythoninterp=yes --with-python-config-dir=/usr/lib/python2.7/config --enable-python3interp=yes --with-python3-config-dir=/usr/lib/python3.5/config --enable-perlinterp=yes --enable-luainterp=yes --enable-gui=gtk2 --enable-cscope --prefix=/usr
+
+make VIMRUNTIMEDIR=/usr/share/vim/vim80
+sudo make install
+
+cmake commands to build newer version
+
+wget -c https://cmake.org/files/v3.9/cmake-3.9.0-rc5.tar.gz
+tar -xf name.tf -C .
+
