@@ -1,3 +1,8 @@
+sudo yum install epel-release
+yum group install "Development Tools"
+yum -y update
+
+
 Instalation packages:
 
 sudo yum install -y ruby ruby-devel lua lua-devel luajit luajit-devel ctags git python python-devel python3 python3-devel tcl-devel perl perl-devel perl-ExtUtils-ParseXS perl-ExtUtils-XSpp perl-ExtUtils-CBuilder perl-ExtUtils-Embed git cmake
@@ -16,4 +21,28 @@ cmake commands to build newer version
 
 wget -c https://cmake.org/files/v3.9/cmake-3.9.0-rc5.tar.gz
 tar -xf name.tf -C .
+cd cmake390
+  cmake .
+  make      
+  make install
+
+
+LLVM instructions
+wget -c http://releases.llvm.org/4.0.1/llvm-4.0.1.src.tar.xz
+tar -xf file.tar -C .
+mkdir LLVM_build
+cmake -DCMAKE_BUILD_TYPE=Debug  ../LLVM/
+cmake --build .
+cmake --build . --target install
+
+Clang instructions
+
+wget -c http://releases.llvm.org/4.0.1/cfe-4.0.1.src.tar.xz
+tar -xf file.tar -C .
+makdir clang_Build
+cmake -DCMAKE_BUILD_TYPE=Debug 
+cmake --build .
+cmake --build . --target install
+
+
 
