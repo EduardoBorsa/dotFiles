@@ -1,51 +1,42 @@
-if empty(glob('~/.vim/autoload/plug.vim'))
-	silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-				\ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-	autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-endif
+set nocompatible              " be iMproved, required
+filetype off                  " required
 
-call plug#begin('~/.vim/plugged')
-Plug 'junegunn/vim-easy-align'
-Plug 'christoomey/vim-tmux-navigator'
-Plug 'christoomey/vim-tmux-runner'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
-Plug 'altercation/vim-colors-solarized'
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'tpope/vim-commentary'
-Plug 'ggreer/the_silver_searcher'
-Plug 'Valloric/YouCompleteMe'
-Plug 'tommcdo/vim-exchange'
-Plug 'ervandew/supertab'
-Plug 'kchmck/vim-coffee-script'
-Plug 'skwp/greplace.vim'
-Plug 'tomtom/tcomment_vim'
-Plug 'thoughtbot/vim-rspec'
-Plug 'tpope/vim-bundler'
-Plug 'tpope/vim-dispatch'
-Plug 'tpope/vim-endwise'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-rails'
-Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-unimpaired'
-Plug 'vim-ruby/vim-ruby'
-Plug 'ctrlpvim/ctrlp.vim'
-" Track the engine.
-Plug 'SirVer/ultisnips'
-" Snippets are separated from the engine. Add this if you want them:
-Plug 'honza/vim-snippets'
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'SirVer/ultisnips'
+Plugin 'ternjs/tern_for_vim'
+Plugin 'tpope/vim-commentary'
+Plugin 'honza/vim-snippets'
+Plugin 'junegunn/vim-easy-align'
+Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'christoomey/vim-tmux-runner'
+Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plugin 'junegunn/fzf.vim'
+Plugin 'tommcdo/vim-exchange'
+Plugin 'ervandew/supertab'
+Plugin 'skwp/greplace.vim'
+Plugin 'tomtom/tcomment_vim'
+Plugin 'thoughtbot/vim-rspec'
+Plugin 'tpope/vim-bundler'
+Plugin 'tpope/vim-dispatch'
+Plugin 'tpope/vim-endwise'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-rails'
+Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-unimpaired'
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'ctrlpvim/ctrlp.vim'
 
 
-
-call plug#end()
-
+call vundle#end()            " required
+filetype plugin indent on    " required
 
 "#vim does not accept spaces while entering commands" 
-let g:solarized_termcolors=256
 syntax enable
 set background=dark
-colorscheme solarized
 set expandtab
 set shiftwidth=2
 set softtabstop=2
@@ -53,7 +44,6 @@ set number
 syntax on
 filetype plugin indent on
 set autoindent
-set spell spelllang=en_us
 filetype plugin on
 set shellslash
 set grepprg=grep\ -nH\ $*

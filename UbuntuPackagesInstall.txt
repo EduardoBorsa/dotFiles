@@ -1,10 +1,10 @@
-sudo apt-get install libncurses5-dev libgnome2-dev libgnomeui-dev libgtk2.0-dev libatk1.0-dev libbonoboui2-dev libcairo2-dev libx11-dev libxpm-dev libxt-dev python-dev python3-dev ruby-dev lua5.1 liblua5.1-0-dev libperl-dev git cmake build-essential python-dev python3-dev gnome-tweak-tool
+sudo apt-get install libncurses5-dev libgnome2-dev libgnomeui-dev libgtk2.0-dev libatk1.0-dev libbonoboui2-dev libcairo2-dev libx11-dev libxpm-dev libxt-dev python-dev python3-dev ruby-dev lua5.1 liblua5.1-0-dev libperl-dev git cmake build-essential python-dev python3-dev gnome-tweak-tool curl zsh tmux g++ subversion nodejs-legacy npm
 
 
 cmake commands to build newer version
 
 wget -c https://cmake.org/files/v3.9/cmake-3.9.0-rc5.tar.gz
-tar -xf name.tf -C .
+tar -vxf name.tf -C .
 cd cmake390
   cmake .
   make      
@@ -23,7 +23,7 @@ sudo make install
 
 LLVM instructions
 wget -c http://releases.llvm.org/4.0.1/llvm-4.0.1.src.tar.xz
-tar -xf file.tar -C .
+tar -vxf file.tar -C .
 mkdir LLVM_build
 cmake -DCMAKE_BUILD_TYPE=Debug  ../LLVM/
 cmake --build .
@@ -37,3 +37,6 @@ makdir clang_Build
 cmake -DCMAKE_BUILD_TYPE=Debug 
 cmake --build .
 cmake --build . --target install
+
+YCM
+~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py
