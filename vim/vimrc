@@ -31,7 +31,11 @@ Plugin 'vim-ruby/vim-ruby'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'chriskempson/base16-vim'
-Plugin 'christoomey/vim-conflicted'
+" Check this here, they are for javascript
+Plugin 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
+"Check for syntatic errors
+Plugin 'vim-syntastic/syntastic'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
@@ -53,6 +57,9 @@ set incsearch
 set hlsearch
 set ignorecase
 
+" Javascript stuff
+let g:jsx_ext_required = 0
+filetype plugin indent on
 " automatically rebalance windows on vim resize
 autocmd VimResized * :wincmd =
 " zoom a vim pane, <C-w>= to re-balance
@@ -74,3 +81,16 @@ endif
 "use ln -n code/dotFiles/vim/vimrc
 "the file vimrc will hold the configurations
 source ~/code/dotFiles/vim/mappings.vim
+
+
+" make YCM compatible with UltiSnips (using supertab)
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+let g:SuperTabDefaultCompletionType = '<C-n>'
+"
+" " better key bindings for UltiSnipsExpandTrigger
+let g:UltiSnipsExpandTrigger = "<tab>"
+let g:UltiSnipsJumpForwardTrigger = "<tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+
+let g:UltiSnipsSnippetDirectories = ['~/.vim/UltiSnips', 'UltiSnips']
