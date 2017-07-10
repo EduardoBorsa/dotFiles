@@ -36,6 +36,14 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 "Check for syntatic errors
 Plugin 'vim-syntastic/syntastic'
+
+" ES2015 code snippets (Optional)
+Plugin 'epilande/vim-es2015-snippets'
+
+" React code snippets
+Plugin 'epilande/vim-react-snippets'
+" Plugin for texEditor
+Plugin 'lervag/vimtex'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
@@ -90,7 +98,8 @@ let g:SuperTabDefaultCompletionType = '<C-n>'
 "
 " " better key bindings for UltiSnipsExpandTrigger
 let g:UltiSnipsExpandTrigger = "<tab>"
+let g:UltiSnipsListSnippets = "<C-tab>"
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 
-let g:UltiSnipsSnippetDirectories = ['~/.vim/UltiSnips', 'UltiSnips']
+let g:UltiSnipsSnippetDirectories = ['~/.vim/bundle/vim-snippets', 'UltiSnips']
