@@ -44,6 +44,9 @@ Plugin 'epilande/vim-es2015-snippets'
 Plugin 'epilande/vim-react-snippets'
 " Plugin for texEditor
 Plugin 'lervag/vimtex'
+"  that on for find strings"
+
+
 call vundle#end()            " required
 filetype plugin indent on    " required
 
@@ -103,3 +106,7 @@ let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 
 let g:UltiSnipsSnippetDirectories = ['~/.vim/bundle/vim-snippets', 'UltiSnips']
+
+
+let g:ackprg = 'ag --nogroup --nocolor --column'
+set runtimepath^=~/.vim/bundle/ag

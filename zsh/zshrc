@@ -39,3 +39,8 @@ BASE16_SHELL=$HOME/.config/base16-shell/
 export PATH=$PATH:/home/eduardoborsa/programs/clang_Build/bin/
 base16_tomorrow-night
 export PATH=$PATH:~/WebstormProjects/MyJSCourse/node_modules/.bin/
+export PATH=$PATH:~/WebstormProjects/Pluralsight/Initial/Mine/node_modules/.bin/
+export PATH=$PATH:~/WebstormProjects/Pluralsight/Initial/Mine/node_modules/
+
+export PATH=$PATH:~/niceScripts/
+

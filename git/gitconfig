@@ -1,12 +1,14 @@
 [user]
-	email = borsa.dado@gmail.com
-	name = Eduardo Borsa
+        email = borsa.dado@gmail.com
+        name = Eduardo Borsa
 [alias]
-	sla = log --oneline --decorate --graph --all
+        sla = log --oneline --decorate --graph --all
         pl = log --pretty=format:'%C(red)%h%C(reset) - %C(yellow)%an%C(reset) [%C(blue)%ar%C(reset)] %s'
-	glog = log -E -i --grep
-	car = commit --amend --no-edit
+        glog = log -E -i --grep
+        car = commit --amend --no-edit
         unstage = reset
-        sl = log --oneline --decorate 
+        sl = log --oneline --decorate
         df = diff --word-diff --color-words
-
+	ctags = !.git/hooks/ctags
+[init]
+        templatedir = ~/.git_template
