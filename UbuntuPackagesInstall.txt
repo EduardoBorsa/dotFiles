@@ -1,7 +1,23 @@
-sudo apt-get install libncurses5-dev libgnome2-dev libgnomeui-dev libgtk2.0-dev libatk1.0-dev libbonoboui2-dev libcairo2-dev libx11-dev libxpm-dev libxt-dev python-dev python3-dev ruby-dev lua5.1 liblua5.1-0-dev libperl-dev git cmake build-essential python-dev python3-dev gnome-tweak-tool curl zsh tmux g++ subversion nodejs-legacy npm gawk xclip deluge gdebi dh-autoreconf texlive texlive-full
+Index)
+
+
+1) Packages to install:
+2) Install cmake commands to build newer version
+3) Install vim from source.
+4) Install LLVM 
+5) Install Clang instructions
+6) How to install YCM
+7) To install ctags go to ctags.io
+
+------------------------------------------//------------
+1) Packages to install:
+
+sudo apt-get install libncurses5-dev libgnome2-dev libgnomeui-dev libgtk2.0-dev libatk1.0-dev libbonoboui2-dev libcairo2-dev libx11-dev libxpm-dev libxt-dev python-dev python3-dev ruby-dev lua5.1 liblua5.1-0-dev libperl-dev git cmake build-essential python-dev python3-dev gnome-tweak-tool curl zsh tmux g++ subversion nodejs-legacy npm gawk xclip deluge gdebi dh-autoreconf texlive texlive-full compizconfig-settings-manager 
 include some new packages like skype, peek, chrome
 
-cmake commands to build newer version
+------------------------------------------//------------
+
+2) Install cmake commands to build newer version
 
 wget -c https://cmake.org/files/v3.9/cmake-3.9.0-rc5.tar.gz
 tar -vxf name.tf -C .
@@ -10,6 +26,8 @@ cd cmake390
   make      
   make install
 
+------------------------------------------//------------
+3) Install vim from source.
 Vim config:
 git clone https://github.com/vim/vim
 
@@ -19,7 +37,9 @@ make VIMRUNTIMEDIR=/usr/share/vim/vim80
 sudo make install
 
 
+------------------------------------------//------------
 
+4) Install LLVM 
 
 LLVM instructions
 wget -c http://releases.llvm.org/4.0.1/llvm-4.0.1.src.tar.xz
@@ -29,7 +49,8 @@ cmake -DCMAKE_BUILD_TYPE=Debug  ../LLVM/
 cmake --build .
 cmake --build . --target install
 
-Clang instructions
+------------------------------------------//------------
+5) Install Clang instructions
 
 wget -c http://releases.llvm.org/4.0.1/cfe-4.0.1.src.tar.xz
 tar -xf file.tar -C .
@@ -38,8 +59,14 @@ cmake -DCMAKE_BUILD_TYPE=Debug
 cmake --build .
 cmake --build . --target install
 
-YCM
+
+------------------------------------------//------------
+6) How to install YCM
+ You must use bundle
 ~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py
 
+
+------------------------------------------//------------
+7) To install ctags go to ctags.io
 
 

@@ -45,7 +45,7 @@ Plugin 'epilande/vim-react-snippets'
 " Plugin for texEditor
 Plugin 'lervag/vimtex'
 "  that on for find strings"
-
+Plugin 'rking/ag.vim'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
