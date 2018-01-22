@@ -27,6 +27,7 @@ Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-unimpaired'
+Plugin 'tpope/vim-projectionist'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
@@ -46,6 +47,10 @@ Plugin 'epilande/vim-react-snippets'
 Plugin 'lervag/vimtex'
 "  that on for find strings"
 Plugin 'rking/ag.vim'
+
+Plugin 'prettier/vim-prettier', { 
+	\ 'do': 'yarn install', 
+	\ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql'] } 
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -91,7 +96,7 @@ endif
 "move the .vimrc to the folder you want
 "use ln -n code/dotFiles/vim/vimrc
 "the file vimrc will hold the configurations
-source ~/code/dotFiles/vim/mappings.vim
+source ~/dotFiles/vim/mappings.vim
 
 
 " make YCM compatible with UltiSnips (using supertab)
