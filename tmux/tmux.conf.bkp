@@ -54,9 +54,9 @@ bind -n C-Up resize-pane -U 5
 
 #Something Related to color
 set -g status-style fg=white,bg=black
-set -g window-status-current-style fg=white,bold,bg=yellow
+set -g window-status-current-style fg=white,bold,bg=blue
 setw -g pane-border-style fg=green,bg=black
-setw -g pane-active-border-style fg=white,bg=yellow
+setw -g pane-active-border-style fg=white,bg=blue
 set -g message-style fg=white,bold,bg=black
 
 set-option -g status-left-length 50
@@ -84,6 +84,7 @@ bind-key C-j choose-tree
 bind -t vi-copy y copy-pipe "xclip -sel clip -i"
 
 bind t split-window -h -c ~/ "vim todoFile"
+bind C-t split-window -h -c ~/ "vim vimNiceComands"
 
 # Prompted join-pane
 bind-key j command-prompt -p "join pane from: "  "join-pane -h -s '%%'"

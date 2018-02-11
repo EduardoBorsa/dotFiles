@@ -1,16 +1,31 @@
-   
-for zsh_source in $HOME/.zsh/configs/**/*.zsh; do
-  source $zsh_source
-done
 
-
-export ZSH=~/.oh-my-zsh
-
+export ZSH=/home/dadooo/.oh-my-zsh
 ZSH_THEME="robbyrussell"
 
- plugins=(git)
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+plugins=(
+  git
+)
 
 source $ZSH/oh-my-zsh.sh
+
+# User configuration
+
+export MANPATH="/usr/local/man:$MANPATH"
+
+# You may need to manually set your language environment
+export LANG=en_US.UTF-8
+
+export PATH=$PATH:~/programs/node-v9.4.0-linux-x64/bin/
+export PATH=$PATH:/usr/bin/
+
+export ANDROID_HOME=~/Android/Sdk/
+export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
+export PATH=$PATH:~/programs/android-studio/bin/
+export PATH=$PATH:~/programs/clion-2017.3.2/bin/
 
 _not_inside_tmux() { [[ -z "$TMUX" ]] }
 
@@ -22,25 +37,18 @@ ensure_tmux_is_running() {
 
 ensure_tmux_is_running
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# General ZSH configurations
-
-export EDITOR="vim"
-
-sz() { source ~/.zshrc }
+export EDITOR="nvim"
+# To set vim in terminal
 bindkey -v
+export KEYTIMEOUT=1
 
-export PATH=$PATH:/home/eduardoborsa/programs/clang_Build/bin/
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 BASE16_SHELL=$HOME/.config/base16-shell/
 [ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
 
-export PATH=$PATH:/home/eduardoborsa/programs/clang_Build/bin/
-base16_solarized-dark 
-export PATH=$PATH:~/WebstormProjects/Pluralsight/Initial/Mine/node_modules/
-export PATH=$PATH:~/niceScripts/
-export PATH=$PATH:~/programs/node-v8.2.1-linux-x64/bin/
-export PATH=$PATH:~/programs/clion-2017.2.2/bin/
-export PATH=$PATH:/opt/mssql-tools/bin
-export ANDROID_HOME=$HOME/programs/android-studio/bin/
+# Theme
+base16_tomorrow-night 
+# FZF config to exlude the same seeting as Ag
+export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
+export FZF_DEFAULT_COMMAND='ag --ignore android --ignore ios -g ""'
