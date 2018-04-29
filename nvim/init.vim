@@ -3,6 +3,9 @@ set nocompatible              " be iMproved, required
 
 set rtp+=~/.config/nvim/bundle/Vundle.vim
 call vundle#begin("~/.config/nvim/bundle")
+" Elixir stuff
+Plugin 'elixir-editors/vim-elixir'
+Plugin 'mhinz/vim-mix-format'
 " SuperTab
 Plugin 'ervandew/supertab'
 " Enables Vundle
@@ -38,6 +41,7 @@ Plugin 'Valloric/YouCompleteMe'
 " Javascript highlight Stuff
 Plugin 'mxw/vim-jsx'
 Plugin 'vim-syntastic/syntastic'
+Plugin 'leafgarland/typescript-vim'
 " Search for Strings
 Plugin 'rking/ag.vim'
 " Replace string in files
@@ -50,6 +54,12 @@ Plugin 'wikitopian/hardmode'
 Plugin 'prettier/vim-prettier', { 
 	\ 'do': 'yarn install', 
 	\ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql'] } 
+
+"Testing "
+Plugin 'janko-m/vim-test'
+"Elm"
+Plugin 'ElmCast/elm-vim'
+Plugin 'avh4/elm-format'
 
 call vundle#end()            " required
 
@@ -83,6 +93,10 @@ let g:UltiSnipsSnippetDirectories = ['~/.config/nvim/bundle/vim-snippets/UltiSni
 " My vim function Mappings
 source ~/.config/nvim/mappings.vim
 
+" Elixir format config
+let g:mix_format_on_save = 1
+" Elf format Config
+let g:elm_format_autosave = 1
 
  
 filetype plugin indent on    " required
