@@ -1,13 +1,9 @@
-
-"""""""""""""" Basics #basics
-""" Tabs #tabs
-" - Two spaces wide
 set tabstop=2
 set softtabstop=2
 " - Expand them all
 set expandtab
 " - Indent by 2 spaces by default
-set shiftwidth=
+set shiftwidth=2
                                                                                                                                         
 """ Format Options #format-options
 set formatoptions=tcrq
@@ -40,57 +36,32 @@ set nocompatible              " be iMproved, required
 
 set rtp+=~/.config/nvim/bundle/Vundle.vim
 call vundle#begin("~/.config/nvim/bundle")
-" Elixir stuff
-Plugin 'elixir-editors/vim-elixir'
-Plugin 'mhinz/vim-mix-format'
-" SuperTab
-Plugin 'ervandew/supertab'
 " Enables Vundle
 Plugin 'VundleVim/Vundle.vim'
-" Enables comentary
-Plugin 'tomtom/tcomment_vim'
-" Begin Tpope stuff
-    " Enables git comands from inside vim
-    Plugin 'tpope/vim-fugitive'
-    "Enables surround inside vim"
-    Plugin 'tpope/vim-surround'
-    "enables Repeat for other plugins
-    Plugin 'tpope/vim-repeat'
-" End Tpope stuff
+"Enables surround inside vim"
+Plugin 'tpope/vim-surround'
+"enables Repeat for other plugins
+Plugin 'tpope/vim-repeat'
 " Tmux stuff
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'christoomey/vim-tmux-runner'
 " Enables NERDTREE
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
-"Enables YouCompleteMe
-" Plugin 'Valloric/YouCompleteMe'
-" " For Enabling Snippets
-" 	" Track the engine.
-" 	Plugin 'SirVer/ultisnips'
-" 	" Snippets are separated from the engine. Add this if you want them:
-" 	Plugin 'honza/vim-snippets'
-" End Snippets habilitation here	
 " Search for Strings
 Plugin 'rking/ag.vim'
 " Replace string in files
 Plugin 'skwp/greplace.vim'
 " Collor stuff
 Plugin 'chriskempson/base16-vim'
-" Identation
-Plugin 'prettier/vim-prettier', { 
-	\ 'do': 'yarn install', 
-	\ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql'] } 
-
-"Testing "
-Plugin 'janko-m/vim-test'
-"Elm"
-Plugin 'ElmCast/elm-vim'
-Plugin 'avh4/elm-format'
+" "Testing "
+" Plugin 'janko-m/vim-test'
+" "Elm"
+" Plugin 'ElmCast/elm-vim'
+" Plugin 'avh4/elm-format'
 "Knewter Stuff"
 Plugin 'sheerun/vim-polyglot'
   let g:polyglot_disabled = ['elm']
-
 " HTML / JS / CSS
 Plugin 'othree/html5.vim'
 Plugin 'vim-scripts/html-improved-indentation'
@@ -98,7 +69,6 @@ Plugin 'pangloss/vim-javascript'
 let g:javascript_plugin_flow = 1
 Plugin 'mxw/vim-jsx'
 let g:jsx_ext_required = 0
-
 "Plug 'flowtype/vim-flow'
 Plugin 'carlosrocha/vim-flow-plus'
 Plugin 'wokalski/autocomplete-flow'
@@ -210,7 +180,7 @@ Plugin 'ervandew/supertab'
 
 " Add comment textobjects (I really want to reformat comments without affecting
 " the next line of code)
-Plugin 'kana/vim-textobj-user' | Plug 'glts/vim-textobj-comment'
+Plugin 'kana/vim-textobj-user' | Plugin 'glts/vim-textobj-comment'
   " Example: Reformat a comment with `gqac` (ac is "a comment")
 
 " EditorConfig support
@@ -324,7 +294,7 @@ Plugin 'junegunn/fzf.vim'
   augroup END
  
 " Open files where you last left them
-Plugin 'dietsche/vim-lastplace
+Plugin 'dietsche/vim-lastplace'
 
 " Easily manage tags files
 Plugin 'ludovicchabant/vim-gutentags'
@@ -363,10 +333,6 @@ let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsListSnippets = "<c-L>"
 let g:UltiSnipsSnippetDirectories = ['~/.config/nvim/bundle/vim-snippets/UltiSnips', 'UltiSnips']
 
-
-
-
-
 " My vim function Mappings
 source ~/.config/nvim/mappings.vim
 
@@ -395,3 +361,5 @@ map <Down>  :echo "no!"<cr>
 nnoremap J mzJ`z
 " Makes foo-bar considered one word
 set iskeyword+=-
+
+nnoremap <leader>f : :echo "Hello"<cr>
