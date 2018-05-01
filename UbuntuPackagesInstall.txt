@@ -9,6 +9,12 @@ Index)
 6) How to install YCM
 7) To install ctags go to ctags.io
 
+---------------
+
+Fonts: 
+git clone https://github.com/aaron-williamson/base16-gnome-terminal.git ~/.config/base16-gnome-terminal
+.config/base16-gnome-terminal/color-scripts/base16-default-dark.sh
+
 ----------------------------
 
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.config/nvim/bundle/Vundle.vim
@@ -17,7 +23,15 @@ git clone https://github.com/VundleVim/Vundle.vim.git ~/.config/nvim/bundle/Vund
 ------------------------------------------//------------
 1) Packages to install:
 
-sudo apt-get install libncurses5-dev libgnome2-dev libgnomeui-dev libgtk2.0-dev libatk1.0-dev libbonoboui2-dev libcairo2-dev libx11-dev libxpm-dev libxt-dev python-dev python3-dev ruby-dev lua5.1 liblua5.1-0-dev libperl-dev git cmake build-essential python-dev python3-dev gnome-tweak-tool curl zsh tmux g++ subversion nodejs-legacy npm gawk xclip deluge gdebi dh-autoreconf texlive texlive-full compizconfig-settings-manager mono-xbuild default-jdk libqt5x11extras5 python-pip
+sudo apt-get install libncurses5-dev libgnome2-dev libgnomeui-dev
+libgtk2.0-dev libatk1.0-dev libbonoboui2-dev libcairo2-dev
+libx11-dev libxpm-dev libxt-dev python-dev python3-dev ruby-dev
+lua5.1 liblua5.1-0-dev libperl-dev git cmake build-essential
+python-dev python3-dev gnome-tweak-tool curl zsh tmux g++
+subversion nodejs-legacy npm gawk xclip deluge gdebi
+dh-autoreconf texlive texlive-full compizconfig-settings-manager
+mono-xbuild default-jdk libqt5x11extras5 python-pip
+exuberant-ctags git-gui
 sudo apt-get install 
 include some new packages like skype, peek, chrome
 
