@@ -33,41 +33,51 @@ set number
 
 filetype off                  " required
 set nocompatible              " be iMproved, required
-set rtp+=~/.config/nvim/bundle/Vundle.vim
-call vundle#begin("~/.config/nvim/bundle")
+" set rtp+=~/.config/nvim/bundle/Vundle.vim
+call plug#begin("~/.config/nvim/plugged")
 " Enables Vundle
-Plugin 'VundleVim/Vundle.vim'
+" Plug 'VundleVim/Vundle.vim'
 "Enables surround inside vim"
-Plugin 'tpope/vim-surround'
+Plug 'tpope/vim-surround'
 "Track the engine.
-Plugin 'SirVer/ultisnips'
+Plug 'SirVer/ultisnips'
 " Snippets are separated from the engine. Add this if you want them:
-Plugin 'honza/vim-snippets'
+Plug 'honza/vim-snippets'
 "enables Repeat for other plugins
-Plugin 'tpope/vim-repeat'
+Plug 'tpope/vim-repeat'
 " Tmux stuff
-Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'christoomey/vim-tmux-runner'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'christoomey/vim-tmux-runner'
 " Search for Strings
-Plugin 'rking/ag.vim'
+Plug 'rking/ag.vim'
 " Replace string in files
-Plugin 'skwp/greplace.vim'
+Plug 'skwp/greplace.vim'
 " Collor stuff
-Plugin 'chriskempson/base16-vim'
+Plug 'chriskempson/base16-vim'
 
-"Knewter Stuff"
-Plugin 'sheerun/vim-polyglot'
+"Knewter Stuff
+" Elm
+Plug 'ElmCast/elm-vim'
+  let g:elm_format_autosave = 1
+  let g:elm_detailed_complete = 1
+  let g:elm_syntastic_show_warnings = 1
+  let g:elm_format_fail_silently = 0
+  let g:elm_browser_command = 'open'
+  let g:elm_make_show_warnings = 1
+  let g:elm_setup_keybindings = 1
+
+Plug 'sheerun/vim-polyglot'
   let g:polyglot_disabled = ['elm']
 " HTML / JS / CSS
-Plugin 'othree/html5.vim'
-Plugin 'vim-scripts/html-improved-indentation'
-Plugin 'pangloss/vim-javascript'
+Plug 'othree/html5.vim'
+Plug 'vim-scripts/html-improved-indentation'
+Plug 'pangloss/vim-javascript'
 " For func argument completion
-Plugin 'Shougo/neosnippet'
-Plugin 'Shougo/neosnippet-snippets'
+Plug 'Shougo/neosnippet'
+Plug 'Shougo/neosnippet-snippets'
 " Automatically imports missing JS dependencies and removes unused ones.
-Plugin 'karthikv/tradeship-vim'
-Plugin 'prettier/vim-prettier', {
+Plug 'karthikv/tradeship-vim'
+Plug 'prettier/vim-prettier', {
 \ 'do': 'yarn install',
 \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql'] }
 
@@ -102,81 +112,72 @@ let g:prettier#config#trailing_comma = 'all'
 let g:prettier#config#parser = 'flow'
 
 " Elixir
-Plugin 'elixir-lang/vim-elixir'
-Plugin 'slashmili/alchemist.vim'
-Plugin 'mhinz/vim-mix-format'
+Plug 'elixir-lang/vim-elixir'
+Plug 'slashmili/alchemist.vim'
+Plug 'mhinz/vim-mix-format'
   let g:mix_format_on_save = 0
   let g:mix_format_options = '--check-equivalent'
 
 
 " Phoenix
-Plugin 'c-brenn/phoenix.vim'
-Plugin 'tpope/vim-projectionist' " required for some navigation features
+Plug 'c-brenn/phoenix.vim'
+Plug 'tpope/vim-projectionist' " required for some navigation features
 
-" Elm
-Plugin 'ElmCast/elm-vim'
-  let g:elm_format_autosave = 1
-  let g:elm_detailed_complete = 1
-  let g:elm_syntastic_show_warnings = 1
-  let g:elm_format_fail_silently = 0
-  let g:elm_browser_command = 'open'
-  let g:elm_make_show_warnings = 1
-  let g:elm_setup_keybindings = 1
 
 " Reformat source code
-Plugin 'sbdchd/neoformat'
+Plug 'sbdchd/neoformat'
 
-Plugin 'ervandew/supertab'
+Plug 'ervandew/supertab'
 
 " Add comment textobjects (I really want to reformat comments
 " without affecting the next line of code)
-Plugin 'kana/vim-textobj-user' | Plugin 'glts/vim-textobj-comment'
+Plug 'kana/vim-textobj-user' | Plug 'glts/vim-textobj-comment'
   " Example: Reformat a comment with `gqac` (ac is "a comment")
 
 " Jump between quicklist, location (syntastic, etc) items with
 " ease, among other things
-Plugin 'tpope/vim-unimpaired'
+Plug 'tpope/vim-unimpaired'
 
 " Line commenting
-Plugin 'tomtom/tcomment_vim'
+Plug 'tomtom/tcomment_vim'
   " By default, `gc` will toggle comments
 
-Plugin 'janko-m/vim-test' 
+Plug 'janko-m/vim-test' 
 
 " git support from dat tpope
-Plugin 'tpope/vim-fugitive'
+Plug 'tpope/vim-fugitive'
 "
 " " github support from dat tpope
-Plugin 'tpope/vim-rhubarb'
+Plug 'tpope/vim-rhubarb'
 
 " visualize your undo tree
-Plugin 'sjl/gundo.vim'
+Plug 'sjl/gundo.vim'
   nnoremap <F5> :GundoToggle<CR>
 
 
 " universal text linking
-Plugin 'vim-scripts/utl.vim'
+Plug 'vim-scripts/utl.vim'
 
 " allow portions of a file to use different syntax
-Plugin 'vim-scripts/SyntaxRange'
+Plug 'vim-scripts/SyntaxRange'
 
 " increment dates like other items
-Plugin 'tpope/vim-speeddating'
+Plug 'tpope/vim-speeddating'
 
 " nicer api for neovim terminal
-Plugin 'kassio/neoterm'
+Plug 'kassio/neoterm'
 
-""" UI Plugins #ui-plugins
+""" UI Plugs #ui-plugins
 " Molokai theme makes me cozy
-Plugin 'tomasr/molokai'
-Plugin 'fmoralesc/molokayo'
+Plug 'tomasr/molokai'
+Plug 'fmoralesc/molokayo'
 " Try out the ayu theme - https://github.com/ayu-theme/ayu-vim
-Plugin 'ayu-theme/ayu-vim'
+Plug 'ayu-theme/ayu-vim'
 " Solarized - variant with specific terminal support
-Plugin 'lifepillar/vim-solarized8'
+Plug 'lifepillar/vim-solarized8'
 
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
   "let g:airline_theme = 'luna'
   "let g:airline_theme = 'lucius'
   let g:airline_theme = 'solarized'
@@ -191,21 +192,40 @@ Plugin 'vim-airline/vim-airline-themes'
 
 "" Code Navigation #code-navigation
 " fzf fuzzy finder
-Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plugin 'junegunn/fzf.vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
   let g:fzf_layout = { 'window': 'enew' }
   nnoremap <silent> <C-P> :FZF<cr>
  
 " Open files where you last left them
-Plugin 'dietsche/vim-lastplace'
+Plug 'dietsche/vim-lastplace'
 
 " Easily manage tags files
-Plugin 'ludovicchabant/vim-gutentags'
+Plug 'ludovicchabant/vim-gutentags'
   let g:gutentags_cache_dir = '~/.tags_cache'
 
 " navigate up a directory with '-' in netrw, among other things
-Plugin 'tpope/vim-vinegar'
-call vundle#end()            " required
+Plug 'tpope/vim-vinegar'
+
+" Asynchronous file linter
+Plug 'w0rp/ale'
+  " wait a bit before checking syntax in a file, if typing
+  let g:ale_lint_delay = 5000
+  " Use global eslint
+  " let g:ale_javascript_eslint_use_global = 1
+  " Only use es6 for js
+  "let g:ale_linters = {'javascript': ['eslint'], 'javascript.jsx': ['eslint']}
+  "let g:ale_linters = {'javascript': ['eslint', 'flow', 'xo']}
+  let g:ale_linters = {'javascript': ['flow']}
+  let g:ale_lint_on_save = 0
+	let g:ale_lint_on_text_changed = 0
+  " let g:ale_fixers = {
+  " \   'javascript': [
+  " \       'eslint',
+  " \   ],
+  " \}
+
+call plug#end()            " required
 
 " FZF stuff
 set rtp+=~/.fzf
@@ -215,8 +235,6 @@ source ~/.config/nvim/mappings.vim
 
 " Elixir format config
 let g:mix_format_on_save = 1
-" Elf format Config
-let g:elm_format_autosave = 1
 
  
 filetype plugin indent on    " required
