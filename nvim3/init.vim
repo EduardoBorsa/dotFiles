@@ -4,7 +4,7 @@ set softtabstop=2
 set expandtab
 " - Indent by 2 spaces by default
 set shiftwidth=2
-                                                                                                                                        
+
 """ Format Options #format-options
 " set formatoptions=tcrq
 set textwidth=65
@@ -65,6 +65,20 @@ Plug 'ElmCast/elm-vim'
   let g:elm_browser_command = 'open'
   let g:elm_make_show_warnings = 1
   let g:elm_setup_keybindings = 1
+
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+  let g:deoplete#enable_at_startup = 1
+  let g:deoplete#sources = {}
+  let g:deoplete#sources._ = ['file', 'neosnippet']
+  let g:deoplete#omni#functions = {}
+  let g:deoplete#omni#input_patterns = {}
+
+  " Elm support
+  " h/t https://github.com/ElmCast/elm-vim/issues/52#issuecomment-264161975
+  let g:deoplete#sources.elm = ['omni'] + g:deoplete#sources._
+  let g:deoplete#omni#functions.elm = ['elm#Complete']
+  let g:deoplete#omni#input_patterns.elm = '[^ \t]+'
+  let g:deoplete#disable_auto_complete = 1
 
 Plug 'sheerun/vim-polyglot'
   let g:polyglot_disabled = ['elm']
@@ -142,7 +156,7 @@ Plug 'tpope/vim-unimpaired'
 Plug 'tomtom/tcomment_vim'
   " By default, `gc` will toggle comments
 
-Plug 'janko-m/vim-test' 
+Plug 'janko-m/vim-test'
 
 " git support from dat tpope
 Plug 'tpope/vim-fugitive'
@@ -196,7 +210,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
   let g:fzf_layout = { 'window': 'enew' }
   nnoremap <silent> <C-P> :FZF<cr>
- 
+
 " Open files where you last left them
 Plug 'dietsche/vim-lastplace'
 
@@ -217,7 +231,7 @@ Plug 'w0rp/ale'
   "let g:ale_linters = {'javascript': ['eslint'], 'javascript.jsx': ['eslint']}
   "let g:ale_linters = {'javascript': ['eslint', 'flow', 'xo']}
   let g:ale_linters = {'javascript': ['flow']}
-  let g:ale_lint_on_save = 0
+  let g:ale_lint_on_save = 1
 	let g:ale_lint_on_text_changed = 0
   " let g:ale_fixers = {
   " \   'javascript': [
@@ -236,7 +250,7 @@ source ~/.config/nvim/mappings.vim
 " Elixir format config
 let g:mix_format_on_save = 1
 
- 
+
 filetype plugin indent on    " required
 syntax on
 filetype plugin on
@@ -245,6 +259,34 @@ filetype indent on
 set autoindent
 setlocal spell spelllang=en_us
 set complete+=kspell
+
+augroup elm
+  autocmd!
+  autocmd BufNewFile,BufRead *.elm setlocal tabstop=4
+  autocmd BufNewFile,BufRead *.elm setlocal shiftwidth=4
+  autocmd BufNewFile,BufRead *.elm setlocal softtabstop=4
+augroup END
+
+augroup markdown
+  autocmd!
+  autocmd FileType markdown setlocal textwidth=100
+  autocmd FileType markdown setlocal formatoptions=tcrq
+  autocmd FileType markdown setlocal spell spelllang=en
+augroup END
+
+""""" End Filetypes ====================
+
+""""" Normalization ====================
+" Delete trailing white space on save
+func! DeleteTrailingWS()
+  exe 'normal mz'
+  %s/\s\+$//ge
+  exe 'normal `z'
+endfunc
+
+augroup whitespace
+  autocmd BufWrite * silent call DeleteTrailingWS()
+augroup END
 
 " NO ARROW KEYS COME ON
 map <Left>  :echo "no!"<cr>
