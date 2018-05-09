@@ -371,3 +371,25 @@ How to use elm?
 
 
 
+
+
+
+
+
+
+
+
+--------------new stuff 09/05/2018 manha -----
+How to enable on click in buttons?
+  import Html.Events exposing (onClick)
+  add ', onClick NameOfEvent' after class
+
+How to fetch from Api in Elm?
+  install where elm-package lives:
+    elm-package install elm-lang/http
+    import in the .elm file:
+      import Http
+      import Json.Decode as Decode
+
+
+
