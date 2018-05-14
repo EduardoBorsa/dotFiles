@@ -5,6 +5,9 @@ set expandtab
 " - Indent by 2 spaces by default
 set shiftwidth=2
 
+"ctags stuff
+set tags=tags
+
 """ Format Options #format-options
 " set formatoptions=tcrq
 set textwidth=65
@@ -58,30 +61,30 @@ Plug 'chriskempson/base16-vim'
 "Knewter Stuff
 " Elm
 Plug 'ElmCast/elm-vim'
-  let g:elm_format_autosave = 1
-  let g:elm_detailed_complete = 1
-  let g:elm_syntastic_show_warnings = 1
-  let g:elm_format_fail_silently = 0
-  let g:elm_browser_command = 'open'
-  let g:elm_make_show_warnings = 1
-  let g:elm_setup_keybindings = 1
+let g:elm_format_autosave = 1
+let g:elm_detailed_complete = 1
+let g:elm_syntastic_show_warnings = 1
+let g:elm_format_fail_silently = 0
+let g:elm_browser_command = 'open'
+let g:elm_make_show_warnings = 1
+let g:elm_setup_keybindings = 1
 
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-  let g:deoplete#enable_at_startup = 1
-  let g:deoplete#sources = {}
-  let g:deoplete#sources._ = ['file', 'neosnippet']
-  let g:deoplete#omni#functions = {}
-  let g:deoplete#omni#input_patterns = {}
+let g:deoplete#enable_at_startup = 1
+let g:deoplete#sources = {}
+let g:deoplete#sources._ = ['file', 'neosnippet']
+let g:deoplete#omni#functions = {}
+let g:deoplete#omni#input_patterns = {}
 
-  " Elm support
-  " h/t https://github.com/ElmCast/elm-vim/issues/52#issuecomment-264161975
-  let g:deoplete#sources.elm = ['omni'] + g:deoplete#sources._
-  let g:deoplete#omni#functions.elm = ['elm#Complete']
-  let g:deoplete#omni#input_patterns.elm = '[^ \t]+'
-  let g:deoplete#disable_auto_complete = 1
+" Elm support
+" h/t https://github.com/ElmCast/elm-vim/issues/52#issuecomment-264161975
+let g:deoplete#sources.elm = ['omni'] + g:deoplete#sources._
+let g:deoplete#omni#functions.elm = ['elm#Complete']
+let g:deoplete#omni#input_patterns.elm = '[^ \t]+'
+let g:deoplete#disable_auto_complete = 1
 
 Plug 'sheerun/vim-polyglot'
-  let g:polyglot_disabled = ['elm']
+let g:polyglot_disabled = ['elm']
 " HTML / JS / CSS
 Plug 'othree/html5.vim'
 Plug 'vim-scripts/html-improved-indentation'
@@ -92,8 +95,8 @@ Plug 'Shougo/neosnippet-snippets'
 " Automatically imports missing JS dependencies and removes unused ones.
 Plug 'karthikv/tradeship-vim'
 Plug 'prettier/vim-prettier', {
-\ 'do': 'yarn install',
-\ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql'] }
+      \ 'do': 'yarn install',
+      \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql'] }
 
 let g:prettier#autoformat = 0
 autocmd BufWritePre *.js,*.css,*.scss,*.less PrettierAsync
@@ -129,8 +132,8 @@ let g:prettier#config#parser = 'flow'
 Plug 'elixir-lang/vim-elixir'
 Plug 'slashmili/alchemist.vim'
 Plug 'mhinz/vim-mix-format'
-  let g:mix_format_on_save = 0
-  let g:mix_format_options = '--check-equivalent'
+let g:mix_format_on_save = 0
+let g:mix_format_options = '--check-equivalent'
 
 
 " Phoenix
@@ -146,7 +149,7 @@ Plug 'ervandew/supertab'
 " Add comment textobjects (I really want to reformat comments
 " without affecting the next line of code)
 Plug 'kana/vim-textobj-user' | Plug 'glts/vim-textobj-comment'
-  " Example: Reformat a comment with `gqac` (ac is "a comment")
+" Example: Reformat a comment with `gqac` (ac is "a comment")
 
 " Jump between quicklist, location (syntastic, etc) items with
 " ease, among other things
@@ -154,7 +157,7 @@ Plug 'tpope/vim-unimpaired'
 
 " Line commenting
 Plug 'tomtom/tcomment_vim'
-  " By default, `gc` will toggle comments
+" By default, `gc` will toggle comments
 
 Plug 'janko-m/vim-test'
 
@@ -166,7 +169,7 @@ Plug 'tpope/vim-rhubarb'
 
 " visualize your undo tree
 Plug 'sjl/gundo.vim'
-  nnoremap <F5> :GundoToggle<CR>
+nnoremap <F5> :GundoToggle<CR>
 
 
 " universal text linking
@@ -192,52 +195,56 @@ Plug 'lifepillar/vim-solarized8'
 
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-  "let g:airline_theme = 'luna'
-  "let g:airline_theme = 'lucius'
-  let g:airline_theme = 'solarized'
-  let g:bufferline_echo = 0
-  let g:airline_powerline_fonts=0
-  let g:airline_enable_branch=1
-  let g:airline_enable_syntastic=1
-  let g:airline_branch_prefix = '⎇ '
-  let g:airline_paste_symbol = '∥'
-  let g:airline#extensions#tabline#enabled = 0
-  let g:airline#extensions#ale#enabled = 1
+"let g:airline_theme = 'luna'
+"let g:airline_theme = 'lucius'
+let g:airline_theme = 'solarized'
+let g:bufferline_echo = 0
+let g:airline_powerline_fonts=0
+let g:airline_enable_branch=1
+let g:airline_enable_syntastic=1
+let g:airline_branch_prefix = '⎇ '
+let g:airline_paste_symbol = '∥'
+let g:airline#extensions#tabline#enabled = 0
+let g:airline#extensions#ale#enabled = 1
 
 "" Code Navigation #code-navigation
 " fzf fuzzy finder
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-  let g:fzf_layout = { 'window': 'enew' }
-  nnoremap <silent> <C-P> :FZF<cr>
+let g:fzf_layout = { 'window': 'enew' }
+nnoremap <silent> <C-P> :FZF<cr>
+map <C-N> :vsp<CR><C-P>
+map <leader>n :tabnew .<CR><C-P>
+map <C-C> :q<CR>
+
 
 " Open files where you last left them
 Plug 'dietsche/vim-lastplace'
 
 " Easily manage tags files
 Plug 'ludovicchabant/vim-gutentags'
-  let g:gutentags_cache_dir = '~/.tags_cache'
+let g:gutentags_cache_dir = '~/.tags_cache'
 
 " navigate up a directory with '-' in netrw, among other things
 Plug 'tpope/vim-vinegar'
 
 " Asynchronous file linter
 Plug 'w0rp/ale'
-  " wait a bit before checking syntax in a file, if typing
-  let g:ale_lint_delay = 5000
-  " Use global eslint
-  " let g:ale_javascript_eslint_use_global = 1
-  " Only use es6 for js
-  "let g:ale_linters = {'javascript': ['eslint'], 'javascript.jsx': ['eslint']}
-  "let g:ale_linters = {'javascript': ['eslint', 'flow', 'xo']}
-  let g:ale_linters = {'javascript': ['flow']}
-  let g:ale_lint_on_save = 1
-	let g:ale_lint_on_text_changed = 0
-  " let g:ale_fixers = {
-  " \   'javascript': [
-  " \       'eslint',
-  " \   ],
-  " \}
+" wait a bit before checking syntax in a file, if typing
+let g:ale_lint_delay = 5000
+" Use global eslint
+" let g:ale_javascript_eslint_use_global = 1
+" Only use es6 for js
+"let g:ale_linters = {'javascript': ['eslint'], 'javascript.jsx': ['eslint']}
+"let g:ale_linters = {'javascript': ['eslint', 'flow', 'xo']}
+let g:ale_linters = {'javascript': ['flow']}
+let g:ale_lint_on_save = 1
+let g:ale_lint_on_text_changed = 0
+" let g:ale_fixers = {
+" \   'javascript': [
+" \       'eslint',
+" \   ],
+" \}
 
 call plug#end()            " required
 

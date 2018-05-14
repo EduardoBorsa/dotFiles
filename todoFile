@@ -391,5 +391,9 @@ How to fetch from Api in Elm?
       import Http
       import Json.Decode as Decode
 
+How to work with SVG?
+  add:
+  elm-package install elm-lang/svg
+
 
 
