@@ -10,6 +10,23 @@ Preface of this document:
   8) Elm
 
 ------------------------------------ELIXIR LIKE QUESTION ----
+How to Spawn Processes in Elixir?
+  spawn(ModuleName, :functionName, [parameters])
+
+How is the string concatenation in Elixir?
+  <>
+
+What is the the alias __MODULE__?
+  It alias the current module
+
+What does the @enforce_keys does?
+  To ensure that when we create a new struct, all attributes that
+  are inside the enforce keys must be filled.
+  i.e: @enforce_keys [:row,col]
+       defstruct [:row, :col]
+
+What are some mix tasks?
+  mix docs - show docs
 
 What is function arity?
   The nuber of arguments you can pass to the function.
@@ -205,6 +222,31 @@ What is a worker is elixir?
 
 How to start new workers?
 
+What are processes?
+
+What is the circuit breaker pattern?
+
+What is OTP?
+  Open Telecom Platform. It is a set of design patterns
+
+What is a GenServer Pattern?
+  What does it already sets for me?
+    start_link/3 and start/3 functions that create new processes.
+
+What is a Application Pattern?
+  Takes care of the question? "Where ti divide a monolith into
+  services?".
+  What are applications?
+    Are supervised units of code that start and stops as a single
+    entity.
+
+  What are casts?
+    They are similar ti calls, but the don't return a specific
+    reply; so the caller wont wait for one.
+
+What are OTP Behaviors?
+  Probably the name of the patterns.
+
 ----------------------------- FRONT_END_LIKE_QUESTIONS -----
 
 RSCSS is a library?
@@ -354,15 +396,29 @@ How to integrate Elm in a Phoenix app?
   mainModules: ['elm/Main.elm'],
   makeParameters: ['--debug'],
   outputFolder: '../assets/js',
-  Create an elm folder with Main.elm
+  Create an elm folder
+  Create a Main.elm inside this folder
   Fill with content
   in page/index.html
   put <div id="elm-container"></dib>
   in app.js add:
   // Elm
   import Elm from "./main"
+  import Game from "./platformer"
   const elmContainer = document.querySelector("#elm-container");
-  if (elmContainer) Elm.Main.embed(elmContainer);
+  const elmGameContainer = document.querySelector("#elm-game-container");
+  if (elmContainer) {
+    const elmApplication = Elm.Main.embed(elmContainer);
+  }
+  if (elmGameContainer) {
+    const elmGame = Game.PlatFormer.embed(elmContainer);
+  }
+  i.e
+  import NameImported from "./path/folder"
+  const containerName =   documento.querySelector("#divIdNameOnBack");
+  if (containerName) {
+    const otherContainerName =     NameImported.ModuleName.embed(containerName)
+  }
 
 How to use elm?
   Html.Attributes exposing (class)
@@ -371,9 +427,37 @@ How to use elm?
 
 
 
+What is the model?
+  app  state
+What is the View?
+  The functions that are passed to the model. (on click)
+What is the Message?
+  what will be sent to update
+What is the Update?
+  Is how we update the model.
+What is the unidirectional data flow?
+  From Model to View to Message to Update to Model.
 
+What is the ++ in Elm?
+  Its the string concatenation operator.
 
+How to write a function in Elm?
+  start always with Lower Case i.e"
+  functionName param1 param2 =
+                body
 
+how to use anonymous functions? (Is this lambda?)
+  \param1 param2 -> param1 + param2
+
+How to create local variable?
+  Use Let
+  i.e:
+  increment cnt amt =
+    let
+      localCount =
+            cnt
+    in
+      localCount + amt
 
 
 
@@ -397,3 +481,9 @@ How to work with SVG?
 
 
 
+-------------
+Accounts
+deletethisaccount01@yandex.com
+01deletethisaccount
+codewarstest@yandex.com
+codewarstest123
