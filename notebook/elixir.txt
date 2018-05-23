@@ -1,0 +1,147 @@
+-------------------ELIXIR LIKE QUESTION ----
+Summary:
+
+     ----------- Debug  ------------
+  #a1)  What does IO.inspect("string Value") works?
+  #a14) what does IO.inspect("string Value")?
+  #a5)  What does the @enforce_keys does?
+
+    ---------- Database Stuff -----
+  #a18) What does the @enforce_keys does?
+
+    ---------- Mix Tasks -------
+  #a19) What are some mix tasks?
+
+    ---------- Language Basics --------
+  #a3)  How is the string concatenation in Elixir?
+  #a6)  What are some mix tasks?
+  #a7)  What is function arity?
+  #a8)  What are guards in a function?
+  #a9)  What does the Bang (!)  symbol means?
+  #a4)  What is the the alias __MODULE__?
+  #a21) What are guards in a function?
+  #a20) What is function arity?
+
+    ---------- CONCURENCY ---------
+  #a10) What does the --sup while creating a project does?
+  #a12) What is child process
+  #a13) What is a worker is elixir?
+  #a2)  How to Spawn Processes in Elixir?
+  #a11) What is an OTP supervision tree?
+  #a26) What is a worker is elixir?
+  #a27) How to start new workers?
+  #a28) What are processes?
+  #a30) What is OTP?
+  #a35) What are OTP Behaviors?
+  #a31) What is a GenServer Pattern?
+  #a32) What is a Application Pattern?
+  #a29) What is the Circuit breaker pattern?
+  #a33) What are applications?
+  #a34) What are casts?
+
+-------------- Start of Links --------
+#a1) what does IO.inspect("string Value")?
+  A: Prints the string value in the screen.
+
+#a2) How to Spawn Processes in Elixir?
+  spawn(ModuleName, :functionName, [parameters])
+
+#a3) How is the string concatenation in Elixir?
+  <>
+
+#a4) What is the the alias __MODULE__?
+  It alias the current module
+
+#a5) What does the @enforce_keys does?
+  To ensure that when we create a new struct, all attributes that
+  are inside the enforce keys must be filled.
+  i.e: @enforce_keys [:row,col]
+       defstruct [:row, :col]
+
+#a6) What are some mix tasks?
+  mix docs - show docs
+
+#a7) What is function arity?
+  The nuber of arguments you can pass to the function.
+
+#a8) What are guards in a function?
+  They are special filters for the function match in a call.
+  i.e: def (x, y) when is_number(x) and is_number(y), do: x+y
+  The possible guards are:
+  is_atom/1        is_binary/1     is_float/1    is_function/1
+  is_list/1        is_map/1        is_pid/1      is_port/1
+  is_bitstring/1   is_function/2   is_nil/1      is_reference/1
+  is_boolean/1     is_integer/1    is_number/1   is_tuple/1
+
+
+#a9) What does the Bang (!)  symbol means?
+  Probably there is another function with the same name, but each of them handles erros ins a different manner.
+
+#a10) What does the --sup while creating a project does?
+  R: It creates a folder with the name of the project with an application.ex. Inside there is a start/2 function that contains a vector with children - that supose to be child processes - and this:
+  opts = [strategy: :one_for_one, name: Tanto.Supervisor]
+  Supervisor.start_link(children, opts)
+
+#a11) What is an OTP supervision tree?
+
+#a12) What is child process
+
+#a13) What is a worker is elixir?
+
+#a14) what does IO.inspect("string Value")?
+  A: Prints the string value in the screen.
+
+
+#a18) What does the @enforce_keys does?
+  To ensure that when we create a new struct, all attributes that
+  are inside the enforce keys must be filled.
+  i.e: @enforce_keys [:row,col]
+       defstruct [:row, :col]
+
+#a19) What are some mix tasks?
+  mix docs - show docs
+
+#a20) What is function arity?
+  The nuber of arguments you can pass to the function.
+
+#a21) What are guards in a function?
+  They are special filters for the function match in a call.
+  i.e: def (x, y) when is_number(x) and is_number(y), do: x+y
+  The possible guards are:
+  is_atom/1        is_binary/1     is_float/1    is_function/1
+  is_list/1        is_map/1        is_pid/1      is_port/1
+  is_bitstring/1   is_function/2   is_nil/1      is_reference/1
+  is_boolean/1     is_integer/1    is_number/1   is_tuple/1
+
+
+
+
+#a26) What is a worker is elixir?
+
+#a27) How to start new workers?
+
+#a28) What are processes?
+
+#a29) What is the circuit breaker pattern?
+
+#a30) What is OTP?
+  Open Telecom Platform. It is a set of design patterns
+
+#a31) What is a GenServer Pattern?
+  What does it already sets for me?
+    start_link/3 and start/3 functions that create new processes.
+
+#a32) What is a Application Pattern?
+  Takes care of the question? "Where ti divide a monolith into
+  services?".
+#a33) What are applications?
+    Are supervised units of code that start and stops as a single
+    entity.
+
+#a34) What are casts?
+    They are similar ti calls, but the don't return a specific
+    reply; so the caller wont wait for one.
+
+#a35) What are OTP Behaviors?
+  Probably the name of the patterns.
+

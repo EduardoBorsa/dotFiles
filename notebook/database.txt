@@ -1,0 +1,50 @@
+
+------------------------------ DATABASE_LIKE_QUESTIONS -----
+How to work with associations?
+
+  In the schema file, add the association.
+  i.e: has_may(:threads, Thread).
+  In this case, the category has many thread, but nothings says
+  that it has this, I mean, in the DB
+  The posts already had foreign keys to user and thread, In the
+  schema we changed the "user_id, :id" and thread_id for
+  belongs_to :user, User.
+  It seams to me that the has_many realy means nothing for the
+  DB. Just have to remember that there is as 's' at the end of
+  the associated word.
+  Yeah, to establish a DB association, one thing is the DB with
+  the foreign key, and the other is the Schemas.
+
+  We created a new changeset for thread. Inside this new one
+  basically we create a new validate and put_assoc to guarantee the
+  changes in the schemas.
+
+How does many_to_many works?
+  So I created a new Json with new schema and context
+  the associated previous context now add a new many_to_many
+  in the fields space.
+  i.e: many_to_many :newTable, NewContext, join_through:   OtherNewContext
+  then in the schema file that the many_to_many references add:
+  belongs_to :contexOwnerInSingular , ContextName
+  (obs: if there are referencedContext_id, remove)
+
+
+How to create primary keys in the Database?
+  Inside a migration file add:
+  create(unique_index(:tablename, [:fieldName]))
+
+
+How does the references work in phx.gen.html?
+  field_id:references:table_name
+
+What the unique_constraint do?
+  Something related to just have one of that record field in the database.
+  But thats not what create(unique_index(:tablename,
+  [:fieldName])) should do? ( this is in the migration file)
+
+Whats the difference between create(unique_index) and unique_constraint?
+  The first thing that I can tell is that the create unique index is in a migration id.
+  And the unique_constraint id inside a context schema file.
+  I think that if you create one, the other is necessary.
+
+How Do I authorizate an application in github

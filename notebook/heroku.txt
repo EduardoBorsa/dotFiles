@@ -1,0 +1,39 @@
+
+------------------------ HEROKU -------------------------------
+1) How to deploy an elixir app to Heroku?
+ 1 - Create a new app at Heroku.
+ 2 - use: heroku git:remote -a YOURAPPNAME
+ 3 - add the following packages to you project:
+    heroku buildpacks:add https://github.com/HashNuke/heroku-buildpack-elixir.git
+    heroku buildpacks:add https://github.com/gjaldon/heroku-buildpack-phoenix-static.git
+ 4 - create a elixir_build-pack.config at the root of your app
+ with the content:
+  erlang_version=20.0
+  elixir_version=1.5.2
+ 5 - Create a Procfile with this content:
+  release: MIX_ENV=prod mix ecto.migrate
+  web: MIX_ENV=prod mix phx.server
+ 6 - Config some environment variables on Heroku:
+  to see them use: heroku config
+ 7 - Create a free postgresSQL with this command:
+  heroku addons:create heroku-postgresql:hobby-dev
+ 8 - Generate a secret key:
+  mix phx.gen.secret
+  exemple output:
+  BTALLd7qW3rBJlmgHTl0/QkNMbV7q1UNacNb9M+TNj8stbqgY7Hwf5G5DavL63Ch
+  Add them to heroku:
+  heroku config:set
+  SECRET_KEY_BASE="BTALLd7qW3rBJlmgHTl0/QkNMbV7q1UNacNb9M+TNj8stbqgY7Hwf5G5DavL63Ch"
+ 9 - Apply changes in the prod.exs
+  config :nameofyourapp, PlatformWeb.Endpoint,
+  load_from_system_env: true,
+  url: [host: "YOURAPPNAME.herokuapp.com", port: 80],
+  cache_static_manifest: "priv/static/cache_manifest.json",
+  secret_key_base: System.get_env("SECRET_KEY_BASE")
+
+
+2) What are Procfiles?
+  A - This file holds the sequence of command that will be
+  executed to start our server.
+
+

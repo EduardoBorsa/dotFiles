@@ -1,0 +1,116 @@
+
+-------------------------------- PHOENIX_LIKE_QUESTIONS -----
+
+How does Phoenix.HTML works?
+  * The link function inside this module works as an anger Tag.
+    i.e: <%= link("Text of the link"), to: "/path/you/want",
+    class= "bootstrap-classes-names"%>
+
+  * form_for -> helps to create forms. Check the url: https://hexdocs.pm/phoenix_html/Phoenix.HTML.Form.html
+
+
+Why when you nest a controller inside another, you have to override the action/2 (action(conn,_) function? What is this funcion?
+
+What is an endpoint in a web application?
+
+How to create a Json API with Phoenix?
+  mix phx.gen.json SchemaName ContextName tableName attributes
+      ---------------Inside the Business Part ----
+      Created a new SchemaFile.ex and Context.ex inside the new SchemaNameFolder
+      and a migration
+      and tests related
+      ---------------Inside the Web Part ----------
+      created a context controller, view
+      a changeset_view (pra que serve isso?)
+      a fallback_controller (pra que serve isso?)
+      and tests related
+
+
+What is an schema in Phoenix?
+
+How does the mix phx.gen.html works?
+  R: I think it is:
+      mix phx.gen.html SchemaName ContextName tableName atributes
+      ---------------Inside the Business Part ----
+      In the business part of the system, it creates a folder with SchemaDirectory and create a SchemaName.ex with its name, i.e forums.ex. It also creates a context.ex .
+      Inside the SchemaName.ex file is where all the CRUD operations of all the business logics inside the SchemaDirectory wiil be stored.
+      The ContextName.ex will hold all the atributes and changeset of the new context.
+      ---------------Inside the Web Part ----------
+      In the webPart of the system, it creates a schemaName_controller in the controller folder. And creates a folder inside templates with schemaName with the html.eex files. Also creates inside view a schemaName_view
+      inside the controller is the webconventions functions of: (1) index, (2) new, (3) create, (4) show, (5) edit, (6) update and (7) delete.
+
+What is the config/config.ex file?
+
+
+How do I use Phoenix Sign up.
+
+
+
+How do I create a Oauth on github:
+  1) settings
+  2) Developer Settings
+  3) New Oauth App
+  4) App_Name: Name,
+     Localhost: localhost:4000,
+     Authorization_URL: localhost:4000/auth/github
+  5) Create a .env file inside config/, i.e -> ./config/.env
+  6) add the environment variable as example:
+                                              export GITHUB_CLIENT_ID="<My Github client id>"
+                                              export GITHUB_CLIENT_SECRET="<My Github Client Secret>"
+  7) Before Running the Application, use the command:
+                                                    source ./config/.env
+
+How can I authenticate a user?
+  Using OAuth -
+    1) Add in mix these two:  {:ueberauth, "~> 0.4"},
+                              {:ueberauth_github, "~> 0.4"}
+    2) Add the following config:  config :ueberauth, Ueberauth,
+                                  providers: [
+                                    # We don't need any permissions on GitHub as we're just using it as an
+                                    # identity provider, so we'll set an empty default scope.
+                                    github: {Ueberauth.Strategy.Github, [default_scope: ""]}
+                                  ]
+
+                                  # We also need a github client id and secret. I've already generated an
+                                  # application on github and I've stored these secrets somewhere...secret.
+                                  config :ueberauth, Ueberauth.Strategy.Github.OAuth,
+                                    client_id: System.get_env("GITHUB_CLIENT_ID"),
+                                    client_secret: System.get_env("GITHUB_CLIENT_SECRET")
+    3) Inside the router.ex, add ueberauth to plug stack:
+       * in the first prosition of Browser pipeline add: plug(Ueberauth)
+       And add a scope for the authAuthentication, as, exmaple:
+                                                              scope "/auth", FirestormWeb.Web do
+                                                              pipe_through :browser
+
+                                                              delete "/logout", AuthController, :delete
+                                                              get "/logout", AuthController, :delete
+                                                              get "/:provider", AuthController, :request
+                                                              get "/:provider/callback", AuthController, :callback
+                                                              post "/:provider/callback", AuthController, :callback
+                                                            end
+
+
+How do I authenticate users using comeonin?
+  add the librarie: comeonin 4.0
+                    bcrypt_elixir 1.0
+
+  It is needed to create a new changeset for the registration
+  that will hold some validate_required fields.
+  Alse, we'll need to create a digest function like this one:
+  defp put_pass_digest(changeset) do
+    case changeset do
+    %Ecto.Changeset{valid?: true, changes: %{password: pass}} ->
+      put_change(changeset, :password_digest, Comeonin.Bcrypt.hashpwsalt(pass))
+    _ ->
+      changeset
+    end
+  end
+How to enable log in?
+  Create a SchemaAuthController wit:
+  init
+  call
+How to restrict unauthenticated?
+  in the controller of the function you want to restrict, plug
+  an authenticate function to it
+  i.e: plug :authenticate when action in [:functionToRestrict]
+

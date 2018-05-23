@@ -1,0 +1,88 @@
+------------------- ELM ----------------------
+How does elm package works?
+
+How does elm testing works?
+  need elm-test and elm-html-test
+How to rum elm tests?
+  elm-app test
+
+How do I start a new Elm project?
+  elm-package install
+
+What does an Elm project must Have?
+  main =
+What is elm-reactor?
+  It opens my one elm server
+
+How to integrate Elm in a Phoenix app?
+  install with:
+  npm install --save-dev elm elm-brunch
+  Config brunch
+  In path/watched add "elm" at the end
+  In plugins:
+  elmBrunch: {
+  mainModules: ['elm/Main.elm'],
+  makeParameters: ['--debug'],
+  outputFolder: '../assets/js',
+  Create an elm folder
+  Create a Main.elm inside this folder
+  Fill with content
+  in page/index.html
+  put <div id="elm-container"></dib>
+  in app.js add:
+  // Elm
+  import Elm from "./main"
+  import Game from "./platformer"
+  const elmContainer = document.querySelector("#elm-container");
+  const elmGameContainer = document.querySelector("#elm-game-container");
+  if (elmContainer) {
+    const elmApplication = Elm.Main.embed(elmContainer);
+  }
+  if (elmGameContainer) {
+    const elmGame = Game.PlatFormer.embed(elmContainer);
+  }
+  i.e
+  import NameImported from "./path/folder"
+  const containerName =   documento.querySelector("#divIdNameOnBack");
+  if (containerName) {
+    const otherContainerName =     NameImported.ModuleName.embed(containerName)
+  }
+
+How to use elm?
+  Html.Attributes exposing (class)
+  In the first [] of a tag is what will hold attributes like our
+  class name. The second [] holds what is inside the html tag
+
+
+
+What is the model?
+  app  state
+What is the View?
+  The functions that are passed to the model. (on click)
+What is the Message?
+  what will be sent to update
+What is the Update?
+  Is how we update the model.
+What is the unidirectional data flow?
+  From Model to View to Message to Update to Model.
+
+What is the ++ in Elm?
+  Its the string concatenation operator.
+
+How to write a function in Elm?
+  start always with Lower Case i.e"
+  functionName param1 param2 =
+                body
+
+how to use anonymous functions? (Is this lambda?)
+  \param1 param2 -> param1 + param2
+
+How to create local variable?
+  Use Let
+  i.e:
+  increment cnt amt =
+    let
+      localCount =
+            cnt
+    in
+      localCount + amt

@@ -1,0 +1,55 @@
+
+-------------------------- TESTING -------------
+
+How can it be passed attributes inside a test?
+  Evolve the tests with a describe block, them create a setup method that returns
+  a list with attributes, example:
+
+How to integrate wallaby in your project?
+  {:wallaby, "~> 0.17.0", only: [:test]}
+  Then start Wallaby in the test_helper:
+  # in the last line
+    {:ok, _} = Application.ensure_all_started(:wallaby) # <--
+  Then modify the endpoint:
+  if Application.get_env(:projectName, :sql_sanbox) do
+    plug(Phoenix.Ecto.SQL.Sandbox)
+  end
+  Then alter the config/test.exs
+  #in the last line
+  config :projectName, sql_sandbox: true
+  and
+  server: true
+  Now a little bit of configuration:
+  Open test_helper again, at the end addj:
+  Application.put_env(:wallaby, :base_url, ProjectName.Web.Endpoint.url)
+  Then Build out case template:
+
+  defmodule ProjectName.FeatureCase do
+  use ExUnit.CaseTemplate
+
+  using do
+    quote do
+      use Wallaby.DSL
+
+      alias ProjectName.Repo
+      import Ecto
+      import Ecto.Changeset
+      import Ecto.Query
+
+      import ProjectName.Web.Router.Helpers
+    end
+  end
+
+  setup tags do
+    :ok = Ecto.Adapters.SQL.Sandbox.checkout( ProjectName.Repo)
+
+    unless tags[:async] do
+      Ecto.Adapters.SQL.Sandbox.mode( ProjectName.Repo, {:shared, self()})
+    end
+
+    metadata = Phoenix.Ecto.SQL.Sandbox.metadata_for( ProjectName.Repo, self())
+    {:ok, session} = Wallaby.start_session(metadata: metadata)
+    {:ok, session: session}
+  end
+end
+
