@@ -1,10 +1,18 @@
 ------------------ CSS & Front End ------------
+Summary
 
-RSCSS is a library?
+  #a01) RSCSS is a library?
+  #a02) How to add good CSS to project?
+  #a03) How do I add Elm to an Application?
+
+
+  ----------------
+
+#a01) RSCSS is a library?
   R: No, it is just a methodology.
 
 
-How to add good CSS to project?
+#a02) How to add good CSS to project?
   1) in Assets -> yarn add sass-brunch --dev
   2) mv app.css to app.scss
   3) yarn add --dev purecss normalize-scss typeplate-starter-kit
@@ -18,5 +26,5 @@ How to add good CSS to project?
     # And all the webpack packages we're using
     yarn add --dev copy-webpack-plugin extract-text-webpack-plugin css-loader file-loader import-glob-loader node-sass sass-loader style-loader url-loader write-file-webpack-plugin
 
-How do I add Elm to an Application?
+#a03) How do I add Elm to an Application?
 

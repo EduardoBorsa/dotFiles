@@ -1,83 +1,205 @@
 ------------------- ELM ----------------------
-How does elm package works?
+Summary
+   ---------- Basics -----------
 
-How does elm testing works?
+  #a1)  How does elm package works?
+  #a2)  How does elm testing works?
+  #a3)  How to rum elm tests?
+  #a4)  How do I start a new Elm project?
+  #a5)  What does an Elm project must Have?
+  #a26) How do I open that elm Terminal? (elm-repl)
+  #a28) What is the elm-make?
+  #a29) How Does elm-package works
+  #a6)  What is elm-reactor?
+  #a8)  How to use elm?
+  #a18) Where to Learn more of Elm?
+
+   ---------- Elm Architecture ------
+
+  #a34) How it is the Elm Achitecture?
+  #a9)  What is the model?
+  #a10) What is the View?
+  #a12) What is the Update?
+  #a40) What are Subscriptions?
+  #a13) What is the unidirectional data flow?
+  #a21) What does beginnerProgram does?
+  #a20) How to use onClick inside Elm?
+  #a39) How does Elm Effects work inside the Architecture?
+
+  ---------- Elm Language Basics -------
+
+
+  #a19) How does fucntion composition works in Elm? i.e ">>"
+  #a14) What is the ++ in Elm?
+  #a17) How to create local variable?
+  #a16) how to use anonymous functions? (Is this lambda?)
+  #a15) How to write a function in Elm?
+  #a23) How to print something to the console?
+  #a27) What are some Elm interesting data types?
+  #a30) How do I concatenate Strings in Elm?
+  #a31) what the difference between the divisor operator / and //?
+  #a33) How are booleand values in elm?
+  #a32) How does if else statemenst works?
+  #a35) How to enable User Input?
+  #a37)  How does type Annotations work?
+  #a36) Buttons:
+  #a38) Text Fields:
+  #a35) How to enable User Input?
+  #a41) Difference of Html.beginnerProgram and Html.program?
+
+
+  ----------- Working with API ----------
+
+  #a24) What are the pre-requisits for fetching from an API?
+
+  ----------- CSS Integration ---------
+
+  #a7)  How to integrate Elm in a Phoenix app?
+
+  ------------ Learning Material ----
+  #a18) Where to Learn more of Elm?
+
+  --------------------
+
+
+#a1)  How does elm package works?
+
+#a2)  How does elm testing works?
   need elm-test and elm-html-test
-How to rum elm tests?
+
+#a3)  How to rum elm tests?
   elm-app test
 
-How do I start a new Elm project?
+#a4)  How do I start a new Elm project?
   elm-package install
 
-What does an Elm project must Have?
+#a5)  What does an Elm project must Have?
   main =
-What is elm-reactor?
+
+#a6)  What is elm-reactor?
   It opens my one elm server
 
-How to integrate Elm in a Phoenix app?
-  install with:
-  npm install --save-dev elm elm-brunch
-  Config brunch
-  In path/watched add "elm" at the end
-  In plugins:
-  elmBrunch: {
-  mainModules: ['elm/Main.elm'],
-  makeParameters: ['--debug'],
-  outputFolder: '../assets/js',
+#a7)  How to integrate Elm in a Phoenix app?
+  go to assests.
+  Then install package.jason packages.
+    npm install --save-dev elm elm-brunch
+  update .gitignore with:
+  ./assets/node_modules
+  ./assets/elm-stuff
+  ./assets/ja/main.js
+  install elm with:
+    elm-package install
   Create an elm folder
   Create a Main.elm inside this folder
-  Fill with content
-  in page/index.html
-  put <div id="elm-container"></dib>
+    module Main exposing (..)
+    import Html exposing (Html, text)
+    main : Html msg
+    main =
+    text "Hello from Elm!"
+  Config brunch
+    In path/watched add "elm" at the end
+    In plugins:
+    elmBrunch: {
+    mainModules: ["elm/Main.elm"],
+    makeParameters: ["--debug"],
+    outputFolder: "../assets/js"
+    }
+  in page/index.html put
+    <div id="elm-container"></div>
   in app.js add:
-  // Elm
-  import Elm from "./main"
-  import Game from "./platformer"
-  const elmContainer = document.querySelector("#elm-container");
-  const elmGameContainer = document.querySelector("#elm-game-container");
-  if (elmContainer) {
-    const elmApplication = Elm.Main.embed(elmContainer);
-  }
-  if (elmGameContainer) {
-    const elmGame = Game.PlatFormer.embed(elmContainer);
-  }
-  i.e
-  import NameImported from "./path/folder"
-  const containerName =   documento.querySelector("#divIdNameOnBack");
-  if (containerName) {
-    const otherContainerName =     NameImported.ModuleName.embed(containerName)
-  }
+    // Elm
+    import Elm from "./main"
+    const elmContainer = document.querySelector("#elm-container");
+    if (elmContainer) Elm.Main.embed(elmContainer);
+    ------ Or More complete -----
+    // Elm
+    import Elm from "./main"
+    import Game from "./platformer"
+    const elmContainer = document.querySelector("#elm-container");
+    const elmGameContainer = document.querySelector("#elm-game-container");
+    if (elmContainer) {
+      const elmApplication = Elm.Main.embed(elmContainer);
+    }
+    if (elmGameContainer) {
+      const elmGame = Game.PlatFormer.embed(elmContainer);
+    }
+    i.e
+    import NameImported from "./path/folder"
+    const containerName =   documento.querySelector("#divIdNameOnBack");
+    if (containerName) {
+      const otherContainerName =     NameImported.ModuleName.embed(containerName)
+    }
 
-How to use elm?
+#a8)  How to use elm?
   Html.Attributes exposing (class)
   In the first [] of a tag is what will hold attributes like our
   class name. The second [] holds what is inside the html tag
 
 
 
-What is the model?
-  app  state
-What is the View?
+#a9)  What is the model?
+  Relats to Data.
+  Its what holds the app  state. It needs a initial Value. That's
+  why we use the initModel : Model
+                 initModel =
+                      0
+
+
+#a10) What is the View?
+  Relats to the UI
   The functions that are passed to the model. (on click)
-What is the Message?
+  i.e
+  view : Model -> Html msg
+  view =
+      -- Things to do
+
+#a11) What is the Message?
   what will be sent to update
-What is the Update?
-  Is how we update the model.
-What is the unidirectional data flow?
+
+#a12) What is the Update?
+  Relates to the Behavior and is how we update the model.
+  First it is needed to create a
+  type Msg =
+    Function1
+    | Function2
+    | ...
+  Concers:
+  First Concern:
+    What things can happen in our app?
+    A: Union Type, i.e:
+      type Msg = AddCaloria | Clear
+  Secons Concer:
+    And how do those things change the model?
+    A: Function
+      update: Msg -> Model -> Model
+      update msg model =
+            -- Things to be done
+  **
+  There will be a function like:
+  update: Msg -> Model -> Model
+  update msg model =
+        case msg of
+          Function1 ->
+            //Todo
+
+          Function2 ->
+            // Todo
+
+#a13) What is the unidirectional data flow?
   From Model to View to Message to Update to Model.
 
-What is the ++ in Elm?
+#a14) What is the ++ in Elm?
   Its the string concatenation operator.
 
-How to write a function in Elm?
+#a15) How to write a function in Elm?
   start always with Lower Case i.e"
   functionName param1 param2 =
                 body
 
-how to use anonymous functions? (Is this lambda?)
+#a16) how to use anonymous functions? (Is this lambda?)
   \param1 param2 -> param1 + param2
 
-How to create local variable?
+#a17) How to create local variable?
   Use Let
   i.e:
   increment cnt amt =
@@ -86,3 +208,122 @@ How to create local variable?
             cnt
     in
       localCount + amt
+
+#a18) Where to Learn more of Elm?
+  http://package.elm-lang.org/
+  https://guide.elm-lang.org/install.html
+
+#a19) How does fucntion composition works in Elm? i.e ">>"
+
+#a20) How to use onClick inside Elm?
+  import Html.Events exposing (..)
+
+#a21) What does beginnerProgram does?
+  Links model, view, update.
+  main : Program Never Model Msg
+  main =
+      Html.beginnerProgram
+              { model = initModel
+                , update = update
+                , view = view
+              }
+
+#a22) How to add text input to elm?
+
+#a23) How to print something to the console?
+  Debug.log ""
+
+
+#a24) What are the pre-requisits for fetching from an API?
+  Create a Msg of type FetchSomething with parameter (Result Http.Error (type of Return))
+  Create a case in the update msg with a function that will do
+  the fecth as this exapmle:
+    fetchGamesList : Cmd Msg
+    fetchGamesList =
+        Http.get "/api/games" decodeGamesList
+            |> Http.send FetchGamesList
+
+#a25) How to Decode a Json?
+  import Http
+  import Json.Decode as Decode
+  decodeGame : Decode.Decoder Game
+  decodeGame =
+      Decode.map2 Game
+          (Decode.field "title" Decode.string)
+          (Decode.field "description" Decode.string)
+
+
+  decodeGamesList : Decode.Decoder (List Game)
+  decodeGamesList =
+      decodeGame
+          |> Decode.list
+          |> Decode.at [ "data" ]
+
+
+#a26) How do I open that elm Terminal? (repl)
+  elm-repl
+  Inside the REPL, the "\" can be used for new line continue
+  i.e
+  over9000 powerLevel = \
+  |   if powerLevel > 9000 then "It's over 9000!!!" else "meh"
+  <function>
+
+#a27) What are some Elm interesting data types?
+  ['a', 'b'] -> List of Char
+  ('a', 32) -> Tuple (char, number)
+  { x = 3, y = 4 } : { x : number, y : number1 } -> Records
+
+
+#a28) What is the elm-make?
+  Compile Elm code directly
+  elm-make Main.elm --output=main.html
+
+#a29) How Does elm-package works
+  Downlods packages
+  elm-package install elm-lang/http
+    *List of commands
+     install : Install the dependencies in elm-package.json
+     publish : Publish you library to the Elm Package Catalog
+     bump : Bump version numbers based on Apis changes
+     diff : Get the difference between two Apis
+
+
+#a30) How do I concatenate Strings in Elm?
+  string ++ string2
+
+#a31) what the difference between the divisor operator / and //?
+  9/2 => 4.5
+  9/2 => 4
+
+#a32) How does if else statemenst works?
+  if True then "hello" else "world"
+
+#a33) How are booleand values in elm?
+  True             #Notice the Uppercase at the beggining
+  False
+
+#a34) How it is the Elm Achitecture?
+  It is basicaly
+  Model
+  Update #a12
+  View
+
+#a35) How to enable User Input?
+  Buttons
+  Text Fields
+  Checkbox Boxes
+  Radio Buttons
+  etc
+
+#a36) Buttons:
+
+
+#a37)  How does type Annotations work?
+
+#a38) Text Fields:
+
+#a39) How does Elm Effects work inside the Architecture?
+
+#a40) What are Subscriptions?
+
+#a41) Difference of Html.beginnerProgram and Html.program?

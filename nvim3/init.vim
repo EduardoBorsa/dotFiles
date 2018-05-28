@@ -10,7 +10,7 @@ set tags=tags
 
 """ Format Options #format-options
 " set formatoptions=tcrq
-set textwidth=65
+set textwidth=100
 """ Handling backup copies
 " make a copy of the file and overwrite the original one
 set backupcopy=yes
@@ -102,7 +102,7 @@ let g:prettier#autoformat = 0
 autocmd BufWritePre *.js,*.css,*.scss,*.less PrettierAsync
 
 " max line lengh that prettier will wrap on
-let g:prettier#config#print_width = 65
+let g:prettier#config#print_width = 100
 
 " number of spaces per indentation level
 let g:prettier#config#tab_width = 2

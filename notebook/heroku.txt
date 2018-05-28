@@ -1,6 +1,11 @@
 
 ------------------------ HEROKU -------------------------------
-1) How to deploy an elixir app to Heroku?
+  #a01) How to deploy an elixir app to Heroku?
+  #a02)  What are Procfiles?
+
+  --------------
+
+#a01) How to deploy an elixir app to Heroku?
  1 - Create a new app at Heroku.
  2 - use: heroku git:remote -a YOURAPPNAME
  3 - add the following packages to you project:
@@ -32,7 +37,7 @@
   secret_key_base: System.get_env("SECRET_KEY_BASE")
 
 
-2) What are Procfiles?
+#a02)  What are Procfiles?
   A - This file holds the sequence of command that will be
   executed to start our server.
 

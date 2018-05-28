@@ -1,6 +1,18 @@
 
 ------------------------------ DATABASE_LIKE_QUESTIONS -----
-How to work with associations?
+Summary
+  #a01)  How to work with associations?
+  #a02)  How does many_to_many works?
+  #a03)  How to create primary keys in the Database?
+  #a04)  How does the references work in phx.gen.html?
+  #a05)  What the unique_constraint do?
+  #a06)  Whats the difference between create(unique_index) and unique_constraint?
+  #a07)  How Do I authorizate an application in github
+
+  ------------------------
+
+
+#a01)  How to work with associations?
 
   In the schema file, add the association.
   i.e: has_may(:threads, Thread).
@@ -19,7 +31,7 @@ How to work with associations?
   basically we create a new validate and put_assoc to guarantee the
   changes in the schemas.
 
-How does many_to_many works?
+#a02)  How does many_to_many works?
   So I created a new Json with new schema and context
   the associated previous context now add a new many_to_many
   in the fields space.
@@ -29,22 +41,22 @@ How does many_to_many works?
   (obs: if there are referencedContext_id, remove)
 
 
-How to create primary keys in the Database?
+#a03)  How to create primary keys in the Database?
   Inside a migration file add:
   create(unique_index(:tablename, [:fieldName]))
 
 
-How does the references work in phx.gen.html?
+#a04)  How does the references work in phx.gen.html?
   field_id:references:table_name
 
-What the unique_constraint do?
+#a05)  What the unique_constraint do?
   Something related to just have one of that record field in the database.
   But thats not what create(unique_index(:tablename,
   [:fieldName])) should do? ( this is in the migration file)
 
-Whats the difference between create(unique_index) and unique_constraint?
+#a06)  Whats the difference between create(unique_index) and unique_constraint?
   The first thing that I can tell is that the create unique index is in a migration id.
   And the unique_constraint id inside a context schema file.
   I think that if you create one, the other is necessary.
 
-How Do I authorizate an application in github
+#a07)  How Do I authorizate an application in github

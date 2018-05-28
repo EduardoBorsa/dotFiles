@@ -1,11 +1,19 @@
 
 -------------------------- TESTING -------------
+Summary
 
-How can it be passed attributes inside a test?
+  #a01)  How can it be passed attributes inside a test?
+  #a02)  How to integrate wallaby in your project?
+
+
+  --------------------
+
+
+#a01)  How can it be passed attributes inside a test?
   Evolve the tests with a describe block, them create a setup method that returns
   a list with attributes, example:
 
-How to integrate wallaby in your project?
+#a02)  How to integrate wallaby in your project?
   {:wallaby, "~> 0.17.0", only: [:test]}
   Then start Wallaby in the test_helper:
   # in the last line

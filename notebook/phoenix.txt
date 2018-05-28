@@ -1,7 +1,27 @@
 
 -------------------------------- PHOENIX_LIKE_QUESTIONS -----
+Summary
 
-How does Phoenix.HTML works?
+  #a01)  How does Phoenix.HTML works?
+  #a02)  Why when you nest a controller inside another, you have to
+         override the action/2 (action(conn,_) function? What is this funcion?
+  #a03)  What is an endpoint in a web application?
+  #a04)  How to create a Json API with Phoenix?
+  #a05)  What is an schema in Phoenix?
+  #a06)  How does the mix phx.gen.html works?
+  #a07)  What is the config/config.ex file?
+  #a08)  How do I use Phoenix Sign up.
+  #a09)  How do I create a Oauth on github:
+  #a10)  How can I authenticate a user?
+  #a11)  How do I authenticate users using comeonin?
+  #a12)  How to enable log in?
+  #a13)  How to restrict unauthenticated?
+
+
+
+  ---------------
+
+#a01)  How does Phoenix.HTML works?
   * The link function inside this module works as an anger Tag.
     i.e: <%= link("Text of the link"), to: "/path/you/want",
     class= "bootstrap-classes-names"%>
@@ -9,11 +29,11 @@ How does Phoenix.HTML works?
   * form_for -> helps to create forms. Check the url: https://hexdocs.pm/phoenix_html/Phoenix.HTML.Form.html
 
 
-Why when you nest a controller inside another, you have to override the action/2 (action(conn,_) function? What is this funcion?
+#a02)  Why when you nest a controller inside another, you have to override the action/2 (action(conn,_) function? What is this funcion?
 
-What is an endpoint in a web application?
+#a03)  What is an endpoint in a web application?
 
-How to create a Json API with Phoenix?
+#a04) How to create a Json API with Phoenix?
   mix phx.gen.json SchemaName ContextName tableName attributes
       ---------------Inside the Business Part ----
       Created a new SchemaFile.ex and Context.ex inside the new SchemaNameFolder
@@ -26,9 +46,9 @@ How to create a Json API with Phoenix?
       and tests related
 
 
-What is an schema in Phoenix?
+#a05)  What is an schema in Phoenix?
 
-How does the mix phx.gen.html works?
+#a06)  How does the mix phx.gen.html works?
   R: I think it is:
       mix phx.gen.html SchemaName ContextName tableName atributes
       ---------------Inside the Business Part ----
@@ -39,14 +59,14 @@ How does the mix phx.gen.html works?
       In the webPart of the system, it creates a schemaName_controller in the controller folder. And creates a folder inside templates with schemaName with the html.eex files. Also creates inside view a schemaName_view
       inside the controller is the webconventions functions of: (1) index, (2) new, (3) create, (4) show, (5) edit, (6) update and (7) delete.
 
-What is the config/config.ex file?
+#a07)  What is the config/config.ex file?
 
 
-How do I use Phoenix Sign up.
+#a08)  How do I use Phoenix Sign up.
 
 
 
-How do I create a Oauth on github:
+#a09)  How do I create a Oauth on github:
   1) settings
   2) Developer Settings
   3) New Oauth App
@@ -60,7 +80,7 @@ How do I create a Oauth on github:
   7) Before Running the Application, use the command:
                                                     source ./config/.env
 
-How can I authenticate a user?
+#a10)  How can I authenticate a user?
   Using OAuth -
     1) Add in mix these two:  {:ueberauth, "~> 0.4"},
                               {:ueberauth_github, "~> 0.4"}
@@ -90,7 +110,7 @@ How can I authenticate a user?
                                                             end
 
 
-How do I authenticate users using comeonin?
+#a11)  How do I authenticate users using comeonin?
   add the librarie: comeonin 4.0
                     bcrypt_elixir 1.0
 
@@ -105,11 +125,13 @@ How do I authenticate users using comeonin?
       changeset
     end
   end
-How to enable log in?
+
+#a12)  How to enable log in?
   Create a SchemaAuthController wit:
   init
   call
-How to restrict unauthenticated?
+
+#a13)  How to restrict unauthenticated?
   in the controller of the function you want to restrict, plug
   an authenticate function to it
   i.e: plug :authenticate when action in [:functionToRestrict]
