@@ -14,6 +14,10 @@ Summary
   #a8)  How to use elm?
   #a18) Where to Learn more of Elm?
 
+   ----------- Basic Imports -------
+  #a42) How to add class?
+  #a43) How to add div?
+
    ---------- Elm Architecture ------
 
   #a34) How it is the Elm Achitecture?
@@ -325,5 +329,43 @@ Summary
 #a39) How does Elm Effects work inside the Architecture?
 
 #a40) What are Subscriptions?
+  Elm subscriptions allow us to subscribe to a steam of events.
+
 
 #a41) Difference of Html.beginnerProgram and Html.program?
+
+#a42) How to add class?
+  import Html.Attributes exposing (class)
+
+#a43) How to add div?
+  import Html exposing (Html, text, div)
+
+#a43) How to perform an API fetch?
+  elm-package install elm-lang/http
+  import Http
+  import Json.Decode as Decode
+  perform a fetch as:
+  fetchWhatEver =
+      Http.get "/api/games" decodeWhatEver
+          |> Http.send FetchMsgThatDealsWithIt
+
+  decodePlayer : Decode.Decoder Player
+  decodePlayer =
+    Decode.map4 Player
+      (Decode.maybe (Decode.field "display_name" Decode.string))
+      (Decode.field "id" Decode.int)
+      ...
+
+  type Msg =
+    |...
+    FetchMsgThatDealsWithIt (Result Http.Error (List Game))
+
+  update update
+    FetchMsgThatDealsWithIt result ->
+          case result of ->
+              Ok stuff ->
+              ( { model | prop = stuff}, Cmd.none )
+
+              Err message ->
+              ( { model | errors = toString message }, Cmd.none )
+

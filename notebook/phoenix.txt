@@ -16,6 +16,7 @@ Summary
   #a11)  How do I authenticate users using comeonin?
   #a12)  How to enable log in?
   #a13)  How to restrict unauthenticated?
+  #a14) What does unique constrain in the changeset does?
 
 
 
@@ -136,3 +137,9 @@ Summary
   an authenticate function to it
   i.e: plug :authenticate when action in [:functionToRestrict]
 
+#a14) What does unique constrain in the changeset does?
+  Creates an error related to de creation of a unique index in the table. If it is not there, the
+  application will not know what happened.
+
+#a15) How to get a param from a session?
+  player_id = get_session(conn, :player_id)

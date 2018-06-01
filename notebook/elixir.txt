@@ -32,6 +32,8 @@ Summary:
 	#a43) What are tail_call recursive functions and what are not?
 	#a45) What is the observer from Erlang?
 	#a44) How does Enum.Reduce works?
+  #a52) How to get info about a funcion?
+  #a51) Some Nice contents
 
     ---------- CONCURENCY ---------
   #a10) What does the --sup while creating a project does?
@@ -92,6 +94,7 @@ Summary:
 
 #a9) What does the Bang (!)  symbol means?
   Probably there is another function with the same name, but each of them handles erros ins a different manner.
+  May raise a run time error.
 
 #a10) What does the --sup while creating a project does?
   R: It creates a folder with the name of the project with an application.ex. Inside there is a start/2 function that contains a vector with children - that supose to be child processes - and this:
@@ -227,3 +230,22 @@ Summary:
 
 #a50) What is the ETS? (Erlanf Term Storage)
 
+#a51) Some Nice contents
+  This book doesn’t provide a detailed reference on any of the language or
+  platform features. That would take too much space, and the material would
+  quickly become outdated. Here are some other references you can check out:
+  For an alternative syntax quick start, you should look at the Getting Started
+  guide on the Elixir official site:
+  https://elixir-lang.org/getting-started/introduction.html .
+  A more detailed reference can be found in the online documentation:
+  https://hexdocs.pm/elixir .
+  For specific questions, you can turn to Elixir forum ( https://elixirforum.com/ ),
+  the #elixir-lang channel on IRC ( irc://irc.freenode.net/elixir-lang ), or the
+  Slack channel ( https://elixir-slackin.herokuapp.com/ ).
+  Finally, for many things, you’ll need to look into the Erlang documentation:
+  http://www.erlang.org/doc . If you’re not familiar with Erlang syntax, you
+  may also need to read Elixir’s crash course on Erlang (
+  https://elixir-lang.org/crash-course.html ).
+
+#a52) How to get info about a funcion?
+  use the h commands, ie.:
