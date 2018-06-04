@@ -16,7 +16,12 @@ Summary
   #a11)  How do I authenticate users using comeonin?
   #a12)  How to enable log in?
   #a13)  How to restrict unauthenticated?
-  #a14) What does unique constrain in the changeset does?
+  #a14)  What does unique constrain in the changeset does?
+  #a15)  How to get a param from a session?
+  #a16)  How to create a controller Api for any Context?
+  #a17)  How does the functions in the *.html.eex function?
+  #a18) How to nest a controller inside another?
+  #a19) How to substitute Brunch for Webpack?
 
 
 
@@ -143,3 +148,37 @@ Summary
 
 #a15) How to get a param from a session?
   player_id = get_session(conn, :player_id)
+
+#a16) How to create a controller Api for any Context?
+
+#a17) How does the functions in the *.html.eex function?
+  They are the ones in the *.view.ex . Some of them are already native of the file.
+
+
+#a18) How to nest a controller inside another?
+  Overtide the action/2 function inside the controller that will be nested inside, i.e:
+  def action(conn, _) do
+    parent = Schema.get_parent!(conn.params["parent_id"])
+    args = [conn, conn.params, parent]
+    apply(__MODULE__, action_name(conn), args)
+  end
+  inside every other fucntion inside this nested controller, add the parent as arg and pass as
+  arguments in the Schema functions inside this fucntions. change also nested_path to
+  parent_nested_path
+  Refactor also the Schema functions, the ones that now will receive the parent as argument.
+  and the templates. (inside this, the path now will be, parent_nested_path())
+
+#a19) How to substitute Brunch for Webpack?
+  get the webpack file at files.
+  add:
+  yarn add --dev babel-core babel-loader babel-preset-es2015
+  yarn add --dev webpack webpack-dev-server
+  yarn add --dev copy-webpack-plugin extract-text-webpack-plugin css-loader file-loader import-glob-loader node-sass sass-loader style-loader url-loader write-file-webpack-plugin
+  npm install webpack-cli -D
+  then inside app.js, put:
+  // We'll require our CSS file, which doesn't yet exist
+  require("../css/app.scss");
+  // And we'll load the phoenix_html javascript from the elixir package
+  import "../../deps/phoenix_html/priv/static/phoenix_html";
+  https://medium.com/@waffleau/using-webpack-4-with-phoenix-1-3-8245b45179c0
+

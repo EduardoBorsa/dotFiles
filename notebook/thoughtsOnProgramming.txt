@@ -1,0 +1,2 @@
+Qual dificil sera que eh transformar um monolito em Json api?
+

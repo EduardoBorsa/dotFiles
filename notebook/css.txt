@@ -1,9 +1,13 @@
 ------------------ CSS & Front End ------------
 Summary
 
-  #a01) RSCSS is a library?
-  #a02) How to add good CSS to project?
-  #a03) How do I add Elm to an Application?
+  #a01)  RSCSS is a library?
+  #a02)  How to add good CSS to project?
+  #a03)  How do I add Elm to an Application?
+  #a04)  How to add sass to an Pheonix App?
+  #a05)  How to Organize your CSS folder structure?
+  #a06)  How to create constantes in SASS?
+  #a07)  What are and how works: PureCss, normalize-scss, Typeplate?
 
 
   ----------------
@@ -13,7 +17,8 @@ Summary
 
 
 #a02) How to add good CSS to project?
-  1) in Assets -> yarn add sass-brunch --dev
+  1) in Assets ->
+    yarn add sass-brunch --dev
   2) mv app.css to app.scss
   3) yarn add --dev purecss normalize-scss typeplate-starter-kit
   4) config Webpack
@@ -28,3 +33,41 @@ Summary
 
 #a03) How do I add Elm to an Application?
 
+#a04) How to add sass to an Pheonix App?
+    yarn add sass-brunch --dev
+    then just change *.css to *.scss
+
+#a05) How to Organize your CSS folder structure?
+  O the app.scss shout just have imports
+  Then create filder for:
+    components
+    pages
+    layout
+  On the root of the css folder, should have _settings files, ie:
+    _settings.metrics.scss
+
+#a06) How to create constantes in SASS?
+  Put a $ in front of it, i.e:
+  $border-radius: .25rem;
+
+#a07) What are and how works: PureCss, normalize-scss, Typeplate?
+  PureCss -> A set of small, responsive CSS modules that you can use in every web project
+  Normalize -> A modern, HTML5-ready alternative to CSS resets.
+               Makes browsers render all elements more consistently and in line with modern standards.
+               It precisely targets only the styles that need normalizing.
+  Typeplate -> Frameworks make decisions for you about how to organize, structure and design a site.
+               Pattern libraries don’t separate styling and markup, making them tough to use in a truly modular fashion.
+               We weren’t satisfied, so we made a thing that doesn’t do that.
+
+  Create _generic.NameOfLibrary.sccs with content of it, i.e
+  vim _generic.typeplate.scss
+  // Typeplate - http://typeplate.com/
+  @import "typeplate-index";
+
+  Then add on Brunch config:
+
+#a08) What is Tailwind css>
+
+#a09) What this does?
+  tracking-wide:
+  hover:border-green: while with the mouse on top, it highlights
