@@ -1,0 +1,5 @@
+Minimize, isolate, and recover from the effects of runtime errors (fault tolerance).
+Handle a load increase by adding more hardware resources without changing or
+redeploying the code (scalability).
+Run your system on multiple machines so that others can take over if one machine
+crashes (distribution).

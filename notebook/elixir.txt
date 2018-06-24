@@ -249,3 +249,6 @@ Summary:
 
 #a52) How to get info about a funcion?
   use the h commands, ie.:
+
+#a53) what is the & (capture operator) in elixir?
+

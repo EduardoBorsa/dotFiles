@@ -60,3 +60,6 @@ Summary
   I think that if you create one, the other is necessary.
 
 #a07)  How Do I authorizate an application in github
+
+#a08) Once one has_many of Y, in Y.ex now has a belongs_to(x, Schame.Context.X). And in Y, in the
+changeset, now has a foreign_key_constraint(:x)
