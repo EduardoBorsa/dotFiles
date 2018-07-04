@@ -249,4 +249,8 @@ Chapter 7.1 - Our First Module
   extrack error habdling in resolvers to their own module -> Part1
 
 Chapter 7.2 - Applying the middleware
+  What is the MiddleWare?
+    The Macro Approach
+
+
 
