@@ -1,5 +1,5 @@
 
-export ZSH=/home/test/.oh-my-zsh
+export ZSH=~/.oh-my-zsh
 ZSH_THEME="robbyrussell"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
@@ -26,6 +26,9 @@ export ANDROID_HOME=~/Android/Sdk/
 export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 export PATH=$PATH:~/programs/android-studio/bin/
 export PATH=$PATH:~/programs/clion-2017.3.2/bin/
+export PATH=$PATH:~/programs/node-v10.6.0-linux-x64/bin/
+
+alias vim='nvim'
 
 _not_inside_tmux() { [[ -z "$TMUX" ]] }
 
@@ -48,7 +51,7 @@ BASE16_SHELL=$HOME/.config/base16-shell/
 [ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
 
 # Theme
-# base16_tomorrow-night 
+# base16_tomorrow-night
 # FZF config to exlude the same seeting as Ag
 export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
 export FZF_DEFAULT_COMMAND='ag --ignore android --ignore ios -g ""'

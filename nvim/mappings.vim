@@ -1,12 +1,18 @@
-function! Cocozao()
+function! FuncaoTeste()
 	normal! mm[s1z=`m
 endfunction
-nnoremap <leader>zp :call Cocozao()<cr>
+nnoremap <leader>zp :call FuncaoTeste()<cr>
 
+nnoremap <C-I> :execute "vsplit" fnameescape(resolve("~/notebook"))<CR>
 
 "easy acess of the vimrc file and how to source it
-nmap <leader>vr :sp $MYVIMRC<cr>
+nmap <leader>vr :vsp $MYVIMRC<cr>
+nmap <leader>vm :vsp ~/.config/nvim/mappings.vim<cr>
 nmap <leader>so :source $MYVIMRC<cr>
+nmap <leader>ffp :echo expand('%:p')<cr>
+
+nmap <C-a>v :AV <cr>
+nmap <C-a>a :A <cr>
 
 function! MoveLineUp()
   normal! ddkkp
@@ -16,7 +22,7 @@ nnoremap <leader>mu :call MoveLineUp()<cr>
 nnoremap <leader>md :normal! ddp<cr>
 
 " Calls fuzzy finder "
-nnoremap <leader>f : :FZF<cr>
+" nnoremap <leader>f : :FZF<cr>
 " Stops the Highlighting "
 nnoremap <leader>h : nohlsearch<cr>
 " Calls Prettier "
