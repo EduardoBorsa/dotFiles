@@ -34,6 +34,7 @@ Summary:
 	#a44) How does Enum.Reduce works?
   #a52) How to get info about a funcion?
   #a51) Some Nice contents
+  #a54) how to get all mix tesks?
 
     ---------- CONCURENCY ---------
   #a10) What does the --sup while creating a project does?
@@ -252,3 +253,12 @@ Summary:
 
 #a53) what is the & (capture operator) in elixir?
 
+#a54) how to get all mix tesks?
+  mix help
+
+#a55) How to use the &Module.function(&1)?
+  ex:
+  phrases = ["lions", "tigers", "bears"]
+  Enum.map(phrases, fn(x)-> String.upcase(x) end)
+    is the same as
+  Enum.map(phrases, &String.upcase(&1))
