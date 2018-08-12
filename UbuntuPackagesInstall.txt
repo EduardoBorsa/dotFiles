@@ -4,14 +4,14 @@ Index)
 1) Packages to install:
 2) Install cmake commands to build newer version
 3) Install vim from source.
-4) Install LLVM 
+4) Install LLVM
 5) Install Clang instructions
 6) How to install YCM
 7) To install ctags go to ctags.io
 
 ---------------
 
-Fonts: 
+Fonts:
 git clone https://github.com/aaron-williamson/base16-gnome-terminal.git ~/.config/base16-gnome-terminal
 .config/base16-gnome-terminal/color-scripts/base16-default-dark.sh
 
@@ -23,8 +23,13 @@ git clone https://github.com/VundleVim/Vundle.vim.git ~/.config/nvim/bundle/Vund
 ------------------------------------------//------------
 1) Packages to install:
 
-sudo apt-get install libncurses5-dev libgnome2-dev libgnomeui-dev libgtk2.0-dev libatk1.0-dev libbonoboui2-dev libcairo2-dev libx11-dev libxpm-dev libxt-dev python-dev python3-dev ruby-dev lua5.1 liblua5.1-0-dev libperl-dev git cmake build-essential python-dev python3-dev gnome-tweak-tool curl zsh tmux g++ subversion nodejs-legacy npm gawk xclip deluge gdebi dh-autoreconf texlive texlive-full compizconfig-settings-manager mono-xbuild default-jdk libqt5x11extras5 python-pip exuberant-ctags git-gui
-sudo apt-get install 
+sudo apt-get install libncurses5-dev libgnome2-dev libgnomeui-dev libgtk2.0-dev libatk1.0-dev
+libbonoboui2-dev libcairo2-dev libx11-dev libxpm-dev libxt-dev python-dev python3-dev ruby-dev
+lua5.1 liblua5.1-0-dev libperl-dev git cmake build-essential python-dev python3-dev gnome-tweak-tool
+curl zsh tmux g++ subversion nodejs-legacy npm gawk xclip deluge gdebi dh-autoreconf texlive
+texlive-full compizconfig-settings-manager mono-xbuild default-jdk libqt5x11extras5 python-pip
+exuberant-ctags git-gui tree
+sudo apt-get install
 include some new packages like skype, peek, chrome
 
 ------------------------------------------//------------
@@ -35,7 +40,7 @@ wget -c https://cmake.org/files/v3.9/cmake-3.9.0-rc5.tar.gz
 tar -vxf name.tf -C .
 cd cmake390
   cmake .
-  make      
+  make
   make install
 
 -------------------------------------------------------
@@ -59,7 +64,7 @@ sudo make install
 
 ------------------------------------------//------------
 
-4) Install LLVM 
+4) Install LLVM
 
 LLVM instructions
 wget -c http://releases.llvm.org/5.0.0/llvm-5.0.0.src.tar.xz

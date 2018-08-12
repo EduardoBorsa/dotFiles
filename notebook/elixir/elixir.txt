@@ -54,6 +54,7 @@ Summary:
   #a34) What are casts?
   #a48) How do I link a procces to another?
   #a49) How do I register a process?
+  #a56) How to create a pid structure?
 
 -------------- Start of Links --------
 
@@ -262,3 +263,7 @@ Summary:
   Enum.map(phrases, fn(x)-> String.upcase(x) end)
     is the same as
   Enum.map(phrases, &String.upcase(&1))
+
+#a56) How to create a pid structure?
+  When the iex return a PID it returns something like #PID<0,34,0>
+  But this same process can be created with pid(0,34,0)

@@ -1,0 +1,36 @@
+Chapter 2 - Innards of an Elixir Project
+
+  2.1) Umbrela Applications
+
+    mix new elixir_drip --module ElixirDrip.Umbrella --app elixir_drip_umbrella --umbrella
+
+    to create new apps in an umbrela project, first be inside apps folder
+    Looks like you can latter remove the umbrela project from is umbrela structure.
+
+  2.2) ElixirDrip - Our Showcase application
+
+    Just show some roadmap of somethings that will come during the process of completing the book.
+
+  2.3) Using Behaviours
+
+    For new providers in the future, they will need to implement both upload/2 and download/1
+    callbacks, i.e, respect the StorageProvider behaviour
+
+  2.4) Vieweing cross references with xref
+
+  End of chapter 2
+
+Chapter 3 - The Bedrock of Concurrency and Fault Tolerance
+
+
+  Detecting errors by linking and monitoring processes
+
+Chapter 4 - Power by Erlang / OTP
+  Summary - End of chapter
+    We will create a GenServer
+    Agent Abstraction
+    Learn to use the Task Module
+    Basic of ETS
+    Register Process and track them
+
+

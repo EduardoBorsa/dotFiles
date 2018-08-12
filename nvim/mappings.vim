@@ -1,7 +1,7 @@
-function! FuncaoTeste()
+function! FixLastMisspelledWord()
 	normal! mm[s1z=`m
 endfunction
-nnoremap <leader>zp :call FuncaoTeste()<cr>
+nnoremap <leader>zp :call FixLastMisspelledWord()<cr>
 
 nnoremap <C-I> :execute "vsplit" fnameescape(resolve("~/notebook"))<CR>
 
