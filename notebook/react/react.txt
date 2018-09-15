@@ -1,0 +1,43 @@
+
+#a01) what is the difference between var and let?
+#a02) What does the --save do?
+#03)
+#04)
+#05)
+#06)
+#07)
+#08)
+#09)
+#10)
+#11)
+#12)
+#13)
+#14)
+#15)
+#16)
+#17)
+#18)
+
+
+-----------------------------------------------
+
+#a01) what is the difference between var and let?
+
+#a02) What does the --save do?
+  save to the json file
+#03)
+#04)
+#05)
+#06)
+#07)
+#08)
+#09)
+#10)
+#11)
+#12)
+#13)
+#14)
+#15)
+#16)
+#17)
+#18)

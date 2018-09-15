@@ -1,0 +1,9 @@
+go to prod.exs
+change to config :myproject, MyprojectWeb.Endpoint,
+  http: [port: 4000],
+  url: [host: "example.com", port: 80],
+  cache_static_manifest: "priv/static/manifest.json",
+  server: true,
+  code_reloader: false
+
+move the key to the server

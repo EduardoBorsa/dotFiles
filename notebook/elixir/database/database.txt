@@ -8,6 +8,9 @@ Summary
   #a05)  What the unique_constraint do?
   #a06)  Whats the difference between create(unique_index) and unique_constraint?
   #a07)  How Do I authorizate an application in github
+  #a08)  How to work with associations?
+  #a09) How to disable case sensitive in the postgres?
+  #a10) How to expect just one record back from a query using Ecto?
 
   ------------------------
 
@@ -61,5 +64,18 @@ Summary
 
 #a07)  How Do I authorizate an application in github
 
-#a08) Once one has_many of Y, in Y.ex now has a belongs_to(x, Schame.Context.X). And in Y, in the
-changeset, now has a foreign_key_constraint(:x)
+#a08)  How to work with associations?
+  The thing that will receive the id is the one that belongs_to.
+  This thing in the changeset will have a put_assoc(:bla, bla) and a assoc_constraint(:bla)
+
+#a09) How to disable case sensitive in the postgres?
+  def up do
+    execute "CREATE EXTENSION IF NOT EXISTS citext"
+  end
+
+  def down do
+    execute "DROP EXTENSION citext"
+  end
+
+#a10) How to expect just one record back from a query using Ecto?
+  Use Repo.one()

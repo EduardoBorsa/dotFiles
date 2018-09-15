@@ -169,3 +169,11 @@ Chapter 8
 
 
   The Query Api
+
+Chapter 9 -Watching Videos
+
+  Watching Videos
+
+Chaper 10 - The Channel
+  We call the messages events, and we put the state in a struct called socket .
+

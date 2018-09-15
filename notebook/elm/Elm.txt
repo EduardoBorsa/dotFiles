@@ -63,7 +63,11 @@ Summary
   ------------ Learning Material ----
   #a18) Where to Learn more of Elm?
 
-  --------------------
+  -------------------- EXTRAS
+
+  #a44) How to auto refresh your elm code?
+
+  ----------------------
 
 
 #a1)  How does elm package works?
@@ -369,3 +373,6 @@ Summary
               Err message ->
               ( { model | errors = toString message }, Cmd.none )
 
+
+#a44) How to auto refresh your elm code?
+  elm-live FileName.elm --open --warn --debug --output=OutputJSFile.js

@@ -1,0 +1,24 @@
+#a01) What is docker container
+#a02) What is docker image?
+#a03) How to list the images in my computer.
+#a04) How to list the container that are runnig in my computer.
+  A: Docker ps
+  Get container ID is also useful
+#a04) How to list the container that were ever created in my computer.
+  A: Docker ps --all
+
+#a05) What is the difference between creating and starting one container?
+  docker start -a HashOfCommans
+    The -a watches the output
+
+
+#a04) How to delete all dockers containers?
+    docker system prune
+
+
+#a04) how to get the log from a container?
+  docker logs ID
+
+
+
+

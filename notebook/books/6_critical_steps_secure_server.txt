@@ -1,0 +1,14 @@
+Contents
+  Implmement strong, unique passwords
+  Use SSH key Authentication
+  Enable software firewalls
+  Limit Server-Side application access to the Internet
+  Update, update, update
+  Block intruders with dail2ban
+  Beyound the 6 steps to secure servers
+
+----------------------------
+
+1) Implement strong, unique passwords
+  VPS -> Virtual Privare Server
+

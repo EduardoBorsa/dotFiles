@@ -5,6 +5,9 @@ set expandtab
 " - Indent by 2 spaces by default
 set shiftwidth=2
 
+set autowrite
+set noswapfile
+
 "ctags stuff
 set tags=tags
 
@@ -247,7 +250,16 @@ let g:ale_lint_on_text_changed = 0
 " \   ],
 " \}
 
+
+" Prolog
+Plug 'mxw/vim-prolog'
+
+" Docker
+Plug 'ekalinin/Dockerfile.vim'
+
+
 call plug#end()            " required
+
 
 " FZF stuff
 set rtp+=~/.fzf
@@ -307,3 +319,4 @@ nnoremap J mzJ`z
 " Makes foo-bar considered one word
 set iskeyword+=-
 au FileType gitcommit,gitrebase let g:gutentags_enabled=0
+au FileType perl set filetype=prolog
