@@ -1,0 +1,22 @@
+* BASIC PACKAGES TO START
+sudo pacman -Syu i3
+sudo pacman -Syu pacman
+sudo pacman -Syu neovim
+sudo pacman -Syu git
+
+* install Plug
+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+sudo pacman -S python-pip
+sudo pip3 install neovim
+
+ln -s ~/programs/dotFiles/nvim/mappings.vim mappings.vim
+ln -s ~/programs/dotFiles/nvim/init.vim init.vim
+
+
+* Install ZSH
+sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+ln -s ~/programs/dotFiles/zsh/zshrc .zshrc
+
+sudo chsh -s /usr/bin/zsh
