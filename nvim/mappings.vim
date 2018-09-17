@@ -10,7 +10,6 @@ nmap <leader>vr :vsp $MYVIMRC<cr>
 nmap <leader>vm :vsp ~/.config/nvim/mappings.vim<cr>
 nmap <leader>so :source $MYVIMRC<cr>
 nmap <leader>ffp :echo expand('%:p')<cr>
-nmap <leader>recf :!elixir '%:p'<cr>
 
 nmap <C-a>v :AV <cr>
 nmap <C-a>a :A <cr>
@@ -36,6 +35,7 @@ nnoremap <leader>tt : :TestNearest<cr>
 nnoremap <leader>tf : :TestFile<cr>
 nnoremap <leader>ta : :TestSuite<cr>
 nnoremap <leader>tl : :TestLast<cr>
+nnoremap <leader>te : :T exit<cr>
 
 " iabbrev div <div><CR></div><UP><TAB>
 " cabbrev vim_config ~/.config/nvim/mappings.vim

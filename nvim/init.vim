@@ -164,6 +164,10 @@ Plug 'tomtom/tcomment_vim'
 " By default, `gc` will toggle comments
 
 Plug 'janko-m/vim-test'
+" run tests in neoterm
+let g:test#strategy = 'neoterm'
+" I use spinach, not cucumber!
+let g:test#ruby#cucumber#executable = 'spinach'
 
 " git support from dat tpope
 Plug 'tpope/vim-fugitive'
@@ -201,7 +205,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 "let g:airline_theme = 'luna'
 "let g:airline_theme = 'lucius'
-let g:airline_theme = 'solarized'
+let g:airline_theme = 'onedark'
 let g:bufferline_echo = 0
 let g:airline_powerline_fonts=0
 let g:airline_enable_branch=1
@@ -320,3 +324,9 @@ nnoremap J mzJ`z
 set iskeyword+=-
 au FileType gitcommit,gitrebase let g:gutentags_enabled=0
 au FileType perl set filetype=prolog
+
+
+" NeoTerm config
+let g:neoterm_default_mod='tab'
+" let g:neoterm_split_on_tnew=1
+let g:neoterm_autojump=1

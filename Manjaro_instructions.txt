@@ -3,8 +3,25 @@ sudo pacman -Syu i3
 sudo pacman -Syu pacman
 sudo pacman -Syu neovim
 sudo pacman -Syu git
+sudo pacman -Syu yaourt
+sudo pacman -Syu ctags
+sudo pacman -Syu playerctl
+sudo pacman -Syu ttf-font-awesome
+sudo pacman -Syu feh
+sudo packman -Suy arandr
+sudo pacman -Syu xorg-xprop
+sudo pacman -Syu arc-gtk-theme
+sudo pacman -Syu thunar
+sudo pacman -Syu moka-icon-theme
+sudo pacman -Syu rofi
+sudo pacman -Syu i3blocks
+sudo pacman -Syu pavucontrol
+sudo pacman -Syu ruby
+sudo pacman -S fzf
+sudo pacman -S the_silver_searcher
+sudo pacman -Syu postgresql
 
-* install Plug
+ install Plug
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
@@ -20,3 +37,9 @@ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/i
 ln -s ~/programs/dotFiles/zsh/zshrc .zshrc
 
 sudo chsh -s /usr/bin/zsh
+
+git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shell
+
+
+To get the San francisco fonts go to https://github.com/smith-neil/YosemiteSanFranciscoFont download
+and put all the tff fonts in .local/share/fonts
