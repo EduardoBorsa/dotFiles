@@ -143,6 +143,9 @@ let g:mix_format_options = '--check-equivalent'
 " Plug 'c-brenn/phoenix.vim'
 Plug 'tpope/vim-projectionist' " required for some navigation features
 
+" Ruby
+Plug 'ruby-formatter/rufo-vim'
+Plug 'vim-ruby/vim-ruby'
 
 
 " Reformat source code
@@ -330,3 +333,8 @@ au FileType perl set filetype=prolog
 let g:neoterm_default_mod='tab'
 " let g:neoterm_split_on_tnew=1
 let g:neoterm_autojump=1
+
+" Ruby format
+" Enable rufo (RUby FOrmat)
+let g:rufo_auto_formatting = 1
+au FileType gitcommit,gitrebase let g:gutentags_enabled=0

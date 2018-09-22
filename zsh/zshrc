@@ -28,16 +28,18 @@ export PATH=$PATH:~/programs/node-v10.6.0-linux-x64/bin/
 
 alias vim='nvim'
 alias datagrip='~/programs/datagrip/bin/datagrip.sh'
+alias ctagsUnderThis='ctags -R --exclude=.git --exclude=node_modules --exclude=test'
 
-# _not_inside_tmux() { [[ -z "$TMUX" ]] }
-#
-# ensure_tmux_is_running() {
-#   if _not_inside_tmux; then
-#    ~/tat.sh
-#   fi
-# }
-#
-# ensure_tmux_is_running
+_not_inside_tmux() { [[ -z "$TMUX" ]] }
+
+ensure_tmux_is_running() {
+  if _not_inside_tmux; then
+   # ~/tat.sh
+   ~/programs/dotFiles/bin/tat.sh
+  fi
+}
+
+ensure_tmux_is_running
 
 export EDITOR="nvim"
 # To set vim in terminal
@@ -58,3 +60,6 @@ export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
 export FZF_DEFAULT_COMMAND='ag --ignore android --ignore ios -g ""'
 
 # Swap caps with cntl
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"

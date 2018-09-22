@@ -104,7 +104,7 @@ set $ws4 "4"
 set $ws5 "5"
 set $ws6 "6"
 set $ws7 "7"
-set $ws8 "8"
+set $ws8 "8 - PDF "
 set $ws9 "9 - Chrome "
 set $ws10 "10 - Folders "
 
@@ -221,3 +221,4 @@ exec setxkbmap -option ctrl:swapcaps
 assign [class="Google-chrome"] $ws9
 assign [class="Thunar"] $ws10
 assign [class="jetbrains-datagrip"] $ws2
+assign [class="Acroread"] $ws8

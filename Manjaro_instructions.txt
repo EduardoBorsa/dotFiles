@@ -20,6 +20,7 @@ sudo pacman -Syu ruby
 sudo pacman -S fzf
 sudo pacman -S the_silver_searcher
 sudo pacman -Syu postgresql
+sudo pacman -Syu postman
 
  install Plug
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
