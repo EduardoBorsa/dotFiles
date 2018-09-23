@@ -1,0 +1,52 @@
+* BASIC PACKAGES TO START
+sudo pacman -Syu --noconfirm i3 &&
+sudo pacman -Syu --noconfirm dmenu &&
+sudo pacman -Syu --noconfirm neovim &&
+sudo pacman -Syu --noconfirm git &&
+sudo pacman -Syu --noconfirm tk &&
+sudo pacman -Syu --noconfirm xorg-xbacklight &&
+sudo pacman -Syu --noconfirm xorg-xmodmap &&
+sudo pacman -Syu --noconfirm fzf &&
+sudo pacman -Syu --noconfirm the_silver_searcher &&
+sudo pacman -Syu --noconfirm python-pip &&
+sudo pacman -Syu --noconfirm yaourt &&
+sudo pacman -Syu --noconfirm ctags &&
+sudo pacman -Syu --noconfirm playerctl &&
+sudo pacman -Syu --noconfirm feh &&
+sudo pacman -Syu --noconfirm thunar &&
+sudo pacman -Syu --noconfirm arandr &&
+sudo pacman -Syu --noconfirm xorg-xprop &&
+sudo pacman -Syu --noconfirm arc-gtk-theme &&
+sudo pacman -Syu --noconfirm moka-icon-theme &&
+sudo pacman -Syu --noconfirm rofi &&
+sudo pacman -Syu --noconfirm i3blocks &&
+sudo pacman -Syu --noconfirm pavucontrol &&
+sudo pacman -Syu --noconfirm postgresql &&
+sudo pacman -Syu --noconfirm tmux &&
+sudo pacman -Syu --noconfirm ttf-font-awesome &&
+sudo pacman -Syu --noconfirm lxappearance &&
+sudo pacman -Syu --noconfirm arc-gtk-theme &&
+
+1) comment lines at the botton of i3.
+1) sudo pacman -Syu i3 dmenu neovim git yaourt ctags playerctl feh arandr thunar xorg-xprop arc-gtk-theme
+2) sudo pacman -Syu moka-icon-theme rofi i3blocks pavucontrol fzf the_silver_searcher postgresql tmux
+2) sudo pacman -Syu python-pip
+8) sudo pip3 install neovim
+3) sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+4) sudo chsh -s /usr/bin/zsh
+5) ln -s ~/programs/dotFiles/nvim/init.vim .config/nvim/init.vim
+6) ln -s ~/programs/dotFiles/nvim/mappings.vim .config/nvim/mappings.vim
+7) curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+9) git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shell
+10) cd ~/programs
+    git clone https://aur.archlinux.org/google-chrome.git
+    cd google-chrome
+    makepkg -s
+    sudo pacman -U google-chrome-6
+11) Apply sanf fonts in every gtkfile in home and .config
+
+
+To get the San francisco fonts go to https://github.com/smith-neil/YosemiteSanFranciscoFont download
+and put all the tff fonts in .local/share/fonts
+
