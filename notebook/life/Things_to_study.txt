@@ -1,3 +1,0 @@
-1) How to work with faker and ex_machina.
-2) Configure webpack 4 and phoenix.
-3) How to work with mini-css-extract-plugin

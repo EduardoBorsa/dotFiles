@@ -1,9 +1,0 @@
-Qual dificil sera que eh transformar um monolito em Json api?
-
-O que eu tenho?
-  - Phoenix inside out
-  - Elixir Elm
-  - Phoenix book
-  - Elixir in Action
-  - GraphiQL
-
