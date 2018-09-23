@@ -28,7 +28,6 @@ export PATH=$PATH:~/programs/node-v10.6.0-linux-x64/bin/
 
 alias vim='nvim'
 alias datagrip='~/programs/datagrip/bin/datagrip.sh'
-alias ctagsUnderThis='ctags -R --exclude=.git --exclude=node_modules --exclude=test'
 
 _not_inside_tmux() { [[ -z "$TMUX" ]] }
 
