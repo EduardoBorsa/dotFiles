@@ -146,6 +146,7 @@ Plug 'tpope/vim-projectionist' " required for some navigation features
 " Ruby
 Plug 'ruby-formatter/rufo-vim'
 Plug 'vim-ruby/vim-ruby'
+Plug 'tpope/vim-rails'
 
 
 " Reformat source code
@@ -335,6 +336,14 @@ let g:neoterm_default_mod='tab'
 let g:neoterm_autojump=1
 
 " Ruby format
-" Enable rufo (RUby FOrmat)
+" Enable rufo (Ruby FOrmat)
 let g:rufo_auto_formatting = 1
 au FileType gitcommit,gitrebase let g:gutentags_enabled=0
+fun! AutoCmd_ERB()
+        "do some other settings/mappings for your ERB, if you have
+        "......
+        "the customized surrounding :
+        let b:surround_{char2nr('=')} = "<%= \r %>"
+        let b:surround_{char2nr('-')} = "<% \r %>"
+endf
+autocmd FileType html.erb call AutoCmd_ERB()
