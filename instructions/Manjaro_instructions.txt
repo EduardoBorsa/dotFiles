@@ -3,6 +3,7 @@ sudo pacman -Syu --noconfirm i3 &&
 sudo pacman -Syu --noconfirm dmenu &&
 sudo pacman -Syu --noconfirm neovim &&
 sudo pacman -Syu --noconfirm git &&
+sudo pacman -Syu --noconfirm tk &&
 sudo pacman -Syu --noconfirm xorg-xbacklight &&
 sudo pacman -Syu --noconfirm xorg-xmodmap &&
 sudo pacman -Syu --noconfirm fzf &&
@@ -48,3 +49,7 @@ sudo pacman -Syu --noconfirm arc-gtk-theme &&
 
 To get the San francisco fonts go to https://github.com/smith-neil/YosemiteSanFranciscoFont download
 and put all the tff fonts in .local/share/fonts
+<<<<<<< HEAD
+=======
+
+>>>>>>> fd03ec91c030feac7e4cc72e92fcbb25867e687d
