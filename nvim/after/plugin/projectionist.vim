@@ -59,6 +59,14 @@ let g:projectionist_heuristics = {
       \     'test/*_test.exs': {
       \        'type': 'test',
       \        'alternate': 'lib/{}.ex'
+      \     },
+      \      'lib/*.rb': {
+      \        'type':      'src',
+      \        'alternate': 'spec/{}_spec.rb'
+      \     },
+      \     'spec/*_spec.rb': {
+      \        'type': 'test',
+      \        'alternate': 'lib/{}.rb'
       \     }
       \   }
       \ }

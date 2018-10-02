@@ -213,7 +213,7 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 bindsym $mod+Shift+x exec i3lock
-exec feh --bg-scale ~/Pictures/wallpaper.png
+exec feh --bg-scale ~/Pictures/wallpaper.jpg
 exec google-chrome-stable
 exec thunar
 exec setxkbmap -option ctrl:swapcaps
