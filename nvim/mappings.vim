@@ -20,6 +20,9 @@ endfunction
 
 nnoremap <leader>mu :call MoveLineUp()<cr>
 nnoremap <leader>md :normal! ddp<cr>
+" --------------
+
+" --------------
 
 " Calls fuzzy finder "
 " nnoremap <leader>f : :FZF<cr>
