@@ -148,6 +148,9 @@ Plug 'ruby-formatter/rufo-vim'
 Plug 'vim-ruby/vim-ruby'
 Plug 'tpope/vim-rails'
 
+"Cucumber
+
+Plug 'tpope/vim-cucumber'
 
 " Reformat source code
 Plug 'sbdchd/neoformat'
