@@ -268,6 +268,9 @@ Plug 'mxw/vim-prolog'
 " Docker
 Plug 'ekalinin/Dockerfile.vim'
 
+" HTML
+Plug 'mattn/emmet-vim'
+
 
 call plug#end()            " required
 
@@ -288,7 +291,8 @@ filetype plugin on
 filetype indent on
 
 set autoindent
-setlocal spell spelllang=en_us
+" setlocal spell spelllang=en_us
+set nospell
 set complete+=kspell
 
 augroup elm

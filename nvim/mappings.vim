@@ -11,6 +11,8 @@ nmap <leader>vm :vsp ~/.config/nvim/mappings.vim<cr>
 nmap <leader>so :source $MYVIMRC<cr>
 nmap <leader>ffp :echo expand('%:p')<cr>
 
+nmap <leader>on :vsp ~/programs/notebooks/<cr>
+
 nmap <C-a>v :AV <cr>
 nmap <C-a>a :A <cr>
 
@@ -20,7 +22,11 @@ endfunction
 
 nnoremap <leader>mu :call MoveLineUp()<cr>
 nnoremap <leader>md :normal! ddp<cr>
-" --------------
+
+function! IdentFile()
+  normal! mmgg=G`m
+endfunction
+nnoremap <leader>if :call IdentFile()<cr>
 
 " --------------
 

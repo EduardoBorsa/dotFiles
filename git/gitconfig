@@ -9,6 +9,7 @@
         unstage = reset
         sl = log --oneline --decorate
         df = diff --word-diff --color-words
-	ctags = !.git/hooks/ctags
+        ctags = !.git/hooks/ctags
+        asm = !git add -A && git commit -sm
 [init]
         templatedir = ~/.git_template
