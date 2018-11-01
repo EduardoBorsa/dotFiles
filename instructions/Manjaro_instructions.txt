@@ -86,3 +86,10 @@ sudo systemctl enable postgresql
 
 To get the San francisco fonts go to https://github.com/smith-neil/YosemiteSanFranciscoFont download
 and put all the tff fonts in .local/share/fonts
+
+
+--------
+makepkg -si
+s resolve dependencia
+i instala
+pacman -U pacote.pkg.tar.xz

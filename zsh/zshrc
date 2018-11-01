@@ -27,6 +27,7 @@ export PATH=$PATH:~/programs/node-v10.6.0-linux-x64/bin/
 
 
 alias vim='nvim'
+alias youtube-dl="youtube-dl -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/mp4'"
 alias datagrip='~/programs/datagrip/bin/datagrip.sh'
 
 _not_inside_tmux() { [[ -z "$TMUX" ]] }
