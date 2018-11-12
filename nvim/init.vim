@@ -84,7 +84,8 @@ let g:deoplete#omni#input_patterns = {}
 let g:deoplete#sources.elm = ['omni'] + g:deoplete#sources._
 let g:deoplete#omni#functions.elm = ['elm#Complete']
 let g:deoplete#omni#input_patterns.elm = '[^ \t]+'
-let g:deoplete#disable_auto_complete = 1
+" let g:deoplete#disable_auto_complete = 1
+let g:deoplete#enable_at_startup = 1
 
 Plug 'sheerun/vim-polyglot'
 let g:polyglot_disabled = ['elm']

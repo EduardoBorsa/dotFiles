@@ -67,14 +67,6 @@ let g:projectionist_heuristics = {
       \     'spec/*_spec.rb': {
       \        'type': 'test',
       \        'alternate': 'lib/{}.rb'
-      \     },
-      \      'features/*.feature': {
-      \        'type':      'feature',
-      \        'alternate': 'features/step_definitions/{}_steps.rb'
-      \     },
-      \     'features/step_definitions/*_steps.rb': {
-      \        'type': 'test',
-      \        'alternate': 'features/{}.feature'
       \     }
       \   }
       \ }

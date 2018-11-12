@@ -52,10 +52,10 @@ bindsym $mod+d exec dmenu_run
 # bindsym $mod+l focus right
 
 # change focus
-bindsym Control+h focus left
-bindsym Control+j focus down
-bindsym Control+k focus up
-bindsym Control+l focus right
+bindsym Control+Shift+h focus left
+bindsym Control+Shift+j focus down
+bindsym Control+Shift+k focus up
+bindsym Control+Shift+l focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
