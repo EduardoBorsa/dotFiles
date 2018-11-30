@@ -34,8 +34,11 @@ set hlsearch
 set ignorecase smartcase
 " Ignore case when searching lowercase
 set smartcase
+
 " Line numbering
 set number
+" set relativenumber
+" set rnu
 
 filetype off                  " required
 set nocompatible              " be iMproved, required
@@ -353,4 +356,7 @@ fun! AutoCmd_ERB()
         let b:surround_{char2nr('-')} = "<% \r %>"
 endf
 autocmd FileType html.erb call AutoCmd_ERB()
+
+" Change emmet
+let g:user_emmet_expandabbr_key = '<C-t>'
 
