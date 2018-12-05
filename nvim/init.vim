@@ -64,6 +64,9 @@ Plug 'skwp/greplace.vim'
 " Collor stuff
 Plug 'chriskempson/base16-vim'
 
+" Vue
+Plug 'posva/vim-vue'
+
 "Knewter Stuff
 " Elm
 Plug 'ElmCast/elm-vim'
@@ -282,6 +285,7 @@ set rtp+=~/.fzf
 
 " My vim function Mappings
 source ~/.config/nvim/mappings.vim
+source ~/.config/nvim/functions.vim
 
 " Elixir format config
 let g:mix_format_on_save = 1
@@ -358,5 +362,8 @@ endf
 autocmd FileType html.erb call AutoCmd_ERB()
 
 " Change emmet
+let g:user_emmet_leader_key='<C-e>'
 let g:user_emmet_expandabbr_key = '<C-t>'
+inoremap <C-e>e <esc>:call emmet#expandAbbr(0,"")<cr>h:call emmet#splitJoinTag()<cr>wwi
+nnoremap <C-e>e :call emmet#expandAbbr(0,"")<cr>h:call emmet#splitJoinTag()<cr>ww
 
