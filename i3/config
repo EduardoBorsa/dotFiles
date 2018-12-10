@@ -221,10 +221,10 @@ bindsym XF86AudioPrev exec playerctl previous
 bindsym $mod+Shift+x exec i3lock
 exec feh --bg-scale ~/Pictures/wallpaper.jpg
 exec google-chrome-stable
-exec thunar
+exec nautilus
 exec setxkbmap -option ctrl:swapcaps
 
 assign [class="Google-chrome"] $ws9
-assign [class="Thunar"] $ws10
+assign [class="Nautilus"] $ws10
 assign [class="jetbrains-datagrip"] $ws2
 assign [class="Acroread"] $ws8

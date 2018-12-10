@@ -20,6 +20,7 @@ sudo pacman -Syu --noconfirm xorg-xprop &&
 sudo pacman -Syu --noconfirm arc-gtk-theme &&
 sudo pacman -Syu --noconfirm moka-icon-theme &&
 sudo pacman -Syu --noconfirm rofi &&
+sudo pacman -Syu --noconfirm gtk2 &&
 sudo pacman -Syu --noconfirm i3blocks &&
 sudo pacman -Syu --noconfirm pavucontrol &&
 sudo pacman -Syu --noconfirm postgresql &&
@@ -57,7 +58,7 @@ install collors:
 git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shell
 
 install google chrome
-9) git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shell
+9) git
 10) cd ~/programs
     git clone https://aur.archlinux.org/google-chrome.git
     cd google-chrome
