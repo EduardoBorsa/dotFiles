@@ -10,6 +10,7 @@ sudo pacman -Syu --noconfirm xorg-xmodmap &&
 sudo pacman -Syu --noconfirm fzf &&
 sudo pacman -Syu --noconfirm the_silver_searcher &&
 sudo pacman -Syu --noconfirm python-pip &&
+sudo pacman -Syu --noconfirm base-devel devtools &&
 sudo pacman -Syu --noconfirm yaourt &&
 sudo pacman -Syu --noconfirm ctags &&
 sudo pacman -Syu --noconfirm playerctl &&
@@ -27,8 +28,7 @@ sudo pacman -Syu --noconfirm postgresql &&
 sudo pacman -Syu --noconfirm tmux &&
 sudo pacman -Syu --noconfirm ttf-font-awesome &&
 sudo pacman -Syu --noconfirm lxappearance &&
-sudo pacman -Syu --noconfirm arc-gtk-theme &&
-sudo pacman -Syu --noconfirm yarn &&
+sudo pacman -Syu --noconfirm arc-gtk-theme
 
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 chsh -s /usr/bin/zsh
@@ -41,6 +41,9 @@ commands for vim:
 1) mkdir .config/nvim/
 2) ln -s ~/programs/dotFiles/nvim/init.vim .config/nvim/init.vim
 3) ln -s ~/programs/dotFiles/nvim/mappings.vim .config/nvim/mappings.vim
+3) ln -s ~/programs/dotFiles/nvim/functions.vim .config/nvim/functions.vim
+4) ln -s ~/programs/dotFiles/nvim/general_vim_config.vim .config/nvim/general_vim_config.vim
+4) ln -s ~/programs/dotFiles/nvim/vim_plug_plugins.vim .config/nvim/vim_plug_plugins.vim
 8) sudo pip3 install neovim
 
 commands for zsh:

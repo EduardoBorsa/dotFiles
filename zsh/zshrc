@@ -70,3 +70,5 @@ export FZF_DEFAULT_COMMAND='ag --ignore android --ignore ios -g ""'
 export PATH="$PATH:$HOME/.rvm/bin"
 
 bindkey '^ ' autosuggest-accept
+source /usr/share/nvm/init-nvm.sh
+export PATH=$PATH:~/.yarn/bin

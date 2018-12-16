@@ -104,15 +104,15 @@ bindsym $mod+a focus parent
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
 set $ws1 "1 - Terminals "
-set $ws2 "2 - database "
+set $ws2 "2 - Pomodor "
 set $ws3 "3 -"
-set $ws4 "4"
+set $ws4 "4 -"
 set $ws5 "5 - Incognito "
-set $ws6 "6"
-set $ws7 "7"
+set $ws6 "6 - Torrent "
+set $ws7 "7 -"
 set $ws8 "8 - PDF "
 set $ws9 "9 - Chrome "
-set $ws10 "10 - Folders "
+set $ws10 "10 - File Manager "
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -222,9 +222,11 @@ bindsym $mod+Shift+x exec i3lock
 exec feh --bg-scale ~/Pictures/wallpaper.jpg
 exec google-chrome-stable
 exec nautilus
+exec gnome-pomodoro
 exec setxkbmap -option ctrl:swapcaps
 
-assign [class="Google-chrome"] $ws9
 assign [class="Nautilus"] $ws10
-assign [class="jetbrains-datagrip"] $ws2
-assign [class="Acroread"] $ws8
+assign [class="Google-chrome"] $ws9
+assign [class="Evince"] $ws8
+assign [class="Deluge"] $ws7
+assign [class="Gnome-pomodoro"] $ws2
