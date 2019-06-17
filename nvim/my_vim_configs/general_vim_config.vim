@@ -41,7 +41,12 @@ set ignorecase smartcase
 set smartcase
 
 " Line numbering
-set number
-" set relativenumber
+" set number
+set relativenumber
 " set rnu
 
+" vnoremap <silent><Leader>y "yy <Bar> :call system('xclip', @y)<CR>
+vnoremap <silent>y "yy <Bar> :call system('xclip', @y)<CR>
+
+let g:UltiSnipsJumpForwardTrigger='<tab>'
+let g:UltiSnipsExpandTrigger="<c-j>"

@@ -1,8 +1,8 @@
 " My vims configs files
-source ~/.config/nvim/my_vim_configs/mappings.vim
-source ~/.config/nvim/my_vim_configs/functions.vim
 source ~/.config/nvim/my_vim_configs/general_vim_config.vim
 source ~/.config/nvim/my_vim_configs/vim_plug_plugins.vim
+source ~/.config/nvim/my_vim_configs/mappings.vim
+source ~/.config/nvim/my_vim_configs/functions.vim
 
 " FZF stuff
 set rtp+=~/.fzf

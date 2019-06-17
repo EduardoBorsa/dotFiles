@@ -3,25 +3,40 @@ set nocompatible              " be iMproved, required
 " set rtp+=~/.config/nvim/bundle/Vundle.vim
 
 call plug#begin("~/.config/nvim/plugged")
-" Enables Vundle
-" Plug 'VundleVim/Vundle.vim'
+
 "Enables surround inside vim"
 Plug 'tpope/vim-surround'
+
 "Track the engine.
 Plug 'SirVer/ultisnips'
+
 " Snippets are separated from the engine. Add this if you want them:
 Plug 'honza/vim-snippets'
+
 "enables Repeat for other plugins
 Plug 'tpope/vim-repeat'
+
 " Tmux stuff
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'christoomey/vim-tmux-runner'
+
 " Search for Strings
 Plug 'rking/ag.vim'
+
 " Replace string in files
 Plug 'skwp/greplace.vim'
+
 " Collor stuff
 Plug 'chriskempson/base16-vim'
+
+" Multiple cursor - just like Atom
+Plug 'terryma/vim-multiple-cursors'
+
+" Enalbe Diff Between Folders
+Plug 'will133/vim-dirdiff'
+
+" Colors for Vim
+Plug 'chrisbra/Colorizer'
 
 " Vue
 Plug 'posva/vim-vue'
@@ -30,8 +45,10 @@ Plug 'posva/vim-vue'
 " Elm
 Plug 'ElmCast/elm-vim'
 let g:elm_format_autosave = 1
-let g:elm_detailed_complete = 1
-let g:elm_syntastic_show_warnings = 1
+let g:elm_detailed_complete = 0
+" let g:elm_detailed_complete = 1
+" let g:elm_syntastic_show_warnings = 1
+let g:elm_syntastic_show_warnings = 0
 let g:elm_format_fail_silently = 0
 let g:elm_browser_command = 'open'
 let g:elm_make_show_warnings = 1
@@ -58,42 +75,46 @@ let g:polyglot_disabled = ['elm']
 Plug 'othree/html5.vim'
 Plug 'vim-scripts/html-improved-indentation'
 Plug 'pangloss/vim-javascript'
+
 " For func argument completion
 Plug 'Shougo/neosnippet'
 Plug 'Shougo/neosnippet-snippets'
 " Automatically imports missing JS dependencies and removes unused ones.
 Plug 'karthikv/tradeship-vim'
+
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 
+" let g:prettier#exec_cmd_path = "/home/dado/.nvm/versions/node/v10.14.2/bin/prettier"
+"
+" " let g:prettier#autoformat = 0
+" " autocmd BufWritePre *.js,*.css,*.scss,*.less PrettierAsync
+"
 let g:prettier#autoformat = 0
-autocmd BufWritePre *.js,*.css,*.scss,*.less PrettierAsync
-
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.yaml,*.html PrettierAsync
+" autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
+"
+"
 " max line lengh that prettier will wrap on
 let g:prettier#config#print_width = 120
-
-" number of spaces per indentation level
+"
+" " number of spaces per indentation level
 let g:prettier#config#tab_width = 2
+"
+" " use tabs over spaces
+" let g:prettier#config#use_tabs = 'false'
+" "
+" " " print semicolons
+" let g:prettier#config#semi = 'true'
+" "
+" " " single quotes over double quotes
+" let g:prettier#config#single_quote = 'true'
+"
+" " print spaces between brackets
+" let g:prettier#config#bracket_spacing = 'true'
+"
+" " put > on the last line instead of new line
+" let g:prettier#config#jsx_bracket_same_line = 'false'
 
-" use tabs over spaces
-let g:prettier#config#use_tabs = 'false'
-
-" print semicolons
-let g:prettier#config#semi = 'true'
-
-" single quotes over double quotes
-let g:prettier#config#single_quote = 'true'
-
-" print spaces between brackets
-let g:prettier#config#bracket_spacing = 'true'
-
-" put > on the last line instead of new line
-let g:prettier#config#jsx_bracket_same_line = 'false'
-
-" none|es5|all
-let g:prettier#config#trailing_comma = 'all'
-
-" flow|babylon|typescript|postcss
-let g:prettier#config#parser = 'flow'
 
 " Elixir
 Plug 'elixir-lang/vim-elixir'
@@ -103,9 +124,9 @@ let g:mix_format_on_save = 0
 let g:mix_format_options = '--check-equivalent'
 
 " Phoenix
-" Plug 'c-brenn/phoenix.vim'
+Plug 'c-brenn/phoenix.vim'
 Plug 'tpope/vim-projectionist' " required for some navigation features
-
+Plug 'andyl/vim-projectionist-elixir'
 " Ruby
 Plug 'ruby-formatter/rufo-vim'
 Plug 'vim-ruby/vim-ruby'
@@ -208,21 +229,14 @@ Plug 'tpope/vim-vinegar'
 
 " Asynchronous file linter
 Plug 'w0rp/ale'
-" wait a bit before checking syntax in a file, if typing
-let g:ale_lint_delay = 5000
-" Use global eslint
-" let g:ale_javascript_eslint_use_global = 1
-" Only use es6 for js
-"let g:ale_linters = {'javascript': ['eslint'], 'javascript.jsx': ['eslint']}
-"let g:ale_linters = {'javascript': ['eslint', 'flow', 'xo']}
+let g:ale_lint_delay = 1000
 let g:ale_linters = {'javascript': ['flow']}
-let g:ale_lint_on_save = 1
 let g:ale_lint_on_text_changed = 0
-" let g:ale_fixers = {
-" \   'javascript': [
-" \       'eslint',
-" \   ],
-" \}
+let g:ale_fixers = {
+\  '*': ['remove_trailing_lines', 'trim_whitespace'],
+\  'javascript': ['eslint'],
+\}
+let g:ale_fix_on_save = 1
 
 
 " Prolog
@@ -234,5 +248,7 @@ Plug 'ekalinin/Dockerfile.vim'
 " HTML
 Plug 'mattn/emmet-vim'
 
+" Lorem ipsum
+Plug 'vim-scripts/loremipsum'
 
 call plug#end()            " required

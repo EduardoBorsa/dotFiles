@@ -1,34 +1,38 @@
 * BASIC PACKAGES TO START
-sudo pacman -Syu --noconfirm i3 &&
-sudo pacman -Syu --noconfirm dmenu &&
-sudo pacman -Syu --noconfirm neovim &&
-sudo pacman -Syu --noconfirm git &&
-sudo pacman -Syu --noconfirm jq &&
-sudo pacman -Syu --noconfirm tk &&
-sudo pacman -Syu --noconfirm xorg-xbacklight &&
-sudo pacman -Syu --noconfirm xorg-xmodmap &&
-sudo pacman -Syu --noconfirm fzf &&
-sudo pacman -Syu --noconfirm the_silver_searcher &&
-sudo pacman -Syu --noconfirm python-pip &&
-sudo pacman -Syu --noconfirm base-devel devtools &&
-sudo pacman -Syu --noconfirm yaourt &&
-sudo pacman -Syu --noconfirm ctags &&
-sudo pacman -Syu --noconfirm playerctl &&
-sudo pacman -Syu --noconfirm feh &&
-sudo pacman -Syu --noconfirm thunar &&
-sudo pacman -Syu --noconfirm arandr &&
-sudo pacman -Syu --noconfirm xorg-xprop &&
-sudo pacman -Syu --noconfirm arc-gtk-theme &&
-sudo pacman -Syu --noconfirm moka-icon-theme &&
-sudo pacman -Syu --noconfirm rofi &&
-sudo pacman -Syu --noconfirm gtk2 &&
-sudo pacman -Syu --noconfirm i3blocks &&
-sudo pacman -Syu --noconfirm pavucontrol &&
-sudo pacman -Syu --noconfirm postgresql &&
-sudo pacman -Syu --noconfirm tmux &&
-sudo pacman -Syu --noconfirm ttf-font-awesome &&
-sudo pacman -Syu --noconfirm lxappearance &&
-sudo pacman -Syu --noconfirm arc-gtk-theme
+sudo pacman -Sy --noconfirm i3 &&
+sudo pacman -Sy --noconfirm dmenu &&
+sudo pacman -Sy --noconfirm neovim &&
+sudo pacman -Sy --noconfirm git &&
+sudo pacman -Sy --noconfirm jq &&
+sudo pacman -Sy --noconfirm tk &&
+sudo pacman -Sy --noconfirm xorg-xbacklight &&
+sudo pacman -Sy --noconfirm xorg-xmodmap &&
+sudo pacman -Sy --noconfirm fzf &&
+sudo pacman -Sy --noconfirm the_silver_searcher &&
+sudo pacman -Sy --noconfirm python-pip &&
+sudo pacman -Sy --noconfirm base-devel devtools &&
+sudo pacman -Sy --noconfirm ctags &&
+sudo pacman -Sy --noconfirm playerctl &&
+sudo pacman -Sy --noconfirm feh &&
+sudo pacman -Sy --noconfirm thunar &&
+sudo pacman -Sy --noconfirm arandr &&
+sudo pacman -Sy --noconfirm xorg-xprop &&
+sudo pacman -Sy --noconfirm arc-gtk-theme &&
+sudo pacman -Sy --noconfirm moka-icon-theme &&
+sudo pacman -Sy --noconfirm rofi &&
+sudo pacman -Sy --noconfirm gtk2 &&
+sudo pacman -Sy --noconfirm i3blocks &&
+sudo pacman -Sy --noconfirm pavucontrol &&
+sudo pacman -Sy --noconfirm postgresql &&
+sudo pacman -Sy --noconfirm tmux &&
+sudo pacman -Sy --noconfirm arandr &&
+sudo pacman -Sy --noconfirm ttf-font-awesome &&
+sudo pacman -Sy --noconfirm lxappearance &&
+sudo pacman -Sy --noconfirm spectacle &&
+sudo pacman -Sy --noconfirm ncurses &&
+sudo pacman -Sy --noconfirm glu mesa wxgtk2 libpng libssh unixodbc &&
+sudo pacman -Sy --noconfirm yaourt &&
+sudo pacman -Sy --noconfirm arc-gtk-theme
 
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 chsh -s /usr/bin/zsh
@@ -98,3 +102,30 @@ makepkg -si
 s resolve dependencia
 i instala
 pacman -U pacote.pkg.tar.xz
+
+
+Node packages
+npm install -g elm
+npm install -g elm-test
+npm install -g elm-format
+
+----------
+#To enable mousepad in i3
+Create this file
+/etc/X11/xorg.conf.d/30-touchpad.conf
+
+With this content:
+
+Section "InputClass"
+        Identifier "10"
+        MatchIsTouchpad "on"
+        Driver "libinput"
+    Option "Tapping" "on"
+    Option "AccelSpeed" "0.8"
+
+EndSection
+
+
+-----
+#How to discover which program I am using (to set inside i3)
+xprop +click

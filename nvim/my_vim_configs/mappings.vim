@@ -1,4 +1,4 @@
-nnoremap <C-I> :execute "vsplit" fnameescape(resolve("~/notebook"))<CR>
+" nnoremap <C-I> :execute "vsplit" fnameescape(resolve("~/notebook"))<CR>
 
 "easy acess of the vimrc file and how to source it
 nmap <leader>vr :vsp $MYVIMRC<cr>
@@ -19,7 +19,7 @@ nmap <C-a>a :A <cr>
 nnoremap <leader>h : nohlsearch<cr>
 
 " Calls Prettier "
-nnoremap <leader>p : :Prettier<cr>
+nnoremap <leader>p :Prettier<cr>
 
 " Elixi format commands
 nnoremap <leader>mf : :MixFormat<cr>
@@ -31,3 +31,15 @@ nnoremap <leader>tf : :TestFile<cr>
 nnoremap <leader>ta : :TestSuite<cr>
 nnoremap <leader>tl : :TestLast<cr>
 nnoremap <leader>te : :T exit<cr>
+
+
+imap lorem1 <left><C-o>:Loremipsum! 1 <cr>
+imap lorem2 <left><C-o>:Loremipsum! 2 <cr>
+imap lorem3 <left><C-o>:Loremipsum! 3 <cr>
+imap lorem4 <left><C-o>:Loremipsum! 4 <cr>
+imap lorem5 <left><C-o>:Loremipsum! 5 <cr>
+imap lorem6 <left><C-o>:Loremipsum! 6 <cr>
+imap lorem7 <left><C-o>:Loremipsum! 7 <cr>
+imap lorem9 <left><C-o>:Loremipsum! 9 <cr>
+imap lorem0 <left><C-o>:Loremipsum! 30 <cr>
+imap 'e é

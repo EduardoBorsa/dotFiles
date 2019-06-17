@@ -11,5 +11,6 @@
         df = diff --word-diff --color-words
         ctags = !.git/hooks/ctags
         asm = !git add -A && git commit -sm
+        cleanAll = clean -df
 [init]
         templatedir = ~/.git_template

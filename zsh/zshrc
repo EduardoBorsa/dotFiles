@@ -1,10 +1,6 @@
 export ZSH=~/.oh-my-zsh
 ZSH_THEME="robbyrussell"
 
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
   zsh-autosuggestions
@@ -28,8 +24,10 @@ export PATH=$PATH:~/programs/node-v10.6.0-linux-x64/bin/
 
 
 alias vim='nvim'
-alias youtube-dl="youtube-dl -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/mp4'"
+alias youtube-dl="youtube-dl -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/bestvideo+bestaudio' --merge-output-format mp4"
+alias youtube-dl-audio="youtube-dl -f 'bestaudio[ext=m4a]/mp4'"
 alias datagrip='~/programs/datagrip/bin/datagrip.sh'
+# alias iex='rlwrap -a foo iex'
 
 _not_inside_tmux() { [[ -z "$TMUX" ]] }
 
@@ -56,7 +54,7 @@ BASE16_SHELL="$HOME/.config/base16-shell/"
 
 
 # Ruby RVM config
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
+# [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
 
 # Theme
 base16_tomorrow-night
@@ -66,9 +64,27 @@ export FZF_DEFAULT_COMMAND='ag --ignore android --ignore ios -g ""'
 
 # Swap caps with cntl
 
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
+# # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+# export PATH="$PATH:$HOME/.rvm/bin"
 
 bindkey '^ ' autosuggest-accept
-source /usr/share/nvm/init-nvm.sh
+# source /usr/share/nvm/init-nvm.sh
 export PATH=$PATH:~/.yarn/bin
+
+source ~/programs/dotFiles/zsh/configs/functions.zsh
+
+. $HOME/.asdf/asdf.sh
+
+. $HOME/.asdf/completions/asdf.bash
+
+asdf_java_wrapper() {
+  if \asdf "$@"; then
+    if [[ "$(\asdf current java 2>&1)" =~ "^([-_.a-zA-Z0-9]+)[[:space:]]*\(set by.*$" ]]; then
+      export JAVA_HOME=$(\asdf where java ${match[1]})
+    else
+      export JAVA_HOME=''
+    fi
+  fi
+}
+
+alias asdf='asdf_java_wrapper'
