@@ -62,10 +62,10 @@ au FileType gitcommit,gitrebase let g:gutentags_enabled=0
 au FileType perl set filetype=prolog
 
 
-" NeoTerm config
-let g:neoterm_default_mod='tab'
-" let g:neoterm_split_on_tnew=1
-let g:neoterm_autojump=1
+" " NeoTerm config
+" let g:neoterm_default_mod='tab'
+" " let g:neoterm_split_on_tnew=1
+" let g:neoterm_autojump=1
 
 " Ruby format
 " Enable rufo (Ruby FOrmat)

@@ -21,6 +21,7 @@ export PATH=$PATH:~/.gem/ruby/2.5.0/bin/
 export PATH=$PATH:~/programs/Postman/app/
 export PATH=$PATH:~/programs/datagrip/bin/
 export PATH=$PATH:~/programs/node-v10.6.0-linux-x64/bin/
+export PATH="$PATH":"$HOME/.pub-cache/bin"
 
 
 alias vim='nvim'

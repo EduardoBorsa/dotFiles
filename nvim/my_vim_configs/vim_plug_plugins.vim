@@ -22,24 +22,9 @@ Plug 'christoomey/vim-tmux-runner'
 
 " Search for Strings
 Plug 'rking/ag.vim'
-
-" Replace string in files
-Plug 'skwp/greplace.vim'
-
-" Collor stuff
-Plug 'chriskempson/base16-vim'
-
+"
 " Multiple cursor - just like Atom
 Plug 'terryma/vim-multiple-cursors'
-
-" Enalbe Diff Between Folders
-Plug 'will133/vim-dirdiff'
-
-" Colors for Vim
-Plug 'chrisbra/Colorizer'
-
-" Vue
-Plug 'posva/vim-vue'
 
 "Knewter Stuff
 " Elm
@@ -54,7 +39,29 @@ let g:elm_browser_command = 'open'
 let g:elm_make_show_warnings = 1
 let g:elm_setup_keybindings = 1
 
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+" Replace string in files
+Plug 'skwp/greplace.vim'
+
+" Collor stuff
+Plug 'chriskempson/base16-vim'
+
+" Enalbe Diff Between Folders
+Plug 'will133/vim-dirdiff'
+
+" Colors for Vim
+Plug 'chrisbra/Colorizer'
+
+" Vue
+Plug 'posva/vim-vue'
+
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
+set runtimepath+=~/.config/nvim/plugins/deoplete.nvim
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#sources = {}
 let g:deoplete#sources._ = ['file', 'neosnippet']
@@ -69,12 +76,13 @@ let g:deoplete#omni#input_patterns.elm = '[^ \t]+'
 " let g:deoplete#disable_auto_complete = 1
 let g:deoplete#enable_at_startup = 1
 
-Plug 'sheerun/vim-polyglot'
-let g:polyglot_disabled = ['elm']
+" Plug 'sheerun/vim-polyglot'
+" let g:polyglot_disabled = ['elm']
 " HTML / JS / CSS
 Plug 'othree/html5.vim'
 Plug 'vim-scripts/html-improved-indentation'
 Plug 'pangloss/vim-javascript'
+Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
 
 " For func argument completion
 Plug 'Shougo/neosnippet'
@@ -91,8 +99,6 @@ Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 "
 let g:prettier#autoformat = 0
 autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.yaml,*.html PrettierAsync
-" autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
-"
 "
 " max line lengh that prettier will wrap on
 let g:prettier#config#print_width = 120
@@ -251,4 +257,10 @@ Plug 'mattn/emmet-vim'
 " Lorem ipsum
 Plug 'vim-scripts/loremipsum'
 
+" Dart
+Plug 'dart-lang/dart-vim-plugin'
+Plug 'thosakwe/vim-flutter'
+
 call plug#end()            " required
+
+let g:hot_reload_on_save=1
