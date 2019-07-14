@@ -1,0 +1,12 @@
+1) create folder for the App
+2) cp /etc/nginx/sites-available/older_site to new_site
+3) remane everything inside from the older_site and delete certbot related manage files and change PORT
+4) create new user on postgres
+  * createuser new_username --pwprompt
+5) create a filder ~/apps/nameOfProject/secret/
+6) copy prod.secret to it
+7) in profile, create the NEW_PORT_NAME
+
+
+IN Project
+change prod.exs

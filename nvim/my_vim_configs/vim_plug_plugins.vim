@@ -261,6 +261,11 @@ Plug 'vim-scripts/loremipsum'
 Plug 'dart-lang/dart-vim-plugin'
 Plug 'thosakwe/vim-flutter'
 
+" Pandoc
+Plug 'vim-pandoc/vim-pandoc-syntax'
+Plug 'vim-pandoc/vim-pandoc'
+
+
 call plug#end()            " required
 
 let g:hot_reload_on_save=1
