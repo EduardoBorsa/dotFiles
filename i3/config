@@ -218,7 +218,7 @@ bindsym XF86AudioPause exec playerctl pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
-bindsym $mod+Shift+x exec i3lock
+bindsym $mod+Shift+x exec i3lock --color=000000
 exec feh --bg-scale ~/Pictures/wallpaper.jpg
 exec google-chrome-stable
 exec nautilus

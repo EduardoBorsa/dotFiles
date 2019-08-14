@@ -90,7 +90,27 @@ Plug 'Shougo/neosnippet-snippets'
 " Automatically imports missing JS dependencies and removes unused ones.
 Plug 'karthikv/tradeship-vim'
 
-Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+" Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+Plug 'prettier/vim-prettier', {
+  \ 'do': 'yarn install',
+  \ 'branch': 'release/1.x',
+  \ 'for': [
+    \ 'javascript',
+    \ 'typescript',
+    \ 'css',
+    \ 'less',
+    \ 'scss',
+    \ 'json',
+    \ 'graphql',
+    \ 'markdown',
+    \ 'vue',
+    \ 'lua',
+    \ 'php',
+    \ 'python',
+    \ 'ruby',
+    \ 'html',
+    \ 'swift' ] }
+
 
 " let g:prettier#exec_cmd_path = "/home/dado/.nvm/versions/node/v10.14.2/bin/prettier"
 "
@@ -98,7 +118,7 @@ Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 " " autocmd BufWritePre *.js,*.css,*.scss,*.less PrettierAsync
 "
 let g:prettier#autoformat = 0
-autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.yaml,*.html PrettierAsync
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.py,*.scss,*.json,*.graphql,*.md,*.yaml,*.html PrettierAsync
 "
 " max line lengh that prettier will wrap on
 let g:prettier#config#print_width = 120
@@ -262,10 +282,18 @@ Plug 'dart-lang/dart-vim-plugin'
 Plug 'thosakwe/vim-flutter'
 
 " Pandoc
-Plug 'vim-pandoc/vim-pandoc-syntax'
-Plug 'vim-pandoc/vim-pandoc'
+" Plug 'vim-pandoc/vim-pandoc-syntax'
+" Plug 'vim-pandoc/vim-pandoc'
 
+"Vim Coc
+" Use release branch
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Or latest tag
+Plug 'neoclide/coc.nvim', {'tag': '*', 'branch': 'release'}
+" Or build from source code by use yarn: https://yarnpkg.com
+Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
 
 call plug#end()            " required
 
 let g:hot_reload_on_save=1
+let g:prettier#config#parser = 'babylon'

@@ -7,6 +7,8 @@ nmap <leader>so :source $MYVIMRC<cr>
 nmap <leader>ffp :echo expand('%:p')<cr>
 
 nmap <leader>on :vsp ~/programs/notebooks/<cr>
+nmap <leader>td :pu=strftime('%c')<cr>
+
 
 nmap <C-a>v :AV <cr>
 nmap <C-a>a :A <cr>
@@ -41,5 +43,5 @@ imap lorem5 <left><C-o>:Loremipsum! 5 <cr>
 imap lorem6 <left><C-o>:Loremipsum! 6 <cr>
 imap lorem7 <left><C-o>:Loremipsum! 7 <cr>
 imap lorem9 <left><C-o>:Loremipsum! 9 <cr>
-imap lorem0 <left><C-o>:Loremipsum! 30 <cr>
+imap lorem0 <left><C-o>:Loremipsum! 50 <cr>
 imap 'e é
