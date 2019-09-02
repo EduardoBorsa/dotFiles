@@ -12,8 +12,6 @@ nnoremap <leader>md :normal! ddp<cr>
 " nnoremap <leader>bft :normal! ^vf>dO<esc>p<cr>
 " nnoremap <leader>bst :normal! ^v$F<hdO<esc>p<cr>
 
-
-
 function! BreakTag()
   normal! ^f>a<cr>
 endfunction

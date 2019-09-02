@@ -164,7 +164,6 @@ Plug 'tpope/vim-cucumber'
 
 " Reformat source code
 Plug 'sbdchd/neoformat'
-
 Plug 'ervandew/supertab'
 
 " Add comment textobjects (I really want to reformat comments
@@ -264,10 +263,6 @@ let g:ale_fixers = {
 \}
 let g:ale_fix_on_save = 1
 
-
-" Prolog
-Plug 'mxw/vim-prolog'
-
 " Docker
 Plug 'ekalinin/Dockerfile.vim'
 
@@ -288,8 +283,10 @@ Plug 'thosakwe/vim-flutter'
 "Vim Coc
 " Use release branch
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
 " Or latest tag
 Plug 'neoclide/coc.nvim', {'tag': '*', 'branch': 'release'}
+
 " Or build from source code by use yarn: https://yarnpkg.com
 Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
 
