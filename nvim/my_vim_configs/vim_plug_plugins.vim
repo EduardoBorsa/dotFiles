@@ -290,6 +290,59 @@ Plug 'neoclide/coc.nvim', {'tag': '*', 'branch': 'release'}
 " Or build from source code by use yarn: https://yarnpkg.com
 Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
 
+
+
+
+
+
+" From here
+Plug 'ervandew/supertab'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+Plug 'ternjs/tern_for_vim', { 'for': ['javascript', 'javascript.jsx'] }
+Plug 'carlitux/deoplete-ternjs', { 'for': ['javascript', 'javascript.jsx'] }
+Plug 'othree/jspc.vim', { 'for': ['javascript', 'javascript.jsx'] }
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+
+let g:deoplete#omni#functions = {}
+let g:deoplete#omni#functions.javascript = [
+      \ 'tern#Complete',
+      \ 'jspc#omni'
+      \]
+set completeopt=longest,menuone,preview
+let g:deoplete#sources = {}
+let g:deoplete#sources['javascript.jsx'] = ['file', 'ultisnips', 'ternjs']
+let g:tern#command = ['tern']
+let g:tern#arguments = ['--persistent']
+autocmd FileType javascript
+let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
+let g:UltiSnipsExpandTrigger="<C-j>"
+let g:SuperTabClosePreviewOnPopupClose = 1
+let g:UltiSnipsJumpForwardTrigger='<tab>'
+let g:UltiSnipsExpandTrigger="<c-j>"
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+let g:ale_elixir_elixir_ls_release    = '/home/dado/programs/elixir-ls/release'
+let g:ale_completion_enabled = 1
+
+
+
+" END OF ALE CONFIGURATION
+" let g:ale_sign_error = '✘'
+" let g:ale_sign_warning = '⚠'
+
+
+
+
+
+" To Here
+
+
+
+
+
+
+
+
 call plug#end()            " required
 
 let g:hot_reload_on_save=1
