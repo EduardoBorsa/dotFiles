@@ -47,6 +47,3 @@ set relativenumber
 
 " vnoremap <silent><Leader>y "yy <Bar> :call system('xclip', @y)<CR>
 vnoremap <silent>y "yy <Bar> :call system('xclip', @y)<CR>
-
-let g:UltiSnipsJumpForwardTrigger='<tab>'
-let g:UltiSnipsExpandTrigger="<c-j>"

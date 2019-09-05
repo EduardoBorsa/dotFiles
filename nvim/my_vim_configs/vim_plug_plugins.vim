@@ -4,6 +4,13 @@ set nocompatible              " be iMproved, required
 
 call plug#begin("~/.config/nvim/plugged")
 
+"SNIPETS
+" For func argument completion
+Plug 'Shougo/neosnippet'
+Plug 'Shougo/neosnippet-snippets'
+" Automatically imports missing JS dependencies and removes unused ones.
+Plug 'karthikv/tradeship-vim'
+
 "Enables surround inside vim"
 Plug 'tpope/vim-surround'
 
@@ -26,19 +33,6 @@ Plug 'rking/ag.vim'
 " Multiple cursor - just like Atom
 Plug 'terryma/vim-multiple-cursors'
 
-"Knewter Stuff
-" Elm
-Plug 'ElmCast/elm-vim'
-let g:elm_format_autosave = 1
-let g:elm_detailed_complete = 0
-" let g:elm_detailed_complete = 1
-" let g:elm_syntastic_show_warnings = 1
-let g:elm_syntastic_show_warnings = 0
-let g:elm_format_fail_silently = 0
-let g:elm_browser_command = 'open'
-let g:elm_make_show_warnings = 1
-let g:elm_setup_keybindings = 1
-
 " Replace string in files
 Plug 'skwp/greplace.vim'
 
@@ -54,13 +48,7 @@ Plug 'chrisbra/Colorizer'
 " Vue
 Plug 'posva/vim-vue'
 
-if has('nvim')
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-  Plug 'Shougo/deoplete.nvim'
-  Plug 'roxma/nvim-yarp'
-  Plug 'roxma/vim-hug-neovim-rpc'
-endif
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 set runtimepath+=~/.config/nvim/plugins/deoplete.nvim
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#sources = {}
@@ -68,27 +56,6 @@ let g:deoplete#sources._ = ['file', 'neosnippet']
 let g:deoplete#omni#functions = {}
 let g:deoplete#omni#input_patterns = {}
 
-" Elm support
-" h/t https://github.com/ElmCast/elm-vim/issues/52#issuecomment-264161975
-let g:deoplete#sources.elm = ['omni'] + g:deoplete#sources._
-let g:deoplete#omni#functions.elm = ['elm#Complete']
-let g:deoplete#omni#input_patterns.elm = '[^ \t]+'
-" let g:deoplete#disable_auto_complete = 1
-let g:deoplete#enable_at_startup = 1
-
-" Plug 'sheerun/vim-polyglot'
-" let g:polyglot_disabled = ['elm']
-" HTML / JS / CSS
-Plug 'othree/html5.vim'
-Plug 'vim-scripts/html-improved-indentation'
-Plug 'pangloss/vim-javascript'
-Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
-
-" For func argument completion
-Plug 'Shougo/neosnippet'
-Plug 'Shougo/neosnippet-snippets'
-" Automatically imports missing JS dependencies and removes unused ones.
-Plug 'karthikv/tradeship-vim'
 
 " Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'prettier/vim-prettier', {
@@ -260,6 +227,8 @@ let g:ale_lint_on_text_changed = 0
 let g:ale_fixers = {
 \  '*': ['remove_trailing_lines', 'trim_whitespace'],
 \  'javascript': ['eslint'],
+\   'elixir':     ['mix_format'],
+\   'eelixir':    ['prettier'],
 \}
 let g:ale_fix_on_save = 1
 
@@ -293,8 +262,6 @@ Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
 
 
 
-
-
 " From here
 Plug 'ervandew/supertab'
 Plug 'SirVer/ultisnips'
@@ -320,18 +287,23 @@ let g:UltiSnipsExpandTrigger="<C-j>"
 let g:SuperTabClosePreviewOnPopupClose = 1
 let g:UltiSnipsJumpForwardTrigger='<tab>'
 let g:UltiSnipsExpandTrigger="<c-j>"
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 let g:ale_elixir_elixir_ls_release    = '/home/dado/programs/elixir-ls/release'
 let g:ale_completion_enabled = 1
-
-
-
-" END OF ALE CONFIGURATION
-" let g:ale_sign_error = '✘'
-" let g:ale_sign_warning = '⚠'
-
-
-
+let g:ale_sign_error = '✘'
+let g:ale_sign_warning = '⚠'
+let g:ale_lint_on_enter = 0
+let g:ale_lint_on_text_changed = 'never'
+highlight ALEErrorSign ctermbg=NONE ctermfg=red
+highlight ALEWarningSign ctermbg=NONE ctermfg=yellow
+let g:ale_linters_explicit = 1
+let g:ale_lint_on_save = 1
+let g:ale_fix_on_save = 1
+noremap <Leader>ad :ALEGoToDefinition<CR>
+nnoremap <leader>af :ALEFix<cr>
+noremap <Leader>ar :ALEFindReferences<CR>
+"Move between linting errors
+nnoremap ]r :ALENextWrap<CR>
+nnoremap [r :ALEPreviousWrap<CR>
 
 
 " To Here
@@ -347,3 +319,6 @@ call plug#end()            " required
 
 let g:hot_reload_on_save=1
 let g:prettier#config#parser = 'babylon'
+let g:UltiSnipsJumpForwardTrigger='<tab>'
+let g:UltiSnipsExpandTrigger="<c-j>"
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"

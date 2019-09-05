@@ -6,11 +6,10 @@ nmap <leader>vm :vsp ~/.config/nvim/mappings.vim<cr>
 nmap <leader>so :source $MYVIMRC<cr>
 nmap <leader>ffp :echo expand('%:p')<cr>
 
-nmap <leader>on :vsp ~/programs/notebooks/<cr>
 nmap <leader>td :pu=strftime('%c')<cr>
 
-
 nmap <C-a>v :AV <cr>
+nmap <C-a>s :AS <cr>
 nmap <C-a>a :A <cr>
 
 " --------------
