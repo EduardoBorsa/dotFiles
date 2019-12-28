@@ -24,3 +24,13 @@ function! FixCurrentFilesEslint()
   silent execute "!npx vue-cli-service lint" filePath
 endfunction
 nnoremap <leader>lf :call FixCurrentFilesEslint()<cr>
+
+" function! BlaTest()
+"   execute "!echo hello"
+" endfunction
+" nnoremap <leader>eh :call BlaTest()<cr>
+"
+" function! BlaTest2()
+"   execute "!echo hello2"
+" endfunction
+" autocmd FileType python nnoremap <leader>eh :call BlaTest2()<cr>

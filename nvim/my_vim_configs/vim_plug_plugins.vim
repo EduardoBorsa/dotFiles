@@ -57,77 +57,23 @@ let g:deoplete#omni#functions = {}
 let g:deoplete#omni#input_patterns = {}
 
 
-" Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
-Plug 'prettier/vim-prettier', {
-  \ 'do': 'yarn install',
-  \ 'branch': 'release/1.x',
-  \ 'for': [
-    \ 'javascript',
-    \ 'typescript',
-    \ 'css',
-    \ 'less',
-    \ 'scss',
-    \ 'json',
-    \ 'graphql',
-    \ 'markdown',
-    \ 'vue',
-    \ 'lua',
-    \ 'php',
-    \ 'python',
-    \ 'ruby',
-    \ 'html',
-    \ 'swift' ] }
-
-
-" let g:prettier#exec_cmd_path = "/home/dado/.nvm/versions/node/v10.14.2/bin/prettier"
-"
-" " let g:prettier#autoformat = 0
-" " autocmd BufWritePre *.js,*.css,*.scss,*.less PrettierAsync
-"
-let g:prettier#autoformat = 0
-autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.py,*.scss,*.json,*.graphql,*.md,*.yaml,*.html PrettierAsync
-"
-" max line lengh that prettier will wrap on
-let g:prettier#config#print_width = 120
-"
-" " number of spaces per indentation level
-let g:prettier#config#tab_width = 2
-"
-" " use tabs over spaces
-" let g:prettier#config#use_tabs = 'false'
-" "
-" " " print semicolons
-" let g:prettier#config#semi = 'true'
-" "
-" " " single quotes over double quotes
-" let g:prettier#config#single_quote = 'true'
-"
-" " print spaces between brackets
-" let g:prettier#config#bracket_spacing = 'true'
-"
-" " put > on the last line instead of new line
-" let g:prettier#config#jsx_bracket_same_line = 'false'
-
 
 " Elixir
 Plug 'elixir-lang/vim-elixir'
 Plug 'slashmili/alchemist.vim'
 Plug 'mhinz/vim-mix-format'
-let g:mix_format_on_save = 0
+" let g:mix_format_on_save = 0
 let g:mix_format_options = '--check-equivalent'
 
 " Phoenix
 Plug 'c-brenn/phoenix.vim'
 Plug 'tpope/vim-projectionist' " required for some navigation features
 Plug 'andyl/vim-projectionist-elixir'
+
 " Ruby
 Plug 'ruby-formatter/rufo-vim'
 Plug 'vim-ruby/vim-ruby'
 Plug 'tpope/vim-rails'
-
-"Cucumber
-
-Plug 'tpope/vim-cucumber'
 
 " Reformat source code
 Plug 'sbdchd/neoformat'
@@ -149,12 +95,10 @@ Plug 'tomtom/tcomment_vim'
 Plug 'janko-m/vim-test'
 " run tests in neoterm
 let g:test#strategy = 'neoterm'
-" I use spinach, not cucumber!
-let g:test#ruby#cucumber#executable = 'spinach'
 
 " git support from dat tpope
 Plug 'tpope/vim-fugitive'
-"
+
 " " github support from dat tpope
 Plug 'tpope/vim-rhubarb'
 
@@ -166,11 +110,11 @@ nnoremap <F5> :GundoToggle<CR>
 " universal text linking
 Plug 'vim-scripts/utl.vim'
 
-" allow portions of a file to use different syntax
-Plug 'vim-scripts/SyntaxRange'
+" " allow portions of a file to use different syntax
+" Plug 'vim-scripts/SyntaxRange'
 
-" increment dates like other items
-Plug 'tpope/vim-speeddating'
+" " increment dates like other items
+" Plug 'tpope/vim-speeddating'
 
 " nicer api for neovim terminal
 Plug 'kassio/neoterm'
@@ -179,8 +123,10 @@ Plug 'kassio/neoterm'
 " Molokai theme makes me cozy
 Plug 'tomasr/molokai'
 Plug 'fmoralesc/molokayo'
+
 " Try out the ayu theme - https://github.com/ayu-theme/ayu-vim
 Plug 'ayu-theme/ayu-vim'
+
 " Solarized - variant with specific terminal support
 Plug 'lifepillar/vim-solarized8'
 
@@ -304,21 +250,58 @@ noremap <Leader>ar :ALEFindReferences<CR>
 "Move between linting errors
 nnoremap ]r :ALENextWrap<CR>
 nnoremap [r :ALEPreviousWrap<CR>
-
-
 " To Here
+"
+
+Plug 'psf/black'
+
+Plug 'prettier/vim-prettier', {
+  \ 'do': 'yarn install',
+  \ 'branch': 'release/1.x',
+  \ 'for': [
+    \ 'javascript',
+    \ 'typescript',
+    \ 'css',
+    \ 'less',
+    \ 'scss',
+    \ 'json',
+    \ 'graphql',
+    \ 'markdown',
+    \ 'vue',
+    \ 'lua',
+    \ 'php',
+    \ 'ruby',
+    \ 'html',
+    \ 'swift' ] }
+let g:prettier#exec_cmd_path = "/home/dado/.asdf/shims/prettier"
+let g:prettier#autoformat = 0
+
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.yaml,*.html PrettierAsync
+"
+" max line lengh that prettier will wrap on
+let g:prettier#config#print_width = 140
+"
+" " number of spaces per indentation level
+let g:prettier#config#tab_width = 2
 
 
+" Python
+Plug 'deoplete-plugins/deoplete-jedi'
 
+" SQL Formatter
+Plug 'b4b4r07/vim-sqlfmt'
 
-
-
-
+" Erlang Runtime
+Plug 'vim-erlang/vim-erlang-tags'
+Plug 'vim-erlang/vim-erlang-runtime'
+Plug 'vim-erlang/vim-erlang-omnicomplete'
+Plug 'vim-erlang/vim-erlang-compiler'
+Plug 'vim-erlang/vim-erlang-skeletons'
 
 call plug#end()            " required
 
 let g:hot_reload_on_save=1
-let g:prettier#config#parser = 'babylon'
+" let g:prettier#config#parser = 'babylon'
 let g:UltiSnipsJumpForwardTrigger='<tab>'
 let g:UltiSnipsExpandTrigger="<c-j>"
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"

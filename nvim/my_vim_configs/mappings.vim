@@ -21,6 +21,7 @@ nnoremap <leader>h : nohlsearch<cr>
 
 " Calls Prettier "
 nnoremap <leader>p :Prettier<cr>
+autocmd FileType python nnoremap <leader>p :Black<cr>
 
 " Elixi format commands
 nnoremap <leader>mf : :MixFormat<cr>

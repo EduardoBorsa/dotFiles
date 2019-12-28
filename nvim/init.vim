@@ -8,7 +8,7 @@ source ~/.config/nvim/my_vim_configs/functions.vim
 set rtp+=~/.fzf
 
 " Elixir format config
-let g:mix_format_on_save = 1
+" let g:mix_format_on_save = 1
 
 filetype plugin indent on    " required
 syntax on
@@ -86,3 +86,16 @@ let g:user_emmet_leader_key='<C-e>'
 let g:user_emmet_expandabbr_key = '<C-t>'
 inoremap <C-e>e <esc>:call emmet#expandAbbr(0,"")<cr>h:call emmet#splitJoinTag()<cr>wwi
 nnoremap <C-e>e :call emmet#expandAbbr(0,"")<cr>h:call emmet#splitJoinTag()<cr>ww
+
+" Enable folding
+autocmd FileType python set foldmethod=indent
+autocmd FileType python set foldlevel=99
+autocmd FileType python nnoremap <space> za
+au BufNewFile,BufRead *.py
+    \ set tabstop=4
+    \ set softtabstop=4
+    \ set shiftwidth=4
+    \ set textwidth=79
+    \ set expandtab
+    \ set autoindent
+    \ set fileformat=unix
