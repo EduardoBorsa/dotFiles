@@ -5,11 +5,10 @@ sudo pacman -Sy --noconfirm neovim &&
 sudo pacman -Sy --noconfirm git &&
 sudo pacman -Sy --noconfirm jq &&
 sudo pacman -Sy --noconfirm tk &&
+sudo pacman -Sy --noconfirm the_silver_searcher &&
 sudo pacman -Sy --noconfirm xorg-xbacklight &&
 sudo pacman -Sy --noconfirm xorg-xmodmap &&
 sudo pacman -Sy --noconfirm fzf &&
-sudo pacman -Sy --noconfirm the_silver_searcher &&
-sudo pacman -Sy --noconfirm python-pip &&
 sudo pacman -Sy --noconfirm base-devel devtools &&
 sudo pacman -Sy --noconfirm ctags &&
 sudo pacman -Sy --noconfirm playerctl &&

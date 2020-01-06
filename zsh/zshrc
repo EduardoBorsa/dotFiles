@@ -44,6 +44,7 @@ ensure_tmux_is_running
 export EDITOR="nvim"
 # To set vim in terminal
 bindkey -v
+bindkey '^R' history-incremental-search-backward
 export KEYTIMEOUT=1
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -63,6 +64,7 @@ export FZF_DEFAULT_COMMAND='ag --ignore android --ignore ios -g ""'
 bindkey '^ ' autosuggest-accept
 # source /usr/share/nvm/init-nvm.sh
 export PATH=$PATH:~/.yarn/bin
+export PATH=$PATH:~/programs/chromedriver_linux64
 
 source ~/programs/dotFiles/zsh/configs/functions.zsh
 

@@ -99,3 +99,8 @@ au BufNewFile,BufRead *.py
     \ set expandtab
     \ set autoindent
     \ set fileformat=unix
+
+
+" Autocompletion
+filetype plugin on
+set omnifunc=syntaxcomplete#Complete

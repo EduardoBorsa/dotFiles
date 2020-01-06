@@ -92,6 +92,9 @@ Plug 'tpope/vim-unimpaired'
 Plug 'tomtom/tcomment_vim'
 " By default, `gc` will toggle comments
 
+Plug 'ternjs/tern_for_vim', { 'do' : 'npm install' }
+
+
 Plug 'janko-m/vim-test'
 " run tests in neoterm
 let g:test#strategy = 'neoterm'
@@ -279,7 +282,7 @@ let g:prettier#autoformat = 0
 autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.yaml,*.html PrettierAsync
 "
 " max line lengh that prettier will wrap on
-let g:prettier#config#print_width = 140
+let g:prettier#config#print_width = 90
 "
 " " number of spaces per indentation level
 let g:prettier#config#tab_width = 2
