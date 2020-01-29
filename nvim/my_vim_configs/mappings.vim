@@ -9,7 +9,7 @@ nmap <leader>ffp :echo expand('%:p')<cr>
 nmap <leader>td :pu=strftime('%c')<cr>
 
 nmap <C-a>v :AV <cr>
-nmap <C-a>s :AS <cr>
+nmap <C-a>x :AS <cr>
 nmap <C-a>a :A <cr>
 
 " --------------
@@ -34,14 +34,8 @@ nnoremap <leader>ta : :TestSuite<cr>
 nnoremap <leader>tl : :TestLast<cr>
 nnoremap <leader>te : :T exit<cr>
 
-
-imap lorem1 <left><C-o>:Loremipsum! 1 <cr>
-imap lorem2 <left><C-o>:Loremipsum! 2 <cr>
-imap lorem3 <left><C-o>:Loremipsum! 3 <cr>
-imap lorem4 <left><C-o>:Loremipsum! 4 <cr>
-imap lorem5 <left><C-o>:Loremipsum! 5 <cr>
-imap lorem6 <left><C-o>:Loremipsum! 6 <cr>
-imap lorem7 <left><C-o>:Loremipsum! 7 <cr>
-imap lorem9 <left><C-o>:Loremipsum! 9 <cr>
-imap lorem0 <left><C-o>:Loremipsum! 50 <cr>
 imap 'e é
+
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-k>     <Plug>(neosnippet_expand_target)

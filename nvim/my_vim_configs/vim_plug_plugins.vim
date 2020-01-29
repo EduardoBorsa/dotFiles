@@ -8,6 +8,7 @@ call plug#begin("~/.config/nvim/plugged")
 " For func argument completion
 Plug 'Shougo/neosnippet'
 Plug 'Shougo/neosnippet-snippets'
+
 " Automatically imports missing JS dependencies and removes unused ones.
 Plug 'karthikv/tradeship-vim'
 
@@ -61,7 +62,7 @@ let g:deoplete#omni#input_patterns = {}
 " Elixir
 Plug 'elixir-lang/vim-elixir'
 Plug 'slashmili/alchemist.vim'
-Plug 'mhinz/vim-mix-format'
+" Plug 'mhinz/vim-mix-format'
 " let g:mix_format_on_save = 0
 let g:mix_format_options = '--check-equivalent'
 
@@ -74,6 +75,8 @@ Plug 'andyl/vim-projectionist-elixir'
 Plug 'ruby-formatter/rufo-vim'
 Plug 'vim-ruby/vim-ruby'
 Plug 'tpope/vim-rails'
+Plug '/takkii/Jet-black-wings'
+" Plug 'davidhalter/jedi-vim'
 
 " Reformat source code
 Plug 'sbdchd/neoformat'
@@ -232,11 +235,10 @@ let g:tern#command = ['tern']
 let g:tern#arguments = ['--persistent']
 autocmd FileType javascript
 let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
+" let g:SuperTabClosePreviewOnPopupClose = 1
 let g:UltiSnipsExpandTrigger="<C-j>"
-let g:SuperTabClosePreviewOnPopupClose = 1
-let g:UltiSnipsJumpForwardTrigger='<tab>'
-let g:UltiSnipsExpandTrigger="<c-j>"
-let g:ale_elixir_elixir_ls_release    = '/home/dado/programs/elixir-ls/release'
+" let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+" let g:ale_elixir_elixir_ls_release    = '/home/dado/programs/elixir-ls/release'
 let g:ale_completion_enabled = 1
 let g:ale_sign_error = '✘'
 let g:ale_sign_warning = '⚠'
@@ -301,10 +303,19 @@ Plug 'vim-erlang/vim-erlang-omnicomplete'
 Plug 'vim-erlang/vim-erlang-compiler'
 Plug 'vim-erlang/vim-erlang-skeletons'
 
+
+" Language client
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
+
+let g:LanguageClient_serverCommands = {
+    \ 'ruby': ['~/.asdf/shims/solargraph', 'stdio'],
+    \ }
 call plug#end()            " required
 
 let g:hot_reload_on_save=1
 " let g:prettier#config#parser = 'babylon'
 let g:UltiSnipsJumpForwardTrigger='<tab>'
-let g:UltiSnipsExpandTrigger="<c-j>"
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
