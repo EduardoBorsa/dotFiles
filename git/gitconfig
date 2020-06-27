@@ -11,5 +11,6 @@
         ctags = !.git/hooks/ctags
         asm = !git add -A && git commit -sm
         cleanAll = clean -df
+        untrack = rm -r --cached
 [init]
         templatedir = ~/.git_template

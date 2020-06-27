@@ -1,0 +1,7 @@
+docker network create --driver bridge postgres-network
+
+
+docker run --name postgres-docker --network=postgres-network -e "POSTGRES_PASSWORD=postgres" -p 5432:5432 -v $HOME/docker/volumes/postgres:/var/lib/postgresql/data -d postgres
+
+
+docker run --name pgadmin-docker --network=postgres-network -p 15432:80 -e "PGADMIN_DEFAULT_EMAIL=borsa.dado@gmail.com" -e "PGADMIN_DEFAULT_PASSWORD=postgres" -d dpage/pgadmin4

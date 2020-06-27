@@ -201,15 +201,15 @@ Plug 'thosakwe/vim-flutter'
 " Plug 'vim-pandoc/vim-pandoc-syntax'
 " Plug 'vim-pandoc/vim-pandoc'
 
-"Vim Coc
-" Use release branch
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
-" Or latest tag
-Plug 'neoclide/coc.nvim', {'tag': '*', 'branch': 'release'}
-
-" Or build from source code by use yarn: https://yarnpkg.com
-Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
+" "Vim Coc
+" " Use release branch
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
+"
+" " Or latest tag
+" Plug 'neoclide/coc.nvim', {'tag': '*', 'branch': 'release'}
+"
+" " Or build from source code by use yarn: https://yarnpkg.com
+" Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
 
 
 
