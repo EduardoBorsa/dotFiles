@@ -2,6 +2,7 @@
 sudo pacman -Sy --noconfirm i3 &&
 sudo pacman -Sy --noconfirm dmenu &&
 sudo pacman -Sy --noconfirm neovim &&
+sudo pacman -Sy --noconfirm zsh &&
 sudo pacman -Sy --noconfirm git &&
 sudo pacman -Sy --noconfirm jq &&
 sudo pacman -Sy --noconfirm tk &&
@@ -9,7 +10,7 @@ sudo pacman -Sy --noconfirm the_silver_searcher &&
 sudo pacman -Sy --noconfirm xorg-xbacklight &&
 sudo pacman -Sy --noconfirm xorg-xmodmap &&
 sudo pacman -Sy --noconfirm fzf &&
-sudo pacman -Sy --noconfirm base-devel devtools &&
+sudo pacman -Sy --noconfirm base-devel &&
 sudo pacman -Sy --noconfirm ctags &&
 sudo pacman -Sy --noconfirm playerctl &&
 sudo pacman -Sy --noconfirm feh &&
@@ -63,43 +64,17 @@ commands for i3:
 install collors:
 git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shell
 
-install google chrome
-9) git
-10) cd ~/programs
-    git clone https://aur.archlinux.org/google-chrome.git
-    cd google-chrome
-    makepkg -si
-    # install .tar.gz
-    sudo pacman -U google-chrome-6
 
 HOW?
 11) Apply sanf fonts in every gtkfile in home and .config
 
-install ruby:
-gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
-curl -sSL https://get.rvm.io | bash -s stable
-source ~/.rvm/scripts/rvm
-rvm requirements
-rvm install 2.5.1
-rvm use 2.5.1 --default
-gem install rails -V --no-ri --no-rdoc
-gem install bundler -V --no-ri --no-rdoc
-gem install rufo
-
-CONFIGURE POSTGRESQL:
-sudo -i -u postgres
-initdb --locale en_US.UTF-8 -E UTF8 -D '/var/lib/postgres/data'
-sudo systemctl start postgresql
-sudo systemctl enable postgresql
 
 To get the San francisco fonts go to https://github.com/smith-neil/YosemiteSanFranciscoFont download
 and put all the tff fonts in .local/share/fonts
 
 
 --------
-makepkg -si
-s resolve dependencia
-i instala
+makepkg -sirc
 pacman -U pacote.pkg.tar.xz
 
 

@@ -52,10 +52,10 @@ Plug 'posva/vim-vue'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 set runtimepath+=~/.config/nvim/plugins/deoplete.nvim
 let g:deoplete#enable_at_startup = 1
-let g:deoplete#sources = {}
-let g:deoplete#sources._ = ['file', 'neosnippet']
-let g:deoplete#omni#functions = {}
-let g:deoplete#omni#input_patterns = {}
+let g:deoplete#custom#option = {}
+let g:deoplete#custom#option._ = ['file', 'neosnippet']
+let g:deoplete#omni#custom#var = {}
+let g:deoplete#omni#custom#var = {}
 
 
 
@@ -223,14 +223,14 @@ Plug 'carlitux/deoplete-ternjs', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'othree/jspc.vim', { 'for': ['javascript', 'javascript.jsx'] }
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 
-let g:deoplete#omni#functions = {}
-let g:deoplete#omni#functions.javascript = [
+let g:deoplete#omni#custom#var = {}
+let g:deoplete#omni#custom#var.javascript = [
       \ 'tern#Complete',
       \ 'jspc#omni'
       \]
 set completeopt=longest,menuone,preview
-let g:deoplete#sources = {}
-let g:deoplete#sources['javascript.jsx'] = ['file', 'ultisnips', 'ternjs']
+let g:deoplete#custom#option = {}
+let g:deoplete#custom#option['javascript.jsx'] = ['file', 'ultisnips', 'ternjs']
 let g:tern#command = ['tern']
 let g:tern#arguments = ['--persistent']
 autocmd FileType javascript

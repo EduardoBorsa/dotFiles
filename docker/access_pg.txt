@@ -1,0 +1,2 @@
+docker exec -it postgres-docker sh
+su - postgres
