@@ -101,6 +101,9 @@ Plug 'ternjs/tern_for_vim', { 'do' : 'npm install' }
 Plug 'janko-m/vim-test'
 " run tests in neoterm
 let g:test#strategy = 'neoterm'
+"
+" nicer api for neovim terminal
+Plug 'kassio/neoterm'
 
 " git support from dat tpope
 Plug 'tpope/vim-fugitive'
@@ -122,8 +125,6 @@ Plug 'vim-scripts/utl.vim'
 " " increment dates like other items
 " Plug 'tpope/vim-speeddating'
 
-" nicer api for neovim terminal
-Plug 'kassio/neoterm'
 
 """ UI Plugs #ui-plugins
 " Molokai theme makes me cozy

@@ -1,3 +1,4 @@
-tags
-nvim/.netrwhist
-nvim/plugged
+**/**/tags
+**/**/.netrwhist
+**/**/plugged/
+**/**/undo/

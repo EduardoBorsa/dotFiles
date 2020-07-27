@@ -72,18 +72,19 @@ source ~/programs/dotFiles/zsh/configs/functions.zsh
 
 . $HOME/.asdf/completions/asdf.bash
 
-asdf_java_wrapper() {
-  if \asdf "$@"; then
-    if [[ "$(\asdf current java 2>&1)" =~ "^([-_.a-zA-Z0-9]+)[[:space:]]*\(set by.*$" ]]; then
-      export JAVA_HOME=$(\asdf where java ${match[1]})
-    else
-      export JAVA_HOME=''
-    fi
-  fi
-}
+# asdf_java_wrapper() {
+#   if \asdf "$@"; then
+#     if [[ "$(\asdf current java 2>&1)" =~ "^([-_.a-zA-Z0-9]+)[[:space:]]*\(set by.*$" ]]; then
+#       export JAVA_HOME=$(\asdf where java ${match[1]})
+#     else
+#       export JAVA_HOME=''
+#     fi
+#   fi
+# }
 
-alias asdf='asdf_java_wrapper'
+# alias asdf='asdf_java_wrapper'
 
+export JAVA_HOME='/home/dado/programs/jre-8u111-linux-x64/jre1.8.0_111/bin'
 autoload edit-command-line; zle -N edit-command-line
 bindkey '^e' edit-command-line
 

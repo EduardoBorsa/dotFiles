@@ -1,0 +1,16 @@
+{
+  "coc.preferences.currentFunctionSymbolAutoUpdate": true,
+  "coc.preferences.colorSupport": true,
+  "diagnostic.virtualText": true,
+  "suggest.triggerAfterInsertEnter": true,
+  "elixir.pathToElixirLS":"~/.elixir-ls/release/language_server.sh",
+
+  "languageserver": {
+    "bash": {
+      "command": "bash-language-server",
+      "args": ["start"],
+      "filetypes": ["sh", "bash"],
+      "ignoredRootPaths": ["~"]
+    }
+  }
+}
