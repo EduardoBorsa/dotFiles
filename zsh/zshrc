@@ -84,7 +84,7 @@ source ~/programs/dotFiles/zsh/configs/functions.zsh
 
 # alias asdf='asdf_java_wrapper'
 
-export JAVA_HOME='/home/dado/programs/jre-8u111-linux-x64/jre1.8.0_111/bin'
+export JAVA_HOME='/home/dado/programs/jre-8u111-linux-x64/jre1.8.0_111/'
 autoload edit-command-line; zle -N edit-command-line
 bindkey '^e' edit-command-line
 
