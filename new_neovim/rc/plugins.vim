@@ -101,11 +101,14 @@ Plug 'jxnblk/vim-mdx-js', { 'for': 'markdown.mdx' }
 " Search for Strings
 Plug 'rking/ag.vim'
 
-vnoremap <silent><Leader>y "yy <Bar> :call system('xclip', @y)<CR>
+" Open files where you last left them
+Plug 'dietsche/vim-lastplace'
+
+
+" vnoremap <silent><Leader>y "yy <Bar> :call system('xclip', @y)<CR>
+vnoremap <Leader>y "yy <Bar> :call system('xclip', @y)<CR>
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-"let g:airline_theme = 'luna'
-"let g:airline_theme = 'lucius'
 let g:airline_theme = 'onedark'
 let g:bufferline_echo = 0
 let g:airline_powerline_fonts=0
@@ -127,42 +130,11 @@ let g:markdown_fenced_languages = ['elixir', 'sh', 'rust']
 map <silent> <c-b> :Bookmark<CR>
 
 "
-" vim-emmet
+" NeoTerm config
 "
-
-"
-" neoterm
-"
- let g:neoterm_size='70'
-" let g:neoterm_default_mod = 'vertical'
-" let g:neoterm_autoscroll = 1
-" let g:neoterm_repl_ruby = 'pry'
-" let g:neoterm_keep_term_open = 1
-
-" " NeoTerm config
 let g:neoterm_default_mod='tab'
 let g:neoterm_split_on_vert_tnew=1
 let g:neoterm_autojump=1
-
-
-nnoremap <silent> <leader>te : :T exit<cr>
-nnoremap <silent> <leader>th :call neoterm#close()<CR>
-nnoremap <silent> <leader>tl :call neoterm#clear()<CR>
-nnoremap <silent> <leader>tk :call neoterm#kill()<CR>
-tmap <silent> <C-e> <C-\><C-n>
-
-"Testing
-" nnoremap <leader>tt : :TestNearest<cr>
-" nnoremap <leader>tf : :TestFile<cr>
-" nnoremap <leader>ta : :TestSuite<cr>
-" nnoremap <leader>tl : :TestLast<cr>
-
-
-"
-" quick-scope
-"
-let g:qs_max_chars=80
-
 "
 " vim-test
 "
@@ -172,6 +144,17 @@ map <leader>ts :TestSuite<CR>
 map <leader>tt :TestNearest<CR>
 map <leader>tf :TestFile<CR>
 map <leader>tl :TestLast<CR>
+
+nnoremap <silent> <leader>te : :T exit<cr>
+nnoremap <silent> <leader>th :call neoterm#close()<CR>
+nnoremap <silent> <leader>tl :call neoterm#clear()<CR>
+nnoremap <silent> <leader>tk :call neoterm#kill()<CR>
+tmap <silent> <C-e> <C-\><C-n>
+
+"
+" quick-scope
+"
+let g:qs_max_chars=80
 
 "
 " fugitive.vim (git wrapper)
@@ -209,12 +192,6 @@ if executable('rg')
   " use Ripgrep over Grep
   set grepprg="rg --color never --no-heading"
 endif
-
-"
-" auto-pairs
-"
-" let g:AutoPairsMultilineClose = 0
-" let g:AutoPairsOnlyWhitespace = 1
 
 "
 " UltiSnips
