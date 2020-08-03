@@ -26,6 +26,12 @@ def ${1:name}($2) do
 end
 endsnippet
 
+snippet defp "method" do
+defp ${1:name}($2) do
+	$0
+end
+endsnippet
+
 snippet defi "inline method" do
 def $1($2), do: $0
 endsnippet
@@ -61,9 +67,6 @@ snippet type "type spec" do
 @type $1 :: $2
 endsnippet
 
-snippet ok "Insert ok tuple" !i
-{:ok, ${1:value}}$0
-endsnippet
 
 snippet if "if .. do .. end"
 if ${1:condition} do
@@ -123,18 +126,33 @@ case ${1} do
 end 
 endsnippet
 
+snippet with "with ... <- ... do"
+with ${1} <- ${2} do 
+	${3}
+end
+endsnippet
+
 snippet fn 
-fn(${1:args}) -> 
+fn (${1:args}) -> 
 	${2} 
 end 
 endsnippet
 
+snippet fni 
+fn ${1:args} -> ${2} end 
+endsnippet
+
+snippet receive "receive do block" 
+receive do 
+    ${1} ->
+	${2}
+end
+endsnippet
+
 snippet insp "inspect an expression result" !b
-IO.puts """
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-#{inspect $0}
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-"""
+IO.puts("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
+IO.inspect($0)
+IO.puts("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
 endsnippet
 
 snippet # "insert a string interpolation" !i
@@ -149,9 +167,22 @@ snippet %b "Insert a map with binaries as keys" !i
 %{"${1:key}" => ${2:value}}$0
 endsnippet
 
+snippet ok "Insert ok tuple" !i
+{:ok, ${1:value}}$0
+endsnippet
+
 snippet err "Insert error tuple" !i
 {:error, ${1:value}}$0
 endsnippet
+
+snippet noreply "creates a noreply tuple for GenServer" !i
+{:noreply, ${1:value}}$0
+endsnippet
+
+snippet reply "creates a reply tuple for GenServer" !i
+{:reply, ${1:value}, ${2:value}}$0
+endsnippet
+
 # snippet mod "module definition"
 # defmodule `!p ex_module_name(path, snip)` do
 # 	$1
