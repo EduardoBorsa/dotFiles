@@ -57,6 +57,10 @@ Plug 'pechorin/any-jump.vim'
 Plug 'junegunn/goyo.vim', { 'for': ['markdown', 'markdown.mdx'] }
 Plug 'junegunn/limelight.vim', { 'for': ['markdown', 'markdown.mdx'] }
 Plug 'vim-voom/VOoM', { 'for': ['markdown', 'markdown.mdx'] }
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
+" If you have nodejs and yarn
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
 
 " Linters
 Plug 'dense-analysis/ale'
@@ -444,3 +448,20 @@ augroup load_us_ycm
   autocmd CursorHold,CursorHoldI * call plug#load('vim-test')
                       \| autocmd! load_us_ycm
 augroup END
+
+"
+" plasticboy/markdown
+"
+
+autocmd FileType markdown let b:sleuth_automatic=0
+autocmd FileType markdown set conceallevel=0
+autocmd FileType markdown normal zR
+
+let g:vim_markdown_frontmatter=1
+
+"
+" iamcco/markdown-preview.nvim
+"
+
+let g:mkdp_refresh_slow = 1
+let g:mkdp_markdown_css='~/.local/lib/github-markdown-css/github-markdown.css'
