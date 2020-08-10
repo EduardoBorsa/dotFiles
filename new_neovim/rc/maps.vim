@@ -42,3 +42,6 @@ function! s:show_documentation()
 endfunction
 
 nmap <silent><leader>h       :nohlsearch<CR>
+
+" Open Diary
+nmap <leader>di :e ~/Eduardo_Borsa/life/diary.md<cr>

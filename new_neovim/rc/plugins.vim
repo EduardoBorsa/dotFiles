@@ -123,6 +123,12 @@ let g:airline_paste_symbol = '∥'
 let g:airline#extensions#tabline#enabled = 0
 let g:airline#extensions#ale#enabled = 1
 
+Plug 'prettier/vim-prettier', {
+  \ 'do': 'yarn install',
+  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
+
+
+
 
 call plug#end()
 filetype plugin indent on
