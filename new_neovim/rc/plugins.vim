@@ -108,6 +108,8 @@ Plug 'rking/ag.vim'
 " Open files where you last left them
 Plug 'dietsche/vim-lastplace'
 
+" first Plugin
+Plug 'EduardoBorsa/Vim_Test_Pluing'
 
 " vnoremap <silent><Leader>y "yy <Bar> :call system('xclip', @y)<CR>
 vnoremap <Leader>y "yy <Bar> :call system('xclip', @y)<CR>
