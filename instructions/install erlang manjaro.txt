@@ -1,1 +1,0 @@
-pacman -S --needed base-devel ncurses glu mesa wxgtk2 libpng libssh unixodbc

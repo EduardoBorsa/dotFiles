@@ -37,51 +37,12 @@ sudo pacman -Sy --noconfirm arc-gtk-theme
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 chsh -s /usr/bin/zsh
 
-
-
-commands for vim:
-1) curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-1) mkdir .config/nvim/
-2) ln -s ~/programs/dotFiles/nvim/init.vim .config/nvim/init.vim
-3) ln -s ~/programs/dotFiles/nvim/mappings.vim .config/nvim/mappings.vim
-3) ln -s ~/programs/dotFiles/nvim/functions.vim .config/nvim/functions.vim
-4) ln -s ~/programs/dotFiles/nvim/general_vim_config.vim .config/nvim/general_vim_config.vim
-4) ln -s ~/programs/dotFiles/nvim/vim_plug_plugins.vim .config/nvim/vim_plug_plugins.vim
-8) sudo pip3 install neovim
-
-commands for zsh:
-1) rm -rf .zshrc
-2) ln -s ~/programs/dotFiles/zsh/zshrc .zshrc
-
-commands for tmux:
-1) ln -s ~/programs/dotFiles/tmux/tmux.conf .tmux.conf
-
-commands for i3:
-1) rm -rf .config/i3/config
-2) ln -s ~/programs/dotFiles/i3/config .config/i3/config
-
 install collors:
 git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shell
-
-
-HOW?
-11) Apply sanf fonts in every gtkfile in home and .config
-
-
-To get the San francisco fonts go to https://github.com/smith-neil/YosemiteSanFranciscoFont download
-and put all the tff fonts in .local/share/fonts
-
 
 --------
 makepkg -sirc
 pacman -U pacote.pkg.tar.xz
-
-
-Node packages
-npm install -g elm
-npm install -g elm-test
-npm install -g elm-format
 
 ----------
 #To enable mousepad in i3

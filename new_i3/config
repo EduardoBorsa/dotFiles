@@ -411,9 +411,7 @@ mode "$mode_gaps_outer" {
 }
 
 exec setxkbmap -option ctrl:swapcaps
-exec firefox
 exec slack
 
 assign [class="Slack"] $ws2
-assign [class="firefox"] $ws7
 assign [class="Nautilus"] $ws8

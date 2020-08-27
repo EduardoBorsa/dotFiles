@@ -9,7 +9,7 @@
     "bash": {
       "command": "bash-language-server",
       "args": ["start"],
-      "filetypes": ["sh", "bash"],
+      "filetypes": ["sh"],
       "ignoredRootPaths": ["~"]
     }
   }
