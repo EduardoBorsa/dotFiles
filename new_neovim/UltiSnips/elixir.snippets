@@ -14,6 +14,18 @@ test "$1" do
 end
 endsnippet
 
+snippet describe "describe" do
+describe "$1" do
+	$0
+end
+endsnippet
+
+snippet setup "setup" do
+setup do
+	$0
+end
+endsnippet
+
 snippet conntest "conn test" do
 test "$1", %{conn: conn} do
 	$0
@@ -30,6 +42,10 @@ snippet defp "method" do
 defp ${1:name}($2) do
 	$0
 end
+endsnippet
+
+snippet defpi "inline function private" do
+defp $1($2), do: $0
 endsnippet
 
 snippet defi "inline method" do

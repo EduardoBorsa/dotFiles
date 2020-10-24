@@ -102,6 +102,9 @@ Plug 'peitalin/vim-jsx-typescript', { 'for': 'tsx' }
 Plug 'jxnblk/vim-mdx-js', { 'for': 'markdown.mdx' }
 
 " ---------------------- DADO's Change --------------------
+" Jenkins File
+Plug 'martinda/Jenkinsfile-vim-syntax'
+
 " Search for Strings
 Plug 'rking/ag.vim'
 
