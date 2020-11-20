@@ -8,6 +8,13 @@ describe "$1" do
 end
 endsnippet
 
+snippet scope "scope block"
+scope "$1", $2 do
+	pipe_through [$3]
+	$4
+end
+endsnippet
+
 snippet test "test" do
 test "$1" do
 	$0
@@ -201,6 +208,12 @@ endsnippet
 
 snippet moduledoc "creates an module doc" !i
 @moduledoc """
+$1
+"""
+endsnippet
+
+snippet doc "creates an module doc" !i
+@doc """
 $1
 """
 endsnippet
