@@ -1,0 +1,283 @@
+global !p
+from snippet_helpers_elixir import *
+endglobal
+
+snippet desc "describe block"
+describe "$1" do
+	$2
+end
+endsnippet
+
+snippet scope "scope block"
+scope "$1", $2 do
+	pipe_through [$3]
+	$4
+end
+endsnippet
+
+snippet test "test" do
+test "$1" do
+	$0
+end
+endsnippet
+
+snippet describe "describe" do
+describe "$1" do
+	$0
+end
+endsnippet
+
+snippet setup "setup" do
+setup do
+	$0
+end
+endsnippet
+
+snippet conntest "conn test" do
+test "$1", %{conn: conn} do
+	$0
+end
+endsnippet
+
+snippet def "method" do
+def ${1:name}($2) do
+	$0
+end
+endsnippet
+
+snippet defp "method" do
+defp ${1:name}($2) do
+	$0
+end
+endsnippet
+
+snippet defpi "inline function private" do
+defp $1($2), do: $0
+endsnippet
+
+snippet defi "inline method" do
+def $1($2), do: $0
+endsnippet
+
+snippet doc "method docs" do
+@doc ~S"""
+$0
+"""
+endsnippet
+
+snippet ex "examples" do
+## Examples
+
+    iex> $0
+endsnippet
+
+snippet doct "method docs with examples" do
+@doc ~S"""
+$1
+
+## Examples
+
+    iex> $2
+"""
+$0
+endsnippet
+
+snippet spec "method spec" do
+@spec $1 :: $2
+endsnippet
+
+snippet type "type spec" do
+@type $1 :: $2
+endsnippet
+
+
+snippet if "if .. do .. end"
+if ${1:condition} do
+	${2:expression} 
+end 
+endsnippet
+
+snippet ifi "if .. do: .." 
+if ${1:condition}, do: ${2:expression} 
+endsnippet
+
+snippet ife "if .. do .. else .. end"
+if ${1:condition} do 
+	${2:expression} 
+else 	
+	${3:expression} 
+end 
+endsnippet
+
+snippet ifei "if .. do: .. else:" 
+if ${1:condition}, do: ${2}, else: ${3} 
+endsnippet
+
+snippet unless "unless .. do .. end" 
+unless ${1} do 
+	${2} 
+end 
+endsnippet
+
+snippet unlessi "unless .. do: .." 
+unless ${1:condition}, do: ${2} 
+endsnippet
+
+snippet unlesse "unless .. do .. else .. end" 
+unless ${1:condition} do 
+	${2} 
+else 
+	${3} 
+end 
+endsnippet
+
+snippet unlessei "unless .. do: .. else:" 
+unless ${1:condition}, do: ${2}, else: ${3} 
+endsnippet
+
+snippet cond "cond do" 
+cond do
+${1} -> 
+	${2} 
+end 
+endsnippet
+
+snippet case "case ... do .." 
+case ${1} do 
+	${2} ->  
+		${3} 
+end 
+endsnippet
+
+snippet with "with ... <- ... do"
+with ${1} <- ${2} do 
+	${3}
+end
+endsnippet
+
+snippet fn 
+fn (${1:args}) -> 
+	${2} 
+end 
+endsnippet
+
+snippet fni 
+fn ${1:args} -> ${2} end 
+endsnippet
+
+snippet receive "receive do block" 
+receive do 
+    ${1} ->
+	${2}
+end
+endsnippet
+
+snippet insp "inspect an expression result" !b
+IO.puts("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
+IO.inspect($0)
+IO.puts("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
+endsnippet
+
+snippet # "insert a string interpolation" !i
+#{${1}}$0
+endsnippet
+
+snippet % "Insert a map with symbols as keys" !i
+%{${1:key}: ${2:value}}$0
+endsnippet
+
+snippet %b "Insert a map with binaries as keys" !i
+%{"${1:key}" => ${2:value}}$0
+endsnippet
+
+snippet ok "Insert ok tuple" !i
+{:ok, ${1:value}}$0
+endsnippet
+
+snippet err "Insert error tuple" !i
+{:error, ${1:value}}$0
+endsnippet
+
+snippet noreply "creates a noreply tuple for GenServer" !i
+{:noreply, ${1:value}}$0
+endsnippet
+
+snippet reply "creates a reply tuple for GenServer" !i
+{:reply, ${1:value}, ${2:value}}$0
+endsnippet
+
+snippet moduledoc "creates an module doc" !i
+@moduledoc """
+$1
+"""
+endsnippet
+
+snippet doc "creates an module doc" !i
+@doc """
+$1
+"""
+endsnippet
+
+# snippet mod "module definition"
+# defmodule `!p ex_module_name(path, snip)` do
+# 	$1
+# end
+# endsnippet
+
+# snippet task "task module"
+# defmodule Mix.Tasks.`!p ex_module_name(path, snip)` do
+# 	use Mix.Task
+
+# 	@shortdoc "$1"
+
+# 	def run(_args) do
+# 		$2
+# 	end
+# end
+# endsnippet
+
+# snippet ectomodel "Ecto model" do
+# defmodule `!p ex_module_name(path, snip)` do
+# 	use `!p ex_project_name(snip)`.Web, :model
+
+# 	schema "$1" do
+# 		$2
+# 	end
+
+# 	$0
+# end
+# endsnippet
+
+# snippet case "ExUnit.Case" do
+# defmodule `!p ex_module_name(path, snip)` do
+# 	use ExUnit.Case
+
+# 	alias `!p ex_module_test_subject(path, snip)`
+
+# 	$0
+# end
+# endsnippet
+
+# snippet datacase "data test case"
+# defmodule `!p ex_module_name(path, snip)` do
+# 	use `!p ex_project_name(snip)`.DataCase
+
+# 	alias `!p ex_module_name(path, snip)`
+
+# 	import `!p ex_project_name(snip)`.Factory
+
+# 	$0
+# end
+# endsnippet
+
+# snippet conncase "conn test case"
+# defmodule `!p ex_module_name(path, snip)` do
+# 	use `!p ex_project_name(snip)`.Web.ConnCase
+
+# 	alias `!p ex_module_name(path, snip)`
+
+# 	import `!p ex_project_name(snip)`.Factory
+
+# 	$0
+# end
+# endsnippet

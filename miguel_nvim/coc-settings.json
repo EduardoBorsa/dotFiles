@@ -1,0 +1,44 @@
+{
+  "coc.preferences.currentFunctionSymbolAutoUpdate": true,
+  "coc.preferences.colorSupport": true,
+  "coc.preferences.rootPatterns": [".git", "package.json"],
+  "coc.preferences.formatOnSaveFiletypes": ["typescript", "ruby", "rust"],
+
+  "suggest.autoTrigger":"trigger",
+  "suggest.triggerAfterInsertEnter": false,
+
+  "diagnostic.errorSign": "💩",
+  "diagnostic.hintSign": "→",
+  "diagnostic.infoSign": "→",
+  "diagnostic.warningSign": "→",
+  "diagnostic.highlightOffset": 5,
+  "diagnostic.format": "%message",
+
+  "languageserver": {
+    "terraform": {
+      "command": "terraform-lsp",
+      "filetypes": ["terraform"],
+      "initializationOptions": {}
+    },
+    "bash": {
+      "command": "bash-language-server",
+      "args": ["start"],
+      "filetypes": ["sh", "bash"],
+      "ignoredRootPaths": ["~"]
+    }
+  },
+
+  "eslint.enable": true,
+  "eslint.run": "onSave",
+  "eslint.options": { "cache": true },
+  "eslint.autoFixOnSave": true,
+
+  "solargraph.hover": true,
+  "solargraph.diagnostics": true,
+  "solargraph.formatting": false,
+  "solargraph.useBundler": true,
+
+  "stylelintplus.enable": true,
+  "stylelintplus.validateOnSave": true,
+  "stylelintplus.autoFixOnSave": true
+}
