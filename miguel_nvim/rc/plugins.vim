@@ -86,12 +86,20 @@ Plug 'tpope/vim-endwise',    { 'for': ['ruby', 'elixir'] }
 Plug 'amiralies/coc-elixir', {'do': 'yarn install && yarn prepack'}
 
 " HTML
-Plug 'mattn/emmet-vim', { 'for': ['html', 'javascript', 'javascript.jsx', 'typescript', 'javascript.tsx', 'typescript.tsx'] }
+Plug 'mattn/emmet-vim'
+" Plug 'mattn/emmet-vim', { 'for': ['html', 'javascript', 'javascript.jsx', 'typescript', 'javascript.tsx', 'typescript.tsx'] }
 
 " Other syntaxes
 Plug 'vim-scripts/SyntaxRange'
 Plug 'hashivim/vim-terraform', { 'for': 'terraform' }
 Plug 'sheerun/vim-polyglot'
+
+" Dado
+" Search for Strings
+Plug 'rking/ag.vim'
+
+" Open files where you last left them
+Plug 'dietsche/vim-lastplace'
 
 call plug#end()
 filetype plugin indent on
@@ -124,8 +132,11 @@ let g:delimitMate_expand_cr = 2
 "
 " neoterm
 "
+let g:neoterm_default_mod='tab'
+" let g:neoterm_default_mod = 'vertical'
+let g:neoterm_split_on_vert_tnew=1
+let g:neoterm_autojump=1
 let g:neoterm_size='70'
-let g:neoterm_default_mod = 'vertical'
 let g:neoterm_autoscroll = 1
 let g:neoterm_repl_ruby = 'pry'
 let g:neoterm_keep_term_open = 1
@@ -145,10 +156,15 @@ let g:qs_max_chars=80
 "
 let test#strategy = 'neoterm'
 
-map <leader>sr :TestSuite<CR>
-map <leader>ss :TestNearest<CR>
-map <leader>sf :TestFile<CR>
-map <leader>sl :TestLast<CR>
+map <leader>ts :TestSuite<CR>
+map <leader>tt :TestNearest<CR>
+map <leader>tf :TestFile<CR>
+map <leader>tl :TestLast<CR>
+
+nnoremap <silent> <leader>te : :T exit<cr>
+nnoremap <silent> <leader>th :call neoterm#close()<CR>
+nnoremap <silent> <leader>tl :call neoterm#clear()<CR>
+nnoremap <silent> <leader>tk :call neoterm#kill()<CR>
 
 "
 " fugitive.vim (git wrapper)

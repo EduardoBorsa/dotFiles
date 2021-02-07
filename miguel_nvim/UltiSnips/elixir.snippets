@@ -21,9 +21,10 @@ defmodule Mix.Tasks.`!p ex_module_name(path, snip)` do
 end
 endsnippet
 
-snippet ectomodel "Ecto model" do
+snippet ectomodel "Ecto model"
 defmodule `!p ex_module_name(path, snip)` do
-	use `!p ex_project_name(snip)`.Web, :model
+	use Ecto.Schema
+  import Ecto.Changeset
 
 	schema "$1" do
 		$2
@@ -33,7 +34,7 @@ defmodule `!p ex_module_name(path, snip)` do
 end
 endsnippet
 
-snippet case "ExUnit.Case" do
+snippet case "ExUnit.Case"
 defmodule `!p ex_module_name(path, snip)` do
 	use ExUnit.Case
 
@@ -73,41 +74,41 @@ describe "$1" do
 end
 endsnippet
 
-snippet test "test" do
+snippet test "test" 
 test "$1" do
 	$0
 end
 endsnippet
 
-snippet conntest "conn test" do
+snippet conntest "conn test" 
 test "$1", %{conn: conn} do
 	$0
 end
 endsnippet
 
-snippet def "method" do
+snippet def "method" 
 def ${1:name}($2) do
 	$0
 end
 endsnippet
 
-snippet defi "inline method" do
+snippet defi "inline method" 
 def $1($2), do: $0
 endsnippet
 
-snippet doc "method docs" do
+snippet doc "method docs" 
 @doc ~S"""
 $0
 """
 endsnippet
 
-snippet ex "examples" do
+snippet ex "examples" 
 ## Examples
 
     iex> $0
 endsnippet
 
-snippet doct "method docs with examples" do
+snippet doct "method docs with examples" 
 @doc ~S"""
 $1
 
@@ -118,10 +119,10 @@ $1
 $0
 endsnippet
 
-snippet spec "method spec" do
+snippet spec "method spec" 
 @spec $1 :: $2
 endsnippet
 
-snippet type "type spec" do
+snippet type "type spec" 
 @type $1 :: $2
 endsnippet

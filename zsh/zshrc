@@ -16,16 +16,11 @@ export MANPATH="/usr/local/man:$MANPATH"
 # You may need to manually set your language environment
 export LANG=en_US.UTF-8
 
-# export PATH=$PATH:/usr/bin/
 export PATH=$PATH:~/programs/node/bin/
-# export PATH=$PATH:~/.gem/ruby/2.5.0/bin/
-# export PATH=$PATH:~/programs/Postman/app/
-# export PATH=$PATH:~/programs/datagrip/bin/
-# export PATH=$PATH:~/programs/node-v10.6.0-linux-x64/bin/
-# export PATH="$PATH":"$HOME/.pub-cache/bin"
-
+export PATH=$PATH:~/programs/chromedriver_linux64/
 alias vim='nvim'
 alias v='nvim'
+alias ctags="ctags -R --exclude=.git --exclude=node_modules --exclude=test --exclude=deps"
 alias youtube-dl="youtube-dl -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/bestvideo+bestaudio' --merge-output-format mp4"
 alias youtube-dl-audio="youtube-dl -f 'bestaudio[ext=m4a]/mp4'"
 
